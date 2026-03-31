@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Med Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #080c10;
+      --white: #f8fafc;
+      --surface: #f1f5f9;
+      --blue: #0f52a0;
+      --blue-mid: #1d6fd4;
+      --blue-pale: #dbeafe;
+      --accent: #38bdf8;
+      --gray: #64748b;
+      --gray-light: #e2e8f0;
+      --text: #0f172a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); font-size: 16px; line-height: 1.6; }
+
+    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--gray-light);
+      padding: 0 2.5rem; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--black); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue-mid); }
+    .nav-cta { background: var(--blue) !important; color: var(--white) !important; padding: 7px 16px !important; border-radius: 6px; }
+    .nav-cta:hover { background: var(--blue-mid) !important; color: var(--white) !important; }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 480px; border-bottom: 1px solid var(--gray-light); }
+    .hero-left { padding: 4.5rem 3rem 4.5rem 2.5rem; border-right: 1px solid var(--gray-light); display: flex; flex-direction: column; justify-content: center; }
+    .hero-kicker { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
+    .hero-kicker::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue-mid); }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.6rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: var(--black); }
+    .hero h1 em { font-style: normal; color: var(--blue-mid); }
+    .hero-sub { font-size: 1rem; color: var(--gray); line-height: 1.75; max-width: 440px; margin-bottom: 2rem; }
+    .hero-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: var(--white); text-decoration: none; padding: 13px 26px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; transition: background 0.2s; width: fit-content; }
+    .hero-btn:hover { background: var(--blue-mid); }
+    .hero-right { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--surface); }
+    .featured-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; }
+    .featured-card { background: var(--white); border: 1px solid var(--gray-light); border-radius: 10px; padding: 1.5rem; border-top: 3px solid var(--blue-mid); }
+    .fc-tag { display: inline-block; background: var(--blue-pale); color: var(--blue); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 0.85rem; }
+    .featured-card h2 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 0.75rem; color: var(--black); }
+    .featured-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.25rem; }
+    .fc-meta { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--gray); display: flex; gap: 10px; }
+
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
+
+    .pillars { padding: 3.5rem 0; border-bottom: 1px solid var(--gray-light); }
+    .sec-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.75rem; }
+    .sec-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
+    .sec-link { font-size: 0.8rem; color: var(--blue-mid); text-decoration: none; font-weight: 500; }
+    .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .pillar { border: 1px solid var(--gray-light); border-radius: 10px; padding: 1.5rem 1.75rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.15s; display: block; }
+    .pillar:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+    .pillar-num { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--gray); margin-bottom: 0.75rem; letter-spacing: 0.08em; }
+    .pillar h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.45rem; letter-spacing: -0.01em; }
+    .pillar p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+    .p-badge { display: inline-block; margin-top: 1rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; }
+    .b-ai { background: var(--blue-pale); color: var(--blue); }
+    .b-tech { background: #ede9fe; color: #4338ca; }
+
+    .posts { padding: 3.5rem 0 5rem; }
+    .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .post-card { display: flex; flex-direction: column; }
+    .post-thumb { width: 100%; height: 150px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; }
+    .thumb-ai { background: #dbeafe; }
+    .thumb-tech { background: #ede9fe; }
+    .post-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .tag-ai { color: var(--blue); }
+    .tag-tech { color: #4338ca; }
+    .post-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.45rem; letter-spacing: -0.01em; }
+    .post-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; flex: 1; margin-bottom: 0.9rem; }
+    .post-foot { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--gray); font-family: 'DM Mono', monospace; border-top: 1px solid var(--gray-light); padding-top: 0.75rem; }
+    .status { margin-left: auto; font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 20px; }
+    .s-pub { background: #dcfce7; color: #166534; }
+    .s-draft { background: #fef9c3; color: #854d0e; }
+
+    .about-band { background: var(--black); padding: 3.5rem 0; }
+    .about-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+    .about-band h2 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--white); margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .about-band p { color: rgba(255,255,255,0.55); font-size: 0.92rem; line-height: 1.75; max-width: 520px; }
+    .about-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--black); text-decoration: none; padding: 13px 24px; border-radius: 6px; font-size: 0.875rem; font-weight: 500; white-space: nowrap; transition: opacity 0.2s; }
+    .about-btn:hover { opacity: 0.85; }
+
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family: 'DM Mono', monospace; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .pillars-grid, .posts-grid { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA med device approvals <span>◆</span> AI diagnostics <span>◆</span>
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA med device approvals <span>◆</span> AI diagnostics <span>◆</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
+    <ul class="nav-links">
+      <li><a href="ai-medicine.html">AI in Medicine</a></li>
+      <li><a href="med-tech.html">Med Tech</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="nav-cta">About Me</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-kicker">Student medical journalism</div>
+      <h1>Where <em>AI</em> meets<br>the human body.</h1>
+      <p class="hero-sub">Weekly writing on artificial intelligence in medicine and emerging medical technology — by a Loyola High School student watching the future of healthcare unfold in real time.</p>
+      <a href="#posts" class="hero-btn">Read the latest →</a>
+    </div>
+    <div class="hero-right">
+      <div class="featured-label">Latest post</div>
+      <div class="featured-card">
+        <div class="fc-tag">AI in Medicine</div>
+        <h2>Can an AI outdiagnose a radiologist? The evidence so far.</h2>
+        <p>Deep learning models are reading X-rays and MRI scans with striking accuracy. But lab performance and real-world performance are two very different things.</p>
+        <div class="fc-meta"><span>Mar 31, 2026</span><span>·</span><span>7 min read</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="pillars">
+      <div class="sec-header"><h2 class="sec-title">What I cover</h2></div>
+      <div class="pillars-grid">
+        <a href="ai-medicine.html" class="pillar">
+          <div class="pillar-num">01 — Pillar</div>
+          <h3>AI in Medicine</h3>
+          <p>Machine learning for diagnosis, large language models in clinical workflows, and how AI is reshaping drug discovery from the ground up.</p>
+          <span class="p-badge b-ai">AI &amp; Medicine</span>
+        </a>
+        <a href="med-tech.html" class="pillar">
+          <div class="pillar-num">02 — Pillar</div>
+          <h3>New Medical Technology</h3>
+          <p>Robotic surgery, smart implants, wearable biosensors, next-gen imaging — the devices and tools transforming how medicine is actually practiced.</p>
+          <span class="p-badge b-tech">Med Tech</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="posts" id="posts">
+      <div class="sec-header">
+        <h2 class="sec-title">All posts</h2>
+        <a href="#" class="sec-link">View archive →</a>
+      </div>
+      <div class="posts-grid">
+
+        <div class="post-card">
+          <div class="post-thumb thumb-ai">🧠</div>
+          <div class="post-tag tag-ai">AI in Medicine</div>
+          <h3>Can an AI outdiagnose a radiologist? The evidence so far.</h3>
+          <p>Deep learning models are reading scans with striking accuracy — but performance in a lab and in a real hospital are two very different things.</p>
+          <div class="post-foot"><span>Mar 31</span><span>·</span><span>7 min</span><span class="status s-pub">Published</span></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-thumb thumb-tech">🤖</div>
+          <div class="post-tag tag-tech">Med Tech</div>
+          <h3>The new wave of robotic surgery — what patients should know</h3>
+          <p>Surgical robots are no longer science fiction. Here's how they actually work, and where the technology still falls short.</p>
+          <div class="post-foot"><span>Mar 24</span><span>·</span><span>6 min</span><span class="status s-pub">Published</span></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-thumb thumb-ai">💊</div>
+          <div class="post-tag tag-ai">AI in Medicine</div>
+          <h3>How AI is accelerating drug discovery — and where the hype ends</h3>
+          <p>AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.</p>
+          <div class="post-foot"><span>Mar 17</span><span>·</span><span>8 min</span><span class="status s-draft">Draft</span></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-thumb thumb-tech">⌚</div>
+          <div class="post-tag tag-tech">Med Tech</div>
+          <h3>Wearable biosensors are getting serious — a look at what's coming</h3>
+          <p>Beyond step counts: continuous glucose, blood pressure, and early sepsis detection. What's actually on its way to your wrist.</p>
+          <div class="post-foot"><span>Mar 10</span><span>·</span><span>5 min</span><span class="status s-draft">Draft</span></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-thumb thumb-ai">🏥</div>
+          <div class="post-tag tag-ai">AI in Medicine</div>
+          <h3>LLMs in the clinic: should doctors use AI to treat patients?</h3>
+          <p>Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real — but so is the upside.</p>
+          <div class="post-foot"><span>Mar 3</span><span>·</span><span>6 min</span><span class="status s-draft">Draft</span></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-thumb thumb-tech">🔬</div>
+          <div class="post-tag tag-tech">Med Tech</div>
+          <h3>CRISPR in 2026: what gene editing can — and can't — do yet</h3>
+          <p>The first CRISPR-based cure for sickle cell disease was approved. Now the race is on to treat everything else.</p>
+          <div class="post-foot"><span>Feb 24</span><span>·</span><span>7 min</span><span class="status s-draft">Draft</span></div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div class="about-band">
+    <div class="wrap">
+      <div class="about-inner">
+        <div>
+          <h2>Who's writing this?</h2>
+          <p>A rising junior at Loyola High School in Los Angeles, writing for the school paper and deeply interested in where medicine and technology intersect. This blog is my space to think out loud — faster and more freely than print allows.</p>
+        </div>
+        <a href="about.html" class="about-btn">Read my full bio →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:">Contact</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>Where AI meets the human body.</p>
+  </footer>
+
+</body>
+</html>

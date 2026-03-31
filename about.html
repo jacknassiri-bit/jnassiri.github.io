@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — The Med Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #080c10; --white: #f8fafc; --surface: #f1f5f9;
+      --blue: #0f52a0; --blue-mid: #1d6fd4; --blue-pale: #dbeafe;
+      --accent: #38bdf8; --gray: #64748b; --gray-light: #e2e8f0; --text: #0f172a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); }
+
+    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--gray-light); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--black); text-decoration: none; }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue-mid); }
+    .nav-cta { background: var(--blue) !important; color: var(--white) !important; padding: 7px 16px !important; border-radius: 6px; }
+
+    .page-header { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--gray-light); }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
+    .kicker { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
+    .kicker::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue-mid); }
+    .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--black); }
+    .page-header h1 em { font-style: italic; color: var(--blue-mid); font-style: normal; }
+
+    .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; padding: 4rem 0 5rem; align-items: start; }
+    .about-body p { font-size: 1.05rem; color: #1e293b; line-height: 1.85; margin-bottom: 1.5rem; }
+    .about-body h2 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+
+    .sidebar { display: flex; flex-direction: column; gap: 14px; }
+    .sidebar-card { background: var(--surface); border-radius: 10px; padding: 1.25rem 1.5rem; }
+    .sidebar-card h4 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .sidebar-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+    .disclaimer { background: var(--blue-pale); border-left: 3px solid var(--blue-mid); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 2rem 0; font-size: 0.9rem; color: var(--blue); line-height: 1.65; }
+
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family: 'DM Mono', monospace; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) { .about-content { grid-template-columns: 1fr; } .nav-links { display: none; } footer { flex-direction: column; gap: 8px; } }
+  </style>
+</head>
+<body>
+
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA med device approvals <span>◆</span>
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA med device approvals <span>◆</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
+    <ul class="nav-links">
+      <li><a href="ai-medicine.html">AI in Medicine</a></li>
+      <li><a href="med-tech.html">Med Tech</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="nav-cta">About Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="wrap">
+      <div class="kicker">About the author</div>
+      <h1>A student writer at the <em>edge</em> of medicine.</h1>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="about-content">
+      <div class="about-body">
+        <p>I'm a rising junior at Loyola High School in Los Angeles, where I write for the school newspaper, <em>The Loyalist</em>. I started The Med Frontier because I wanted a place to write about the topics I care most about — on my own timeline, without waiting for the next issue.</p>
+
+        <p>I'm fascinated by the collision between artificial intelligence and medicine. We're living through a moment where algorithms are reading X-rays, predicting drug interactions, and assisting in surgery — and most people don't even know it's happening yet. That gap between what's actually occurring in research and what the public understands is exactly what I want to help close.</p>
+
+        <p>My goal is simple: take complex developments in medical AI and emerging technology and make them readable for anyone who's curious. If a story is worth covering, it's worth explaining clearly.</p>
+
+        <h2>What I focus on</h2>
+        <p>AI in medicine — how machine learning, large language models, and computer vision are reshaping diagnosis, drug discovery, and clinical decision-making. And new medical technology — robotic surgery, smart implants, wearable biosensors, and next-generation imaging tools that are quietly transforming patient care.</p>
+
+        <p>I try to always ask: what does this actually mean for patients? Technology means nothing without the human on the other end of it.</p>
+
+        <div class="disclaimer">
+          <strong>Note:</strong> I'm a high school student, not a medical professional. Nothing on this blog is medical advice. I aim for accuracy and always link to primary sources — but please consult a doctor for anything health-related.
+        </div>
+
+        <h2>Why "The Med Frontier"?</h2>
+        <p>A frontier is a place where the known world ends and the unknown begins. That's exactly where medicine is right now — especially with AI. This blog is my attempt to report from that edge, as clearly and honestly as I can.</p>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <h4>Where I write</h4>
+          <p>Loyola High School, Los Angeles. Also a writer for The Loyalist, the school newspaper.</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Posting schedule</h4>
+          <p>Once a week, typically on Mondays. AI in Medicine and Med Tech posts alternate.</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Sources I trust</h4>
+          <p>STAT News, The Lancet, NIH, FDA, Nature Medicine, and primary research papers — always linked in every post.</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Get in touch</h4>
+          <p>Topic ideas, feedback, or questions — reach out via the contact link in the footer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:">Contact</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>Where AI meets the human body.</p>
+  </footer>
+
+</body>
+</html>
