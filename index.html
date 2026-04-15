@@ -6,7 +6,7 @@
   <title>The Med Frontier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     /* LIGHT THEME */
     :root {
@@ -53,7 +53,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; transition: background 0.25s, color 0.25s; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; transition: background 0.25s, color 0.25s; }
 
     /* TICKER */
     .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
@@ -72,7 +72,7 @@
     .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
 
     /* THEME TOGGLE */
-    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; transition: background 0.2s; white-space: nowrap; }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'Inter', sans-serif; transition: background 0.2s; white-space: nowrap; }
     .theme-toggle:hover { background: var(--border); }
     .toggle-icon { font-size: 14px; }
 
@@ -102,8 +102,7 @@
     .sec-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.75rem; }
     .sec-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
     .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .pillar { border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.15s, background 0.25s; display: block; background: var(--bg-card); }
-    .pillar:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+    .pillar { border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; color: var(--text); background: var(--bg-card); cursor: default; transition: background 0.25s; }
     .pillar-num { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 0.08em; }
     .pillar h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.45rem; letter-spacing: -0.01em; color: var(--text); }
     .pillar p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
@@ -114,7 +113,7 @@
     /* POSTS */
     .posts { padding: 3.5rem 0 5rem; }
     .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .post-card { display: flex; flex-direction: column; }
+    .post-card { display: flex; flex-direction: column; text-decoration: none; color: var(--text); }
     .post-thumb { width: 100%; height: 150px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; transition: background 0.25s; }
     .thumb-ai { background: var(--thumb-ai); }
     .thumb-tech { background: var(--thumb-tech); }
@@ -167,7 +166,6 @@
       <ul class="nav-links">
         <li><a href="ai-medicine.html">AI in Medicine</a></li>
         <li><a href="med-tech.html">Med Tech</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="about.html" class="nav-cta">About Me</a></li>
       </ul>
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
@@ -199,25 +197,24 @@
     <section class="pillars">
       <div class="sec-header"><h2 class="sec-title">What I cover</h2></div>
       <div class="pillars-grid">
-        <a href="ai-medicine.html" class="pillar">
+        <div class="pillar">
           <div class="pillar-num">01 — Pillar</div>
           <h3>AI in Medicine</h3>
           <p>Machine learning for diagnosis, large language models in clinical workflows, and how AI is reshaping drug discovery from the ground up.</p>
           <span class="p-badge b-ai">AI &amp; Medicine</span>
-        </a>
-        <a href="med-tech.html" class="pillar">
+        </div>
+        <div class="pillar">
           <div class="pillar-num">02 — Pillar</div>
           <h3>New Medical Technology</h3>
           <p>Robotic surgery, smart implants, wearable biosensors, next-gen imaging — the devices and tools transforming how medicine is actually practiced.</p>
           <span class="p-badge b-tech">Med Tech</span>
-        </a>
+        </div>
       </div>
     </section>
 
     <section class="posts" id="posts">
       <div class="sec-header">
-        <h2 class="sec-title">All posts</h2>
-        <a href="#" style="font-size: 0.8rem; color: var(--blue-mid); text-decoration: none; font-weight: 500;">View archive →</a>
+        <h2 class="sec-title">Published posts</h2>
       </div>
       <div class="posts-grid">
 
@@ -235,38 +232,6 @@
           <h3>The new wave of robotic surgery — what patients should know</h3>
           <p>Surgical robots are no longer science fiction. Here's how they actually work, and where the technology still falls short.</p>
           <div class="post-foot"><span>Mar 24</span><span>·</span><span>6 min</span><span class="status s-pub">Published</span></div>
-        </a>
-
-        <a href="ai-drug-discovery.html" class="post-card">
-          <div class="post-thumb thumb-ai">💊</div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>How AI is accelerating drug discovery — and where the hype ends</h3>
-          <p>AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.</p>
-          <div class="post-foot"><span>Mar 17</span><span>·</span><span>8 min</span><span class="status s-draft">Draft</span></div>
-        </a>
-
-        <a href="wearable-biosensors.html" class="post-card">
-          <div class="post-thumb thumb-tech">⌚</div>
-          <div class="post-tag tag-tech">Med Tech</div>
-          <h3>Wearable biosensors are getting serious — a look at what's coming</h3>
-          <p>Beyond step counts: continuous glucose, blood pressure, and early sepsis detection on your wrist.</p>
-          <div class="post-foot"><span>Mar 10</span><span>·</span><span>5 min</span><span class="status s-draft">Draft</span></div>
-        </a>
-
-        <a href="llms-clinic.html" class="post-card">
-          <div class="post-thumb thumb-ai">🏥</div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>LLMs in the clinic: should doctors use AI to treat patients?</h3>
-          <p>Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real — but so is the upside.</p>
-          <div class="post-foot"><span>Mar 3</span><span>·</span><span>6 min</span><span class="status s-draft">Draft</span></div>
-        </a>
-
-        <a href="crispr-2026.html" class="post-card">
-          <div class="post-thumb thumb-tech">🔬</div>
-          <div class="post-tag tag-tech">Med Tech</div>
-          <h3>CRISPR in 2026: what gene editing can — and can't — do yet</h3>
-          <p>The first CRISPR-based cure for sickle cell disease was approved. Now the race is on to treat everything else.</p>
-          <div class="post-foot"><span>Feb 24</span><span>·</span><span>7 min</span><span class="status s-draft">Draft</span></div>
         </a>
 
       </div>

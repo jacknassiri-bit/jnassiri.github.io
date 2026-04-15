@@ -6,7 +6,7 @@
   <title>AI in Medicine — The Med Frontier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
@@ -25,7 +25,7 @@
       --pub: #14532d; --pub-text: #86efac; --draft: #422006; --draft-text: #fde68a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
 
     .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
     .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
@@ -40,7 +40,7 @@
     .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--blue-mid); }
     .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
-    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'Inter', sans-serif; white-space: nowrap; transition: background 0.2s; }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; white-space: nowrap; transition: background 0.2s; }
     .theme-toggle:hover { background: var(--border); }
 
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
@@ -99,6 +99,7 @@
       <ul class="nav-links">
         <li><a href="ai-medicine.html" class="active">AI in Medicine</a></li>
         <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="about.html" class="nav-cta">About Me</a></li>
       </ul>
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
@@ -111,7 +112,7 @@
     <div class="page-header">
       <div class="page-title-row">
         <h1 class="page-title">AI in <em>Medicine</em></h1>
-        <span class="page-count">1 post</span>
+        <span class="page-count">4 posts</span>
       </div>
       <p class="page-desc">How machine learning, large language models, and computer vision are reshaping diagnosis, drug discovery, and clinical decision-making.</p>
     </div>
@@ -119,7 +120,7 @@
     <div class="posts-section">
       <div class="posts-grid">
 
-        <a href="ai-radiologist.html" class="post-card">
+        <a href="#" class="post-card">
           <div class="card-thumb">🧠</div>
           <div class="card-body">
             <div class="card-tag">AI in Medicine</div>
@@ -129,6 +130,35 @@
           </div>
         </a>
 
+        <a href="#" class="post-card">
+          <div class="card-thumb">💊</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">How AI is accelerating drug discovery — and where the hype ends</div>
+            <div class="card-desc">AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.</div>
+            <div class="card-foot"><span>Mar 17 · 8 min</span><span class="status s-draft">Draft</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="post-card">
+          <div class="card-thumb">🏥</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">LLMs in the clinic: should doctors use AI to treat patients?</div>
+            <div class="card-desc">Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real — but so is the upside.</div>
+            <div class="card-foot"><span>Mar 3 · 6 min</span><span class="status s-draft">Draft</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="post-card">
+          <div class="card-thumb">🔬</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">AI in pathology: teaching computers to spot cancer in a slide</div>
+            <div class="card-desc">Pathologists analyze tissue samples for hours. AI models are now doing it in seconds — and sometimes catching what humans miss.</div>
+            <div class="card-foot"><span>Coming April 2026</span><span class="status s-draft">Draft</span></div>
+          </div>
+        </a>
 
       </div>
     </div>

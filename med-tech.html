@@ -6,7 +6,7 @@
   <title>Med Tech — The Med Frontier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
@@ -27,7 +27,7 @@
       --pub: #14532d; --pub-text: #86efac; --draft: #422006; --draft-text: #fde68a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
 
     .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
     .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
@@ -42,7 +42,7 @@
     .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--purple-mid); }
     .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
-    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; white-space: nowrap; transition: background 0.2s; }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'Inter', sans-serif; white-space: nowrap; transition: background 0.2s; }
     .theme-toggle:hover { background: var(--border); }
 
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
@@ -101,7 +101,6 @@
       <ul class="nav-links">
         <li><a href="ai-medicine.html">AI in Medicine</a></li>
         <li><a href="med-tech.html" class="active">Med Tech</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="about.html" class="nav-cta">About Me</a></li>
       </ul>
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
@@ -114,7 +113,7 @@
     <div class="page-header">
       <div class="page-title-row">
         <h1 class="page-title">New Medical <em>Technology</em></h1>
-        <span class="page-count">4 posts</span>
+        <span class="page-count">1 post</span>
       </div>
       <p class="page-desc">Robotic surgery, smart implants, wearable biosensors, next-gen imaging — the devices and tools quietly transforming how medicine is practiced.</p>
     </div>
@@ -132,35 +131,6 @@
           </div>
         </a>
 
-        <a href="wearable-biosensors.html" class="post-card">
-          <div class="card-thumb">⌚</div>
-          <div class="card-body">
-            <div class="card-tag">Med Tech</div>
-            <div class="card-title">Wearable biosensors are getting serious — a look at what's coming</div>
-            <div class="card-desc">Beyond step counts: continuous glucose monitoring, blood pressure tracking, and early sepsis detection — all on your wrist.</div>
-            <div class="card-foot"><span>Mar 10 · 5 min</span><span class="status s-draft">Draft</span></div>
-          </div>
-        </a>
-
-        <a href="crispr-2026.html" class="post-card">
-          <div class="card-thumb">🔬</div>
-          <div class="card-body">
-            <div class="card-tag">Med Tech</div>
-            <div class="card-title">CRISPR in 2026: what gene editing can — and can't — do yet</div>
-            <div class="card-desc">The first CRISPR-based cure for sickle cell disease was approved. Now researchers are racing to apply it to dozens of other conditions.</div>
-            <div class="card-foot"><span>Feb 24 · 7 min</span><span class="status s-draft">Draft</span></div>
-          </div>
-        </a>
-
-        <a href="smart-implants.html" class="post-card">
-          <div class="card-thumb">🫀</div>
-          <div class="card-body">
-            <div class="card-tag">Med Tech</div>
-            <div class="card-title">Smart implants: the devices living inside patients and sending data back</div>
-            <div class="card-desc">Pacemakers that connect to the internet. Implants that detect seizures before they happen. The era of the connected body is already here.</div>
-            <div class="card-foot"><span>Coming April 2026</span><span class="status s-draft">Draft</span></div>
-          </div>
-        </a>
 
       </div>
     </div>
