@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Medicine — The Med Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
+      --text: #0f172a; --text-muted: #64748b; --border: #e2e8f0;
+      --blue: #0f52a0; --blue-mid: #1d6fd4; --blue-pale: #dbeafe;
+      --thumb: #1e3a6e;
+      --accent: #38bdf8; --black: #080c10; --nav-bg: #f8fafc;
+      --pub: #dcfce7; --pub-text: #166534; --draft: #fef9c3; --draft-text: #854d0e;
+    }
+    [data-theme="dark"] {
+      --bg: #18181b; --bg-surface: #222226; --bg-card: #27272a;
+      --text: #f4f4f5; --text-muted: #a1a1aa; --border: #3f3f46;
+      --blue: #60a5fa; --blue-mid: #93c5fd; --blue-pale: #1e3a5f;
+      --thumb: #1a3460;
+      --accent: #38bdf8; --black: #09090b; --nav-bg: #18181b;
+      --pub: #14532d; --pub-text: #86efac; --draft: #422006; --draft-text: #fde68a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
+
+    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-mid); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; white-space: nowrap; transition: background 0.2s; }
+    .theme-toggle:hover { background: var(--border); }
+
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
+
+    .page-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); }
+    .page-title-row { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.6rem; }
+    .page-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
+    .page-title em { color: var(--blue-mid); font-style: normal; }
+    .page-count { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--text-muted); }
+    .page-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; max-width: 560px; }
+
+    .posts-section { padding: 2.5rem 0 0; }
+    .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .post-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.15s, background 0.25s; text-decoration: none; color: var(--text); display: flex; flex-direction: column; }
+    .post-card:hover { border-color: var(--blue-mid); transform: translateY(-3px); }
+    .card-thumb { height: 170px; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: var(--thumb); }
+    .card-body { padding: 1.1rem 1.25rem 1.25rem; display: flex; flex-direction: column; flex: 1; }
+    .card-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.45rem; }
+    .card-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 0.5rem; color: var(--text); }
+    .card-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+    .card-foot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 0.75rem; font-size: 0.72rem; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+    .status { font-size: 0.63rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 9px; border-radius: 20px; }
+    .s-pub { background: var(--pub); color: var(--pub-text); }
+    .s-draft { background: var(--draft); color: var(--draft-text); }
+
+    .whos-writing { border-top: 1px solid var(--border); margin-top: 4rem; padding: 3rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .whos-left { display: flex; align-items: center; gap: 1.25rem; }
+    .whos-avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .whos-text h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text); }
+    .whos-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 480px; }
+    .bio-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: #fff; text-decoration: none; padding: 11px 24px; border-radius: 6px; font-size: 0.875rem; font-weight: 500; white-space: nowrap; transition: opacity 0.2s; flex-shrink: 0; }
+    .bio-btn:hover { opacity: 0.85; }
+
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); margin-top: 0; padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family: 'DM Mono', monospace; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 900px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } .whos-writing { flex-direction: column; align-items: flex-start; } footer { flex-direction: column; gap: 8px; } }
+    @media (max-width: 580px) { .posts-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      AI diagnostics <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Radiology AI <span>◆</span> Clinical decision support <span>◆</span> AI in pathology <span>◆</span>
+      AI diagnostics <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Radiology AI <span>◆</span> Clinical decision support <span>◆</span> AI in pathology <span>◆</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="ai-medicine.html" class="active">AI in Medicine</a></li>
+        <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="nav-cta">About Me</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
+        <span id="toggle-icon">🌙</span><span id="toggle-label">Dark</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="page-header">
+      <div class="page-title-row">
+        <h1 class="page-title">AI in <em>Medicine</em></h1>
+        <span class="page-count">4 posts</span>
+      </div>
+      <p class="page-desc">How machine learning, large language models, and computer vision are reshaping diagnosis, drug discovery, and clinical decision-making.</p>
+    </div>
+
+    <div class="posts-section">
+      <div class="posts-grid">
+
+        <a href="ai-radiologist.html" class="post-card">
+          <div class="card-thumb">🧠</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">Can an AI outdiagnose a radiologist? The evidence so far.</div>
+            <div class="card-desc">Deep learning models are reading scans with striking accuracy — but lab performance and real-world hospital performance are two very different things.</div>
+            <div class="card-foot"><span>Mar 31 · 7 min</span><span class="status s-pub">Published</span></div>
+          </div>
+        </a>
+
+        <a href="ai-drug-discovery.html" class="post-card">
+          <div class="card-thumb">💊</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">How AI is accelerating drug discovery — and where the hype ends</div>
+            <div class="card-desc">AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.</div>
+            <div class="card-foot"><span>Mar 17 · 8 min</span><span class="status s-draft">Draft</span></div>
+          </div>
+        </a>
+
+        <a href="llms-clinic.html" class="post-card">
+          <div class="card-thumb">🏥</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">LLMs in the clinic: should doctors use AI to treat patients?</div>
+            <div class="card-desc">Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real — but so is the upside.</div>
+            <div class="card-foot"><span>Mar 3 · 6 min</span><span class="status s-draft">Draft</span></div>
+          </div>
+        </a>
+
+        <a href="ai-pathology.html" class="post-card">
+          <div class="card-thumb">🔬</div>
+          <div class="card-body">
+            <div class="card-tag">AI in Medicine</div>
+            <div class="card-title">AI in pathology: teaching computers to spot cancer in a slide</div>
+            <div class="card-desc">Pathologists analyze tissue samples for hours. AI models are now doing it in seconds — and sometimes catching what humans miss.</div>
+            <div class="card-foot"><span>Coming April 2026</span><span class="status s-draft">Draft</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="whos-writing">
+      <div class="whos-left">
+        <div class="whos-avatar">✍️</div>
+        <div class="whos-text">
+          <h3>Who's writing this?</h3>
+          <p>A rising junior at Loyola High School in Los Angeles, writing about the intersection of AI and medicine. Trying to make sense of where healthcare is headed — one post at a time.</p>
+        </div>
+      </div>
+      <a href="about.html" class="bio-btn">Read Bio →</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:">Contact</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>Where AI meets the human body.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
+      document.getElementById('toggle-label').textContent = isDark ? 'Dark' : 'Light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('toggle-icon').textContent = '☀️';
+      document.getElementById('toggle-label').textContent = 'Light';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CHANGE THIS: Your post title -->
+  <title>Post Title — The Med Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
+      --text: #0f172a; --text-muted: #64748b; --border: #e2e8f0;
+      --blue: #0f52a0; --blue-mid: #1d6fd4; --blue-pale: #dbeafe;
+      --accent: #38bdf8; --black: #080c10; --nav-bg: #f8fafc;
+    }
+    [data-theme="dark"] {
+      --bg: #18181b; --bg-surface: #222226; --bg-card: #27272a;
+      --text: #f4f4f5; --text-muted: #a1a1aa; --border: #3f3f46;
+      --blue: #60a5fa; --blue-mid: #93c5fd; --blue-pale: #1e3a5f;
+      --accent: #38bdf8; --black: #09090b; --nav-bg: #18181b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
+
+    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); }
+    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue-mid); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; white-space: nowrap; }
+    .theme-toggle:hover { background: var(--border); }
+
+    .post-header { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .post-wrap { max-width: 720px; margin: 0 auto; padding: 0 2.5rem; }
+    .post-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .post-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
+    .tag-ai { background: var(--blue-pale); color: var(--blue); }
+    .tag-tech { background: #2e1a4a; color: #a78bfa; }
+    [data-theme="light"] .tag-tech { background: #ede9fe; color: #4338ca; }
+    .post-meta { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--text-muted); }
+    .post-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: var(--text); }
+    .post-dek { font-size: 1.1rem; color: var(--text-muted); line-height: 1.75; }
+
+    .post-body { padding: 3rem 0 5rem; }
+    .post-body p { font-size: 1.05rem; color: var(--text); line-height: 1.9; margin-bottom: 1.5rem; }
+    .post-body h2 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; margin: 2.75rem 0 1rem; letter-spacing: -0.01em; color: var(--text); }
+    .post-body h3 { font-size: 1.1rem; font-weight: 500; margin: 2rem 0 0.75rem; color: var(--text); }
+    .post-body a { color: var(--blue-mid); text-decoration: underline; text-underline-offset: 3px; }
+    .post-body ul, .post-body ol { margin: 0 0 1.5rem 1.5rem; }
+    .post-body li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 0.4rem; }
+
+    .pullquote { border-left: 3px solid var(--blue-mid); margin: 2.5rem 0; padding: 0.5rem 1.5rem; }
+    .pullquote p { font-family: 'Syne', sans-serif; font-size: 1.3rem !important; font-weight: 600; color: var(--blue-mid) !important; line-height: 1.45 !important; margin: 0 !important; letter-spacing: -0.01em; }
+
+    .what-this-means { background: var(--blue-pale); border-left: 3px solid var(--blue-mid); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; margin: 2.5rem 0; }
+    .what-this-means h4 { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.6rem; }
+    .what-this-means p { font-size: 0.95rem !important; color: var(--blue-mid) !important; margin: 0 !important; line-height: 1.7 !important; }
+
+    .sources-box { background: var(--bg-surface); border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 3rem; transition: background 0.25s; }
+    .sources-box h4 { font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .sources-box ol { margin-left: 1.25rem; }
+    .sources-box li { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.4rem; }
+    .sources-box a { color: var(--blue-mid); }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--blue-mid); text-decoration: none; margin-bottom: 2.5rem; font-weight: 500; }
+    .back-link:hover { text-decoration: underline; }
+
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family: 'DM Mono', monospace; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    @media (max-width: 768px) { .nav-links { display: none; } footer { flex-direction: column; gap: 8px; } }
+  </style>
+</head>
+<body>
+
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span>
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="ai-medicine.html">AI in Medicine</a></li>
+        <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="nav-cta">About Me</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
+        <span id="toggle-icon">🌙</span>
+        <span id="toggle-label">Dark</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="post-header">
+    <div class="post-wrap">
+      <div class="post-eyebrow">
+        <!-- CHANGE THIS: swap tag-ai / tag-tech as needed -->
+        <span class="post-tag tag-ai">AI in Medicine</span>
+        <!-- CHANGE THIS: date and read time -->
+        <span class="post-meta">Month Day, Year &nbsp;·&nbsp; X min read</span>
+      </div>
+      <!-- CHANGE THIS: your post title -->
+      <h1>Your Post Title Goes Here</h1>
+      <!-- CHANGE THIS: one sentence summary -->
+      <p class="post-dek">A one-sentence summary of what this post covers and why it matters right now.</p>
+    </div>
+  </div>
+
+  <div class="post-body">
+    <div class="post-wrap">
+      <a href="index.html" class="back-link">← Back to all posts</a>
+
+      <!-- WRITE YOUR POST BELOW -->
+      <p>Start your post here. Set up the topic and explain why it matters right now. Hook the reader in 2–3 sentences.</p>
+
+      <h2>Your first section heading</h2>
+      <p>Write your first section. Each section should make one clear point. Keep paragraphs to 3–5 sentences max.</p>
+
+      <div class="pullquote">
+        <p>"A striking quote or key insight from your post."</p>
+      </div>
+
+      <h2>Your second section heading</h2>
+      <p>Continue here. Link to sources inline using &lt;a href="URL"&gt;source name&lt;/a&gt;.</p>
+
+      <h2>Your third section heading</h2>
+      <p>Keep building. Try to include a specific example or statistic in each section.</p>
+
+      <div class="what-this-means">
+        <h4>What this means</h4>
+        <p>In plain language: what does this actually mean for patients, doctors, or the future of medicine?</p>
+      </div>
+
+      <p>Closing paragraph. Wrap up the argument and give the reader something to think about.</p>
+
+      <div class="sources-box">
+        <h4>Sources</h4>
+        <ol>
+          <li><a href="#">Author, "Title," Publication, Year</a></li>
+          <li><a href="#">Author, "Title," Publication, Year</a></li>
+          <li><a href="#">Author, "Title," Publication, Year</a></li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:">Contact</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>Where AI meets the human body.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
+      document.getElementById('toggle-label').textContent = isDark ? 'Dark' : 'Light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('toggle-icon').textContent = '☀️';
+      document.getElementById('toggle-label').textContent = 'Light';
+    }
+  </script>
+
+</body>
+</html>
