@@ -76,10 +76,31 @@
     footer a:hover { color: var(--accent); }
     @media (max-width: 768px) { .nav-links { display: none; } .whos-writing { flex-direction: column; align-items: flex-start; } footer { flex-direction: column; gap: 8px; } .article-hero { height: 220px; } .hero-emoji { font-size: 5rem; } }
 
+
+    /* PROGRESS BAR */
+    #progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(to right, var(--blue-mid), var(--accent)); z-index: 9999; transition: width 0.08s linear; }
+
+    /* SHARE SECTION */
+    .share-section { border-top: 1px solid var(--border); padding: 1.75rem 0 2rem; }
+    .share-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.85rem; }
+    .share-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; border-radius: 6px; font-size: 0.82rem; font-weight: 500; text-decoration: none; cursor: pointer; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); transition: background 0.18s, border-color 0.18s; font-family: 'Inter', sans-serif; }
+    .share-btn:hover { background: var(--bg-surface); border-color: var(--blue-mid); color: var(--blue-mid); }
+    .share-copy { }
+    #copy-confirm { font-size: 0.75rem; color: var(--blue-mid); display: none; margin-left: 4px; }
+
+    /* CITATIONS */
+    .citations-section { border-top: 1px solid var(--border); padding: 2rem 0 2.5rem; }
+    .citations-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; letter-spacing: -0.01em; }
+    .citations-list { padding-left: 1.4rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .citations-list li { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .citations-list a { color: var(--blue-mid); text-decoration: none; }
+    .citations-list a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
+  <div id="progress-bar"></div>
   <div class="ticker-bar">
     <div class="ticker-inner">
       AI diagnostics <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Radiology AI <span>◆</span> Clinical decision support <span>◆</span> AI in pathology <span>◆</span>
@@ -93,6 +114,9 @@
       <ul class="nav-links">
         <li><a href="ai-medicine.html" class="active">AI in Medicine</a></li>
         <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="how-i-write.html">How I Write</a></li>
+        <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
         <li><a href="about.html" class="nav-cta">About Me</a></li>
       </ul>
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
@@ -127,6 +151,23 @@
       <p>The technology is good. It is getting better. Whether health systems can actually integrate it safely, equitably, and in a way that patients trust is a different and much harder problem.</p>
     </div>
 
+
+    <div class="share-section">
+      <div class="share-label">Share this post</div>
+      <div class="share-buttons">
+        <a href="https://twitter.com/intent/tweet?url=https://jacknassiri-bit.github.io/jnassiri.github.io/ai-radiologist.html&text=Can%20an%20AI%20outdiagnose%20a%20radiologist?%20The%20evidence%20so%20far.&via=TheMedFrontier" target="_blank" rel="noopener" class="share-btn">&#x1D54F; Post on X</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://jacknassiri-bit.github.io/jnassiri.github.io/ai-radiologist.html" target="_blank" rel="noopener" class="share-btn">in Share on LinkedIn</a>
+        <button class="share-btn share-copy" onclick="copyLink()" id="copy-btn">&#128279; Copy Link<span id="copy-confirm">Copied!</span></button>
+      </div>
+    </div>
+    <div class="citations-section">
+      <h2 class="citations-title">Sources &amp; References</h2>
+      <ol class="citations-list">
+      <li id="ref-1"><a href="https://arxiv.org/abs/1711.05225" target="_blank" rel="noopener">Rajpurkar P et al., "CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning." Stanford AI Lab, 2017.</a></li>
+      <li id="ref-2"><a href="https://jamanetwork.com/journals/jama/fullarticle/2588763" target="_blank" rel="noopener">Gulshan V et al., "Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy." JAMA, 2016.</a></li>
+      <li id="ref-3"><a href="https://www.nature.com/articles/s41591-018-0300-7" target="_blank" rel="noopener">Topol EJ, "High-performance medicine: the convergence of human and artificial intelligence." Nature Medicine, 2019.</a></li>
+      </ol>
+    </div>
     <div class="whos-writing">
       <div class="whos-left">
         <div class="whos-avatar">✍️</div>
@@ -158,6 +199,22 @@
       document.documentElement.setAttribute('data-theme', 'dark');
       document.getElementById('toggle-icon').textContent = '☀️';
       document.getElementById('toggle-label').textContent = 'Light';
+    }
+
+    // Reading progress bar
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.body.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('progress-bar').style.width = pct + '%';
+    });
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.style.display = 'inline';
+        setTimeout(function() { c.style.display = 'none'; }, 2000);
+      });
     }
   </script>
 </body>

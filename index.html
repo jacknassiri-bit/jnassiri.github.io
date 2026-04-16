@@ -149,6 +149,20 @@
       .nav-links { display: none; }
       footer { flex-direction: column; gap: 8px; text-align: center; }
     }
+
+    /* NEWSLETTER BAND */
+    .newsletter-band { background: var(--blue); padding: 3.5rem 0; }
+    .newsletter-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+    .newsletter-band h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .newsletter-band p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.65; max-width: 420px; }
+    .nl-form { display: flex; gap: 10px; flex-shrink: 0; }
+    .nl-input { padding: 11px 16px; border-radius: 6px; border: none; font-size: 0.88rem; font-family: 'Inter', sans-serif; width: 240px; background: rgba(255,255,255,0.15); color: #fff; outline: none; }
+    .nl-input::placeholder { color: rgba(255,255,255,0.55); }
+    .nl-input:focus { background: rgba(255,255,255,0.25); }
+    .nl-btn { padding: 11px 22px; border-radius: 6px; border: none; background: #fff; color: var(--blue); font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: opacity 0.2s; white-space: nowrap; }
+    .nl-btn:hover { opacity: 0.9; }
+    .nl-thanks { color: #fff; font-size: 0.88rem; display: none; }
+    @media (max-width: 768px) { .newsletter-inner { grid-template-columns: 1fr; } .nl-form { flex-direction: column; } .nl-input { width: 100%; } }
   </style>
 </head>
 <body>
@@ -166,6 +180,9 @@
       <ul class="nav-links">
         <li><a href="ai-medicine.html">AI in Medicine</a></li>
         <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="how-i-write.html">How I Write</a></li>
+        <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
         <li><a href="about.html" class="nav-cta">About Me</a></li>
       </ul>
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
@@ -238,6 +255,21 @@
     </section>
   </div>
 
+  <div class="newsletter-band">
+    <div class="wrap">
+      <div class="newsletter-inner">
+        <div>
+          <h2>Get new posts in your inbox</h2>
+          <p>New articles every week on AI in medicine and emerging medical technology. No spam, no noise.</p>
+        </div>
+        <form class="nl-form" action="https://formspree.io/f/xpwzqkrn" method="POST" onsubmit="nlSubmit(event, this)">
+          <input class="nl-input" type="email" name="email" placeholder="your@email.com" required>
+          <button class="nl-btn" type="submit">Subscribe</button>
+          <span class="nl-thanks" id="nl-thanks">Thanks! You&#8217;re in.</span>
+        </form>
+      </div>
+    </div>
+  </div>
   <div class="about-band">
     <div class="wrap">
       <div class="about-inner">
@@ -269,6 +301,22 @@
       document.documentElement.setAttribute('data-theme', 'dark');
       document.getElementById('toggle-icon').textContent = '☀️';
       document.getElementById('toggle-label').textContent = 'Light';
+    }
+
+    function nlSubmit(e, form) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r) {
+        document.getElementById('nl-thanks').style.display = 'inline';
+        form.querySelector('.nl-input').style.display = 'none';
+        form.querySelector('.nl-btn').style.display = 'none';
+      }).catch(function() {
+        document.getElementById('nl-thanks').textContent = 'Error. Try again.';
+        document.getElementById('nl-thanks').style.display = 'inline';
+      });
     }
   </script>
 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Write | The Med Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
+      --text: #0f172a; --text-muted: #64748b; --border: #e2e8f0;
+      --blue: #0f52a0; --blue-mid: #1d6fd4; --blue-pale: #dbeafe;
+      --accent: #38bdf8; --black: #080c10; --nav-bg: #f8fafc;
+    }
+    [data-theme="dark"] {
+      --bg: #18181b; --bg-surface: #222226; --bg-card: #27272a;
+      --text: #f4f4f5; --text-muted: #a1a1aa; --border: #3f3f46;
+      --blue: #60a5fa; --blue-mid: #93c5fd; --blue-pale: #1e3a5f;
+      --accent: #38bdf8; --black: #09090b; --nav-bg: #18181b;
+    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
+    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-mid); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
+    .nav-icon { color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.2s; display: flex; align-items: center; }
+    .nav-icon:hover { color: var(--blue-mid); }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'Inter', sans-serif; white-space: nowrap; transition: background 0.2s; }
+    .theme-toggle:hover { background: var(--border); }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family: 'DM Mono', monospace; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    @media (max-width: 768px) { .nav-links { display: none; } footer { flex-direction: column; gap: 8px; } }
+    .page-header { padding: 4.5rem 0 3rem; border-bottom: 1px solid var(--border); }
+    .kicker { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+    .kicker::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue-mid); }
+    .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; color: var(--text); margin-bottom: 0.75rem; }
+    .page-header p { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 580px; }
+    .content-wrap { max-width: 760px; margin: 0 auto; padding: 0 2.5rem; }
+    .process-body { padding: 3rem 0 5rem; }
+    .step { display: flex; gap: 2rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+    .step:last-child { border-bottom: none; }
+    .step-num { font-family: 'DM Mono', monospace; font-size: 2.5rem; font-weight: 500; color: var(--blue-pale); line-height: 1; flex-shrink: 0; width: 60px; padding-top: 4px; }
+    [data-theme="dark"] .step-num { color: var(--blue-pale); }
+    .step-content h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.85rem; letter-spacing: -0.01em; }
+    .step-content p { font-size: 1rem; color: var(--text); line-height: 1.85; margin-bottom: 1rem; }
+    .step-content p:last-child { margin-bottom: 0; }
+    .tools-box { background: var(--bg-surface); border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 1rem; transition: background 0.25s; }
+    .tools-box h4 { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; }
+    .tools-box ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tools-box ul li { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+    @media (max-width: 600px) { .step { flex-direction: column; gap: 0.75rem; } .step-num { font-size: 1.5rem; width: auto; } }
+  </style>
+</head>
+<body>
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA approvals <span>◆</span>
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA approvals <span>◆</span>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="ai-medicine.html">AI in Medicine</a></li>
+        <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="how-i-write.html">How I Write</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="how-i-write.html">How I Write</a></li>
+        <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
+        <li><a href="about.html" class="nav-cta">About Me</a></li>
+      </ul>
+      <a href="search.html" class="nav-icon" title="Search">🔍</a>
+      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
+        <span id="toggle-icon">🌙</span><span id="toggle-label">Dark</span>
+      </button>
+    </div>
+  </nav>
+  <div class="page-header">
+    <div class="wrap">
+      <div class="kicker">Process</div>
+      <h1>How I research and write</h1>
+      <p>Every post on this blog starts with a question I genuinely do not know the answer to. Here is how I go from curiosity to a finished article.</p>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="process-body">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h2>Finding a topic worth writing about</h2>
+          <p>I follow medical and AI news closely, mostly through STAT News, Nature, and my school library's access to journal databases. A topic earns a spot on my list when two things are true: there is real primary research behind it, and the public understanding of that research is either missing or wrong.</p>
+          <p>I also pay attention to what confuses me. If I read a headline and realize I cannot explain the underlying mechanism, that is usually a sign the article is worth writing. If I am confused, someone else probably is too.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h2>Reading the primary source first</h2>
+          <p>Before I read any news coverage of a study, I try to find and read the original paper. I use PubMed, Google Scholar, and bioRxiv for this. Reading the abstract and methods section tells me things that journalism almost always leaves out: sample size, study design, limitations, and whether the effect size is actually meaningful.</p>
+          <p>If I cannot access the full paper, I use the NIH's PubMed Central database, which has free access to a large portion of federally funded research.</p>
+          <div class="tools-box">
+            <h4>Where I find papers</h4>
+            <ul>
+              <li>PubMed</li>
+              <li>Google Scholar</li>
+              <li>bioRxiv / medRxiv</li>
+              <li>NIH PubMed Central</li>
+              <li>Semantic Scholar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h2>Checking the claim against other sources</h2>
+          <p>A single study is not a fact. I look for whether the finding has been replicated, whether it has been covered by credible medical journalists, and whether researchers in the relevant field have commented on it publicly. If a result is brand new and has not been independently replicated, I say so in the article.</p>
+          <p>I also look for expert pushback. The comment sections of papers on PubPeer, responses published in the same journal, and expert interviews cited in STAT News or the Lancet often reveal limitations that the original authors downplayed.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h2>Writing for a general audience without losing accuracy</h2>
+          <p>The hardest part of this kind of writing is finding analogies that are accurate enough to be honest without being so simplified they mislead. I try to explain the mechanism first, then the implications. I avoid passive hedging words like "may suggest" unless the evidence genuinely only suggests rather than demonstrates something.</p>
+          <p>I write a draft, then read it back and ask: would a smart person with no science background understand this? Would a medical professional find anything here that is wrong? Both questions matter.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h2>Adding citations and publishing</h2>
+          <p>Every factual claim in a finished article links to its source. I include the citation at the bottom of each post so readers can verify anything I wrote, read further, or catch me if I got something wrong. Getting things right matters more to me than getting things published quickly.</p>
+          <p>I publish on a weekly schedule, alternating between AI in Medicine and Med Tech topics. If I am not confident enough in a draft, I hold it rather than rush it out.</p>
+          <div class="tools-box">
+            <h4>My writing toolkit</h4>
+            <ul>
+              <li>Google Docs</li>
+              <li>Zotero (citations)</li>
+              <li>Hemingway Editor</li>
+              <li>VS Code (HTML)</li>
+              <li>GitHub Pages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:">Contact</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>Where AI meets the human body.</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
+      document.getElementById('toggle-label').textContent = isDark ? 'Dark' : 'Light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('toggle-icon').textContent = '☀️';
+      document.getElementById('toggle-label').textContent = 'Light';
+    }
+  </script>
+</body>
+</html>

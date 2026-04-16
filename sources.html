@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sources | The Med Frontier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
+      --text: #0f172a; --text-muted: #64748b; --border: #e2e8f0;
+      --blue: #0f52a0; --blue-mid: #1d6fd4; --blue-pale: #dbeafe;
+      --accent: #38bdf8; --black: #080c10; --nav-bg: #f8fafc;
+    }
+    [data-theme="dark"] {
+      --bg: #18181b; --bg-surface: #222226; --bg-card: #27272a;
+      --text: #f4f4f5; --text-muted: #a1a1aa; --border: #3f3f46;
+      --blue: #60a5fa; --blue-mid: #93c5fd; --blue-pale: #1e3a5f;
+      --accent: #38bdf8; --black: #09090b; --nav-bg: #18181b;
+    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.25s, color 0.25s; }
+    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
+    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--blue-mid); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-mid); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
+    .nav-icon { color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.2s; display: flex; align-items: center; }
+    .nav-icon:hover { color: var(--blue-mid); }
+    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family: 'Inter', sans-serif; white-space: nowrap; transition: background 0.2s; }
+    .theme-toggle:hover { background: var(--border); }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family: 'DM Mono', monospace; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    @media (max-width: 768px) { .nav-links { display: none; } footer { flex-direction: column; gap: 8px; } }
+    .page-header { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+    .kicker { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+    .kicker::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue-mid); }
+    .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; color: var(--text); margin-bottom: 0.75rem; }
+    .page-header p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; max-width: 560px; }
+    .sources-body { padding: 3rem 0 5rem; }
+    .sources-section { margin-bottom: 3rem; }
+    .sources-section h2 { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .source-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .source-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; transition: border-color 0.2s, transform 0.15s; text-decoration: none; display: block; }
+    .source-card:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+    .source-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--blue-mid); margin-bottom: 0.4rem; }
+    .source-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+    .source-tag { display: inline-block; margin-top: 0.75rem; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; background: var(--blue-pale); color: var(--blue); }
+    @media (max-width: 768px) { .source-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="ticker-bar">
+    <div class="ticker-inner">
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA approvals <span>◆</span>
+      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA approvals <span>◆</span>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="ai-medicine.html">AI in Medicine</a></li>
+        <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="how-i-write.html">How I Write</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="how-i-write.html">How I Write</a></li>
+        <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
+        <li><a href="about.html" class="nav-cta">About Me</a></li>
+      </ul>
+      <a href="search.html" class="nav-icon" title="Search">🔍</a>
+      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
+        <span id="toggle-icon">🌙</span><span id="toggle-label">Dark</span>
+      </button>
+    </div>
+  </nav>
+  <div class="page-header">
+    <div class="wrap">
+      <div class="kicker">Transparency</div>
+      <h1>Sources and references</h1>
+      <p>Every claim on this blog is backed by a primary or secondary source. Here are the publications, databases, and institutions I rely on most.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="sources-body">
+
+      <div class="sources-section">
+        <h2>Medical journals</h2>
+        <div class="source-grid">
+          <a href="https://www.nejm.org" target="_blank" class="source-card">
+            <div class="source-name">New England Journal of Medicine</div>
+            <div class="source-desc">One of the most cited medical journals in the world. Primary source for landmark clinical trial results and medical research.</div>
+            <span class="source-tag">Peer reviewed</span>
+          </a>
+          <a href="https://www.thelancet.com" target="_blank" class="source-card">
+            <div class="source-name">The Lancet</div>
+            <div class="source-desc">Leading international medical journal covering clinical research, global health, and major disease studies.</div>
+            <span class="source-tag">Peer reviewed</span>
+          </a>
+          <a href="https://www.nature.com/nm/" target="_blank" class="source-card">
+            <div class="source-name">Nature Medicine</div>
+            <div class="source-desc">High-impact journal focusing on biomedical research with a strong emphasis on translational medicine and AI applications.</div>
+            <span class="source-tag">Peer reviewed</span>
+          </a>
+          <a href="https://jamanetwork.com" target="_blank" class="source-card">
+            <div class="source-name">JAMA Network</div>
+            <div class="source-desc">Journal of the American Medical Association and its specialty journals covering all areas of medicine and public health.</div>
+            <span class="source-tag">Peer reviewed</span>
+          </a>
+          <a href="https://www.nature.com" target="_blank" class="source-card">
+            <div class="source-name">Nature</div>
+            <div class="source-desc">Multidisciplinary science journal. Essential for breakthrough research in AI, genomics, and biomedical technology.</div>
+            <span class="source-tag">Peer reviewed</span>
+          </a>
+          <a href="https://www.science.org" target="_blank" class="source-card">
+            <div class="source-name">Science</div>
+            <div class="source-desc">Published by the American Association for the Advancement of Science. Covers major advances across all scientific disciplines.</div>
+            <span class="source-tag">Peer reviewed</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <h2>Government and regulatory bodies</h2>
+        <div class="source-grid">
+          <a href="https://www.nih.gov" target="_blank" class="source-card">
+            <div class="source-name">National Institutes of Health (NIH)</div>
+            <div class="source-desc">The primary US federal agency for biomedical research. Publishes funding data, clinical trial information, and research summaries.</div>
+            <span class="source-tag">Government</span>
+          </a>
+          <a href="https://www.fda.gov" target="_blank" class="source-card">
+            <div class="source-name">U.S. Food and Drug Administration</div>
+            <div class="source-desc">Source for all approved drug and medical device decisions, including AI-based diagnostic clearances and safety communications.</div>
+            <span class="source-tag">Government</span>
+          </a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" class="source-card">
+            <div class="source-name">PubMed</div>
+            <div class="source-desc">The NIH's database of biomedical literature. Every scientific claim I make links back to a PubMed-indexed study where possible.</div>
+            <span class="source-tag">Database</span>
+          </a>
+          <a href="https://clinicaltrials.gov" target="_blank" class="source-card">
+            <div class="source-name">ClinicalTrials.gov</div>
+            <div class="source-desc">Registry of publicly and privately funded clinical studies. Used to verify what trials are actually running and at what stage.</div>
+            <span class="source-tag">Database</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <h2>Medical journalism</h2>
+        <div class="source-grid">
+          <a href="https://www.statnews.com" target="_blank" class="source-card">
+            <div class="source-name">STAT News</div>
+            <div class="source-desc">Dedicated health and science journalism. Known for rigorous reporting on biotech, pharmaceuticals, and emerging medical technology.</div>
+            <span class="source-tag">Journalism</span>
+          </a>
+          <a href="https://www.medscape.com" target="_blank" class="source-card">
+            <div class="source-name">Medscape</div>
+            <div class="source-desc">Clinical news and education platform used by practicing physicians. Good source for understanding how new research affects clinical practice.</div>
+            <span class="source-tag">Journalism</span>
+          </a>
+          <a href="https://www.healthline.com" target="_blank" class="source-card">
+            <div class="source-name">Healthline Media</div>
+            <div class="source-desc">Consumer health journalism with medical review standards. Useful for understanding how research translates for general audiences.</div>
+            <span class="source-tag">Journalism</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sources-section">
+        <h2>AI and technology research</h2>
+        <div class="source-grid">
+          <a href="https://deepmind.google" target="_blank" class="source-card">
+            <div class="source-name">Google DeepMind</div>
+            <div class="source-desc">Source for AlphaFold, Gemini, and other AI research with direct medical applications. Publishes research papers and technical blog posts.</div>
+            <span class="source-tag">Research lab</span>
+          </a>
+          <a href="https://arxiv.org" target="_blank" class="source-card">
+            <div class="source-name">arXiv</div>
+            <div class="source-desc">Preprint server for physics, math, computer science, and quantitative biology. Often where AI research appears before formal journal publication.</div>
+            <span class="source-tag">Preprints</span>
+          </a>
+          <a href="https://ai.googleblog.com" target="_blank" class="source-card">
+            <div class="source-name">Google AI Blog</div>
+            <div class="source-desc">Technical blog covering Google's AI research, including medical applications like Med-PaLM and imaging diagnostics.</div>
+            <span class="source-tag">Research lab</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:">Contact</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>Where AI meets the human body.</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
+      document.getElementById('toggle-label').textContent = isDark ? 'Dark' : 'Light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('toggle-icon').textContent = '☀️';
+      document.getElementById('toggle-label').textContent = 'Light';
+    }
+  </script>
+</body>
+</html>
