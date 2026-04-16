@@ -2,6 +2,16 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
+    <meta property="og:type" content="website">
+  <meta property="og:title" content="About | The Med Frontier">
+  <meta property="og:description" content="A rising junior at Loyola High School in Los Angeles writing about AI and medicine.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About | The Med Frontier">
+  <meta name="twitter:description" content="A rising junior at Loyola High School in Los Angeles writing about AI and medicine.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&h=630&q=80">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | The Med Frontier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,10 +72,48 @@
     footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
     footer a:hover { color: var(--accent); }
     @media (max-width: 768px) { .about-content { grid-template-columns: 1fr; } .nav-links { display: none; } footer { flex-direction: column; gap: 8px; } }
+
+    /* BACK TO TOP */
+    #back-top { position:fixed; bottom:28px; right:28px; width:42px; height:42px; border-radius:50%; background:var(--blue); color:#fff; border:none; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.25s; z-index:900; box-shadow:0 4px 14px rgba(0,0,0,0.18); }
+    #back-top.visible { opacity:1; pointer-events:auto; }
+
+    /* HAMBURGER */
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; transition:transform 0.2s, opacity 0.2s; }
+    .mobile-nav { display:none; position:absolute; top:60px; left:0; right:0; background:var(--nav-bg); border-bottom:1px solid var(--border); padding:1rem 2.5rem; flex-direction:column; gap:1rem; z-index:99; }
+    .mobile-nav a { text-decoration:none; font-size:0.88rem; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; }
+    .mobile-nav a:hover { color:var(--blue-mid); }
+    .mobile-nav .nav-cta { background:var(--blue); color:#fff !important; padding:8px 16px; border-radius:6px; display:inline-block; }
+    @media (max-width:768px) { .hamburger { display:flex; } .nav-links { display:none !important; } .mobile-nav.open { display:flex; } nav { position:relative; } }
+
+    /* RELATED ARTICLES */
+    .related-section { border-top:1px solid var(--border); padding:2.5rem 0 3rem; }
+    .related-title { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--text); margin-bottom:1.25rem; letter-spacing:-0.01em; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .related-card { display:flex; flex-direction:column; text-decoration:none; background:var(--bg-card); border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:border-color 0.2s; }
+    .related-card:hover { border-color:var(--blue-mid); }
+    .related-thumb { height:110px; background-size:cover; background-position:center; background-color:var(--bg-surface); }
+    .related-body { padding:1rem; }
+    .related-tag { font-size:0.65rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:0.4rem; }
+    .related-tag-tech { color:#a78bfa; }
+    .related-card h4 { font-family:'Syne',sans-serif; font-size:0.9rem; font-weight:700; line-height:1.35; color:var(--text); margin-bottom:0.35rem; }
+    .related-card span { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--text-muted); }
+    @media (max-width:600px) { .related-grid { grid-template-columns:1fr; } }
+
+    /* TABLE OF CONTENTS */
+    .toc-box { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:2.5rem; }
+    .toc-label { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.75rem; }
+    .toc-list { list-style:none; display:flex; flex-direction:column; gap:0.4rem; }
+    .toc-list a { font-size:0.85rem; color:var(--blue-mid); text-decoration:none; }
+    .toc-list a:hover { text-decoration:underline; }
+
+    /* ACTIVE NAV */
+    .nav-links a.active { color:var(--blue-mid) !important; }
   </style>
 </head>
 <body>
 
+  <button id="back-top" title="Back to top" aria-label="Back to top">↑</button>
   <div class="ticker-bar">
     <div class="ticker-inner">
       AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span>
@@ -140,6 +188,24 @@
       document.getElementById('toggle-icon').textContent = '☀️';
       document.getElementById('toggle-label').textContent = 'Light';
     }
+
+    // Back to top
+    var btt = document.getElementById('back-top');
+    if(btt) {
+      window.addEventListener('scroll', function(){ btt.classList.toggle('visible', window.scrollY > 350); });
+      btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+    }
+    // Hamburger
+    function toggleMenu(){
+      document.getElementById('mobile-nav').classList.toggle('open');
+    }
+    // Active nav
+    (function(){
+      var page = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(function(a){
+        if(a.getAttribute('href') === page) a.classList.add('active');
+      });
+    })();
   </script>
 
 </body>
