@@ -16,7 +16,7 @@
   <title>About | The Med Frontier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f8fafc; --bg-surface: #f1f5f9; --bg-card: #ffffff;
@@ -39,7 +39,7 @@
     @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
-    .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo { font-family: 'Source Serif 4', serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
     .nav-logo span { color: var(--blue-mid); }
     .nav-right { display: flex; align-items: center; gap: 2rem; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
@@ -53,16 +53,16 @@
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
     .kicker { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
     .kicker::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue-mid); }
-    .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--text); }
+    .page-header h1 { font-family: 'Source Serif 4', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--text); }
     .page-header h1 em { color: var(--blue-mid); font-style: normal; }
 
     .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; padding: 4rem 0 5rem; align-items: start; }
     .about-body p { font-size: 1.05rem; color: var(--text); line-height: 1.85; margin-bottom: 1.5rem; }
-    .about-body h2 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; color: var(--text); }
+    .about-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; color: var(--text); }
 
     .sidebar { display: flex; flex-direction: column; gap: 14px; }
     .sidebar-card { background: var(--bg-surface); border-radius: 10px; padding: 1.25rem 1.5rem; transition: background 0.25s; }
-    .sidebar-card h4 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+    .sidebar-card h4 { font-family: 'Source Serif 4', serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
     .sidebar-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 
     .disclaimer { background: var(--blue-pale); border-left: 3px solid var(--blue-mid); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 2rem 0; font-size: 0.9rem; color: var(--blue-mid); line-height: 1.65; }
@@ -88,7 +88,7 @@
 
     /* RELATED ARTICLES */
     .related-section { border-top:1px solid var(--border); padding:2.5rem 0 3rem; }
-    .related-title { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--text); margin-bottom:1.25rem; letter-spacing:-0.01em; }
+    .related-title { font-family:'Source Serif 4',serif; font-size:1rem; font-weight:700; color:var(--text); margin-bottom:1.25rem; letter-spacing:-0.01em; }
     .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     .related-card { display:flex; flex-direction:column; text-decoration:none; background:var(--bg-card); border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:border-color 0.2s; }
     .related-card:hover { border-color:var(--blue-mid); }
@@ -96,7 +96,7 @@
     .related-body { padding:1rem; }
     .related-tag { font-size:0.65rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:0.4rem; }
     .related-tag-tech { color:#a78bfa; }
-    .related-card h4 { font-family:'Syne',sans-serif; font-size:0.9rem; font-weight:700; line-height:1.35; color:var(--text); margin-bottom:0.35rem; }
+    .related-card h4 { font-family:'Source Serif 4',serif; font-size:0.9rem; font-weight:700; line-height:1.35; color:var(--text); margin-bottom:0.35rem; }
     .related-card span { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--text-muted); }
     @media (max-width:600px) { .related-grid { grid-template-columns:1fr; } }
 
