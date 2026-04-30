@@ -117,8 +117,8 @@
 <body>
   <div class="ticker-bar">
     <div class="ticker-inner">
-      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA approvals <span>◆</span>
-      AI in radiology <span>◆</span> Robotic surgery 2026 <span>◆</span> LLMs in clinical care <span>◆</span> Drug discovery AI <span>◆</span> Wearable biosensors <span>◆</span> CRISPR gene editing <span>◆</span> FDA approvals <span>◆</span>
+      AI triage <span>◆</span> Protein timing <span>◆</span> Ambient AI scribes <span>◆</span> Creatine <span>◆</span> Lean bulking <span>◆</span> Recovery nutrition <span>◆</span>
+      AI triage <span>◆</span> Protein timing <span>◆</span> Ambient AI scribes <span>◆</span> Creatine <span>◆</span> Lean bulking <span>◆</span> Recovery nutrition <span>◆</span>
     </div>
   </div>
   <nav>
@@ -126,7 +126,7 @@
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="ai-medicine.html">AI in Medicine</a></li>
-        <li><a href="med-tech.html">Med Tech</a></li>
+        <li><a href="anabolic-nutrition.html">Anabolic Nutrition</a></li>
         <li><a href="sources.html">Sources</a></li>
         <li><a href="how-i-write.html">How I Write</a></li>
         <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
@@ -141,14 +141,14 @@
     <div class="wrap">
       <h1>Search articles</h1>
       <div class="search-box-wrap">
-        <input type="text" class="search-input" id="searchInput" placeholder="Try: radiology, CRISPR, robotic surgery..." autofocus>
+        <input type="text" class="search-input" id="searchInput" placeholder="Try: triage, protein, creatine..." autofocus>
         <span class="search-icon">🔍</span>
       </div>
     </div>
   </div>
   <div class="results-section">
     <div class="wrap">
-      <div class="results-count" id="resultsCount">Showing all 10 articles</div>
+      <div class="results-count" id="resultsCount">Showing all 12 articles</div>
       <div class="results-grid" id="resultsGrid"></div>
       <div class="no-results" id="noResults" style="display:none">
         <div style="font-size:2rem">🔍</div>
@@ -162,15 +162,17 @@
   </footer>
   <script>
     const ARTICLES = [
+      { title: "AI Hospital Triage: Can Algorithms Decide Who Needs Care First?", desc: "Emergency rooms are crowded, triage is hard, and AI promises faster risk prediction without hiding judgment inside a black box.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 30, 2026", url: "ai-hospital-triage.html" },
+      { title: "Protein for Muscle Growth: What Actually Matters", desc: "Protein matters for building muscle, but the useful question is how much, how often, and how consistent you can be.", tag: "Anabolic Nutrition", tagClass: "tag-tech", date: "April 30, 2026", url: "protein-muscle-growth.html" },
+      { title: "Ambient AI Scribes: The First Medical AI Patients May Actually Notice", desc: "Instead of diagnosing disease, ambient AI listens to visits and drafts clinical notes so doctors can focus more on patients.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 29, 2026", url: "ambient-ai-scribes.html" },
+      { title: "Creatine: The Supplement That Actually Earned Its Reputation", desc: "Creatine is not flashy, but it is one of the few sports supplements with a deep research base behind it.", tag: "Anabolic Nutrition", tagClass: "tag-tech", date: "April 29, 2026", url: "creatine-guide.html" },
+      { title: "Carbs Around Training: Fuel, Recovery, and the Myth of the Perfect Window", desc: "Carbohydrates are not automatically good or bad. For training, they are mainly a question of timing, workload, and recovery.", tag: "Anabolic Nutrition", tagClass: "tag-tech", date: "April 28, 2026", url: "carbs-training.html" },
+      { title: "The Lean Bulk: How to Gain Muscle Without Treating Calories Like a Guess", desc: "A lean bulk is about giving the body enough surplus to grow without letting the plan turn sloppy.", tag: "Anabolic Nutrition", tagClass: "tag-tech", date: "April 27, 2026", url: "lean-bulk.html" },
+      { title: "Sleep, Recovery, and Muscle Growth: The Part Most People Underestimate", desc: "Training starts the adaptation process, but recovery decides how much of that work the body can actually use.", tag: "Anabolic Nutrition", tagClass: "tag-tech", date: "April 26, 2026", url: "sleep-muscle-growth.html" },
       { title: "Can an AI outdiagnose a radiologist? The evidence so far.", desc: "Deep learning models are reading scans with striking accuracy but lab performance and real-world hospital performance are very different things.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 15, 2026", url: "ai-radiologist.html" },
-      { title: "The new wave of robotic surgery: what patients should know", desc: "Surgical robots are no longer science fiction. Here is how they work, where they are already being used, and where they still fall short.", tag: "Med Tech", tagClass: "tag-tech", date: "April 13, 2026", url: "robotic-surgery.html" },
       { title: "How AI is accelerating drug discovery and where the hype ends", desc: "AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 11, 2026", url: "ai-drug-discovery.html" },
-      { title: "Wearable biosensors are getting serious: a look at what is coming", desc: "Beyond step counts: continuous glucose, blood pressure, and early sepsis detection on your wrist.", tag: "Med Tech", tagClass: "tag-tech", date: "April 9, 2026", url: "wearable-biosensors.html" },
       { title: "LLMs in the clinic: should doctors use AI to treat patients?", desc: "Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real but so is the upside.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 7, 2026", url: "llms-clinic.html" },
-      { title: "CRISPR in 2026: what gene editing can and cannot do yet", desc: "The first CRISPR-based cure for sickle cell disease was approved. Now the race is on to treat everything else.", tag: "Med Tech", tagClass: "tag-tech", date: "April 5, 2026", url: "crispr-2026.html" },
       { title: "AI in pathology: teaching computers to spot cancer in a slide", desc: "Pathologists analyze tissue samples for hours. AI models are now doing it in seconds and sometimes catching what humans miss.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 4, 2026", url: "ai-pathology.html" },
-      { title: "Smart implants: the devices living inside patients and sending data back", desc: "Pacemakers that connect to the internet. Implants that detect seizures before they happen. The era of the connected body is already here.", tag: "Med Tech", tagClass: "tag-tech", date: "April 3, 2026", url: "smart-implants.html" },
-      { title: "The imaging revolution: how AI is reinventing the medical scan", desc: "Photon-counting CT, AI-reconstructed MRI, and portable scanners are changing what medical imaging can do.", tag: "Med Tech", tagClass: "tag-tech", date: "April 2, 2026", url: "next-gen-imaging.html" },
       { title: "Can AI detect depression before you can?", desc: "Voice biomarkers, speech patterns, and passive monitoring, researchers are finding ways to detect mental illness before symptoms are obvious.", tag: "AI in Medicine", tagClass: "tag-ai", date: "April 1, 2026", url: "ai-mental-health.html" },
     ];
 
