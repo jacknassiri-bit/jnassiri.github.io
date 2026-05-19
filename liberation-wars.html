@@ -6,262 +6,325 @@
 <title>Liberation Wars</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0e0c0a;--surface:#1a1714;--border:#2e2b27;--text:#f0ebe3;--muted:#8a8278;--accent:#c9a84c;--accent-dim:#3d2e10;--red:#c94c4c;--red-dim:#3d1010;--green:#4ca87a;--green-dim:#0e3020;--amber:#c98a4c;--amber-dim:#3d2410}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem 4rem}
+body{background:#0e0c0a;color:#f0ebe3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem 4rem}
 #app{width:100%;max-width:620px}
-.screen{display:none}.screen.on{display:block}
-h1{font-family:Georgia,'Times New Roman',serif;font-size:36px;font-weight:700;color:var(--accent);margin-bottom:6px;line-height:1.2}
-.tagline{font-size:13px;color:var(--muted);margin-bottom:2rem;letter-spacing:.05em;text-transform:uppercase}
-.intro-body{font-size:15px;color:#c8c0b5;line-height:1.8;margin-bottom:2rem;padding:1.25rem;border:1px solid var(--border);border-left:3px solid var(--accent);background:var(--surface)}
-.section-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;font-weight:500}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:36px;font-weight:700;color:#c9a84c;margin-bottom:6px;line-height:1.2}
+.tagline{font-size:13px;color:#8a8278;margin-bottom:2rem;letter-spacing:.05em;text-transform:uppercase}
+.intro-body{font-size:15px;color:#c8c0b5;line-height:1.8;margin-bottom:2rem;padding:1.25rem;border:1px solid #2e2b27;border-left:3px solid #c9a84c;background:#1a1714}
+.label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8a8278;margin-bottom:.75rem;font-weight:500}
 .war-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
-.war-btn{padding:1.25rem;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;text-align:left;transition:border-color .2s,background .2s;font-family:inherit;display:block;width:100%}
-.war-btn:hover{border-color:var(--accent);background:#201d17}
-.war-btn.sel{border-color:var(--accent);background:var(--accent-dim)}
-.wname{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:var(--text);display:block;margin-bottom:3px}
-.wsub{font-size:12px;color:var(--muted)}
-.role-card{border:1px solid var(--border);background:var(--surface);padding:1rem 1.25rem;margin-bottom:8px;cursor:pointer;transition:border-color .2s,background .2s;width:100%;text-align:left;font-family:inherit;color:var(--text);display:block}
-.role-card:hover{border-color:var(--accent);background:#201d17}
-.role-card.sel{border-color:var(--accent);background:var(--accent-dim)}
-.rtitle{font-weight:500;color:var(--text);margin-bottom:3px}
-.rdesc{font-size:13px;color:var(--muted);line-height:1.5}
-.start-btn{width:100%;padding:1rem;margin-top:1.25rem;background:var(--accent);color:#0e0c0a;border:none;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background .2s;letter-spacing:.03em}
-.start-btn:hover{background:#d4b060}
-.start-btn:disabled{background:var(--border);color:var(--muted);cursor:default}
-.hud{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;margin-bottom:1.25rem;border-bottom:1px solid var(--border)}
-.hud-role{font-size:12px;color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:.08em}
-.hud-round{font-size:12px;color:var(--muted)}
+.warbtn{padding:1.25rem;border:1px solid #2e2b27;background:#1a1714;color:#f0ebe3;cursor:pointer;text-align:left;font-family:inherit;display:block;width:100%;transition:border-color .2s}
+.warbtn:hover{border-color:#c9a84c;background:#201d17}
+.wname{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:#f0ebe3;display:block;margin-bottom:3px}
+.wsub{font-size:12px;color:#8a8278}
+.rolecard{border:1px solid #2e2b27;background:#1a1714;padding:1rem 1.25rem;margin-bottom:8px;cursor:pointer;width:100%;text-align:left;font-family:inherit;color:#f0ebe3;display:block;transition:border-color .2s}
+.rolecard:hover{border-color:#c9a84c;background:#201d17}
+.rtitle{font-weight:500;color:#f0ebe3;margin-bottom:3px}
+.rdesc{font-size:13px;color:#8a8278;line-height:1.5}
+.startbtn{width:100%;padding:1rem;margin-top:1.25rem;background:#c9a84c;color:#0e0c0a;border:none;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.startbtn:hover{background:#d4b060}
+.startbtn:disabled{background:#2e2b27;color:#8a8278;cursor:default}
+.hud{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;margin-bottom:1.25rem;border-bottom:1px solid #2e2b27}
+.hudrole{font-size:12px;color:#c9a84c;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+.hudround{font-size:12px;color:#8a8278}
 .meters{display:flex;gap:10px;margin-bottom:1.5rem}
 .meter{flex:1}
-.meter-label{font-size:11px;color:var(--muted);margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.meter-track{height:4px;background:var(--border);overflow:hidden}
-.meter-fill{height:100%;transition:width .5s ease}
-.f0{background:var(--accent)}.f1{background:var(--amber)}.f2{background:var(--red)}
-.scene-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.scene-box{background:var(--surface);border-left:3px solid var(--accent);padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:14px;color:#c8c0b5;line-height:1.8}
-.question{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:var(--text);margin-bottom:1rem;line-height:1.5}
-.choices{display:grid;gap:8px;margin-bottom:1rem}
-.choice{padding:1rem 1.25rem;border:1px solid var(--border);background:var(--surface);color:var(--text);text-align:left;cursor:pointer;font-family:inherit;font-size:14px;line-height:1.5;transition:border-color .2s,background .2s;width:100%}
-.choice:hover:not(:disabled){border-color:var(--accent);background:#201d17}
-.choice:disabled{cursor:default}
-.choice.picked{border-color:var(--accent);background:var(--accent-dim);color:var(--accent)}
-.outcome{padding:1rem 1.25rem;font-size:14px;line-height:1.7;margin-bottom:1rem;display:none}
-.outcome.show{display:block !important}
-.outcome.show.good{display:block !important;background:var(--green-dim);border:1px solid var(--green);color:#a0d4bc}
-.outcome.show.bad{display:block !important;background:var(--red-dim);border:1px solid var(--red);color:#d4a0a0}
-.outcome.show.mid{display:block !important;background:var(--amber-dim);border:1px solid var(--amber);color:#d4bca0}
-.next-btn{width:100%;padding:.85rem;border:1px solid var(--border);background:transparent;color:var(--text);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,background .2s;display:none}
-.next-btn:hover{border-color:var(--accent);background:var(--surface)}
-.next-btn.show{display:block !important}
-.end-top{text-align:center;padding:2.5rem 1rem 2rem}
-.end-icon{font-size:52px;margin-bottom:1rem}
-.end-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;color:var(--accent);margin-bottom:.75rem}
-.end-body{font-size:14px;color:var(--muted);line-height:1.8;max-width:460px;margin:0 auto 2rem}
+.mlabel{font-size:11px;color:#8a8278;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mtrack{height:4px;background:#2e2b27;overflow:hidden}
+.mfill{height:100%;transition:width .5s ease}
+.scenetag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a8278;margin-bottom:10px}
+.scenebox{background:#1a1714;border-left:3px solid #c9a84c;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:14px;color:#c8c0b5;line-height:1.8}
+.question{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#f0ebe3;margin-bottom:1rem;line-height:1.5}
+.choicebtn{width:100%;padding:1rem 1.25rem;border:1px solid #2e2b27;background:#1a1714;color:#f0ebe3;text-align:left;cursor:pointer;font-family:inherit;font-size:14px;line-height:1.5;display:block;margin-bottom:8px;transition:border-color .2s}
+.choicebtn:hover{border-color:#c9a84c;background:#201d17}
+.outcomebox{padding:1rem 1.25rem;font-size:14px;line-height:1.7;margin-bottom:1rem;margin-top:4px}
+.nextbtn{width:100%;padding:.85rem;border:1px solid #2e2b27;background:transparent;color:#f0ebe3;font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s}
+.nextbtn:hover{border-color:#c9a84c;background:#1a1714}
+.endtop{text-align:center;padding:2.5rem 1rem 2rem}
+.endicon{font-size:52px;margin-bottom:1rem}
+.endtitle{font-family:Georgia,'Times New Roman',serif;font-size:28px;color:#c9a84c;margin-bottom:.75rem}
+.endbody{font-size:14px;color:#8a8278;line-height:1.8;max-width:460px;margin:0 auto 2rem}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.5rem}
-.stat{background:var(--surface);border:1px solid var(--border);padding:1rem;text-align:center}
-.stat-n{font-family:Georgia,'Times New Roman',serif;font-size:26px;color:var(--accent)}
-.stat-l{font-size:11px;color:var(--muted);margin-top:3px}
-.history-box{border:1px solid var(--border);margin-bottom:1.5rem}
-.history-header{padding:.75rem 1rem;border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.hist-row{padding:.85rem 1rem;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6;color:var(--muted)}
-.hist-row:last-child{border-bottom:none}
-.hist-choice{color:var(--text);font-weight:500;display:block;margin-bottom:3px}
-.again-btn{width:100%;padding:1rem;background:var(--accent);color:#0e0c0a;border:none;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background .2s}
-.again-btn:hover{background:#d4b060}
+.stat{background:#1a1714;border:1px solid #2e2b27;padding:1rem;text-align:center}
+.statn{font-family:Georgia,'Times New Roman',serif;font-size:26px;color:#c9a84c}
+.statl{font-size:11px;color:#8a8278;margin-top:3px}
+.histbox{border:1px solid #2e2b27;margin-bottom:1.5rem}
+.histhead{padding:.75rem 1rem;border-bottom:1px solid #2e2b27;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a8278}
+.histrow{padding:.85rem 1rem;border-bottom:1px solid #2e2b27;font-size:13px;line-height:1.6;color:#8a8278}
+.histrow:last-child{border-bottom:none}
+.histchoice{color:#f0ebe3;font-weight:500;display:block;margin-bottom:3px}
+.againbtn{width:100%;padding:1rem;background:#c9a84c;color:#0e0c0a;border:none;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.againbtn:hover{background:#d4b060}
 @media(max-width:480px){h1{font-size:28px}.war-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div id="app">
+<div id="app"></div>
 
-<div id="s-intro" class="screen on">
-  <h1>Liberation Wars</h1>
-  <p class="tagline">Algeria and Angola · A decision game</p>
-  <div class="intro-body">Two countries. Two wars. Two colonial powers who said they would never leave and then left. Algeria fought France from 1954 to 1962. Angola fought Portugal from 1961 to 1975. In both cases regular people, soldiers, farmers, diplomats, and outsiders had to make impossible choices. Now it is your turn. You do not need to know anything going in. The game will teach you as you play.</div>
-  <p class="section-label">Pick your war</p>
-  <div class="war-grid">
-    <button type="button" class="war-btn" id="wb-alg" onclick="selectWar('algeria')"><span class="wname">Algeria</span><span class="wsub">vs. France · 1954 to 1962</span></button>
-    <button type="button" class="war-btn" id="wb-ang" onclick="selectWar('angola')"><span class="wname">Angola</span><span class="wsub">vs. Portugal · 1961 to 1975</span></button>
-  </div>
-  <p class="section-label">Pick your role</p>
-  <div id="role-list"></div>
-  <button type="button" class="start-btn" id="start-btn" onclick="startGame()" disabled>Choose a war and a role to start</button>
-</div>
-
-<div id="s-game" class="screen">
-  <div class="hud"><span class="hud-role" id="hud-role"></span><span class="hud-round" id="hud-round"></span></div>
-  <div class="meters">
-    <div class="meter"><div class="meter-label" id="ml0"></div><div class="meter-track"><div class="meter-fill f0" id="mf0" style="width:50%"></div></div></div>
-    <div class="meter"><div class="meter-label" id="ml1"></div><div class="meter-track"><div class="meter-fill f1" id="mf1" style="width:50%"></div></div></div>
-    <div class="meter"><div class="meter-label" id="ml2"></div><div class="meter-track"><div class="meter-fill f2" id="mf2" style="width:50%"></div></div></div>
-  </div>
-  <div class="scene-tag" id="scene-tag"></div>
-  <div class="scene-box" id="scene-box"></div>
-  <div class="question" id="question"></div>
-  <div class="choices" id="choices"></div>
-  <div class="outcome" id="outcome"></div>
-  <button type="button" class="next-btn" id="next-btn" onclick="nextRound()"></button>
-</div>
-
-<div id="s-end" class="screen">
-  <div class="end-top">
-    <div class="end-icon" id="end-icon"></div>
-    <div class="end-title" id="end-title"></div>
-    <div class="end-body" id="end-body"></div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-n" id="es-bold">0</div><div class="stat-l">Bold moves</div></div>
-    <div class="stat"><div class="stat-n" id="es-caut">0</div><div class="stat-l">Careful moves</div></div>
-    <div class="stat"><div class="stat-n" id="es-score">0</div><div class="stat-l">Final score</div></div>
-  </div>
-  <div class="history-box">
-    <div class="history-header">Your decisions</div>
-    <div id="history-list"></div>
-  </div>
-  <button type="button" class="again-btn" onclick="resetGame()">Play again</button>
-</div>
-
-</div>
 <script>
-var ROLES={algeria:[{id:"commander",title:"FLN field commander",desc:"You lead a guerrilla unit in the mountains. You have 40 fighters, barely any weapons, and whole villages depending on you.",meters:["Troop morale","Civilian trust","French pressure"]},{id:"diplomat",title:"FLN diplomat in Tunisia",desc:"You represent the liberation movement abroad. Your job is to get other countries on your side and convince the UN that Algeria deserves to be free.",meters:["International support","Legitimacy","French influence"]},{id:"farmer",title:"Algerian farmer",desc:"You live in a small village stuck between French soldiers and FLN fighters. Both sides want something from you. Neither one is going to keep you safe.",meters:["Family safety","Trust in FLN","French suspicion"]},{id:"journalist",title:"French journalist in Algiers",desc:"You are reporting the war for a newspaper back in Paris. What you write and what you leave out will shape what people at home believe.",meters:["Story integrity","Personal safety","Public pressure"]}],angola:[{id:"mpla",title:"MPLA political officer",desc:"You are running an underground resistance network in Luanda. The Portuguese secret police are already arresting people. Every meeting you hold is a risk.",meters:["Network strength","Secrecy","Portuguese suspicion"]},{id:"cuban",title:"Cuban military advisor",desc:"Cuba sent you to help the MPLA. You are supposed to just give advice but it is becoming clear that will not be enough. You are also a pawn in a much bigger Cold War game.",meters:["Mission success","Troop readiness","Soviet pressure"]},{id:"settler",title:"Portuguese settler",desc:"Your family has been in Angola for two generations. The independence movement is getting stronger every year. You have to decide where you actually stand.",meters:["Family security","Colonial ties","Independence sympathy"]},{id:"elder",title:"Angolan village elder",desc:"Your village is right next to a main supply route. The MPLA, the FNLA, and the Portuguese army all pass through. Your only job is to keep your people alive.",meters:["Village survival","Neutrality","Armed group trust"]}]};
+var ROLES = {
+  algeria: [
+    {id:"commander",title:"FLN field commander",desc:"You lead a guerrilla unit in the mountains. You have 40 fighters, barely any weapons, and whole villages depending on you.",meters:["Troop morale","Civilian trust","French pressure"]},
+    {id:"diplomat",title:"FLN diplomat in Tunisia",desc:"You represent the liberation movement abroad. Your job is to get other countries on your side and convince the UN that Algeria deserves to be free.",meters:["International support","Legitimacy","French influence"]},
+    {id:"farmer",title:"Algerian farmer",desc:"You live in a small village stuck between French soldiers and FLN fighters. Both sides want something from you. Neither one is going to keep you safe.",meters:["Family safety","Trust in FLN","French suspicion"]},
+    {id:"journalist",title:"French journalist in Algiers",desc:"You are reporting the war for a newspaper back in Paris. What you write and what you leave out will shape what people at home believe.",meters:["Story integrity","Personal safety","Public pressure"]}
+  ],
+  angola: [
+    {id:"mpla",title:"MPLA political officer",desc:"You are running an underground resistance network in Luanda. The Portuguese secret police are already arresting people. Every meeting you hold is a risk.",meters:["Network strength","Secrecy","Portuguese suspicion"]},
+    {id:"cuban",title:"Cuban military advisor",desc:"Cuba sent you to help the MPLA. You are supposed to just give advice but it is becoming clear that will not be enough. You are also a pawn in a much bigger Cold War game.",meters:["Mission success","Troop readiness","Soviet pressure"]},
+    {id:"settler",title:"Portuguese settler",desc:"Your family has been in Angola for two generations. The independence movement is getting stronger every year. You have to decide where you actually stand.",meters:["Family security","Colonial ties","Independence sympathy"]},
+    {id:"elder",title:"Angolan village elder",desc:"Your village is right next to a main supply route. The MPLA, the FNLA, and the Portuguese army all pass through. Your only job is to keep your people alive.",meters:["Village survival","Neutrality","Armed group trust"]}
+  ]
+};
 
-var SCENARIOS={algeria:{commander:[{tag:"The Aures mountains, 1956",scene:"A French patrol grabbed two of your fighters last night. You know roughly where they are being held. A rescue mission would put your whole camp at risk but leaving them behind will destroy what little morale you have left.",q:"What do you do?",choices:["Go in at night and get them out","Leave them and keep the unit safe"],outcomes:["Your fighters made it back just before sunrise. The whole unit felt it. But now the French have a general idea of where you are.","You told your unit they were gone. Three people walked off within a week. You kept your position secret though."],effects:[[8,-5,-10],[-8,12,5]],bold:[0,1]},{tag:"A village near Batna, 1957",scene:"French forces burned a village near yours that they thought was helping your unit. Survivors are showing up at your camp. You barely have enough food for your own people and taking them in will slow everything down.",q:"Do you take them in?",choices:["Yes, every Algerian life matters","No, the mission has to come first"],outcomes:["Two of the survivors turned out to know the French patrol schedules. That information saved your unit twice.","You moved on. Their story spread through the cities and a whole generation of young Algerians got radicalized because of it."],effects:[[6,10,-5],[-4,-8,3]],bold:[1,0]},{tag:"A crossroads, 1958",scene:"A French officer says he wants to switch sides. He claims to have information about a big sweep operation coming your way. But this could easily be a trap to find your camp.",q:"Do you meet him?",choices:["Meet him, the intelligence could save a lot of lives","Too risky, could be a trap"],outcomes:["The intelligence was real. You avoided the sweep. The officer vanished a week later and you never found out what happened to him.","Three weeks later the sweep happens. You lose eight fighters. But you are still breathing."],effects:[[10,-3,-15],[-8,2,8]],bold:[0,1]},{tag:"Radio contact, 1959",scene:"The FLN leadership in Tunisia is telling you to attack a French civilian infrastructure target. You think it will kill innocent people and completely wreck your international image.",q:"Do you follow the order?",choices:["Follow it, they see the bigger picture","Refuse and tell them why"],outcomes:["The attack worked militarily. But France used the photos in their propaganda for the next two years. You are still not sure it was worth it.","Tunisia was furious with you. But your restraint got mentioned in a foreign paper. The diplomats actually thanked you."],effects:[[-5,-8,10],[8,5,-5]],bold:[0,1]},{tag:"Peace talks, 1961",scene:"Secret negotiations between France and the FLN have started in Evian. A French officer quietly tells you that your commander can get amnesty if operations stop now. It might almost be over.",q:"What do you do?",choices:["Pull back and protect your people while talks happen","Keep fighting until something is actually signed"],outcomes:["Your people survived the war. The Evian Accords were signed in 1962. Algeria was free.","Two of your people died that last year. But the FLN negotiated from a position of strength. Algeria still won."],effects:[[5,8,-5],[3,2,5]],bold:[1,0]}],diplomat:[{tag:"Cairo, 1956",scene:"Egypt's Nasser is offering weapons but he wants the FLN to publicly back his pan-Arab political agenda. A lot of Algerian leaders think that would compromise what they are actually fighting for.",q:"Do you take the deal?",choices:["Yes, weapons are what matter right now","No, Algeria cannot owe anyone that"],outcomes:["The weapons came through fast. But the FLN started splitting internally over the Arab vs Algerian identity question and that fight lasted decades.","Nasser was annoyed but he respected it. You found other suppliers. The FLN stayed on its own terms."],effects:[[10,-8,0],[-5,12,5]],bold:[0,1]},{tag:"New York, UN General Assembly, 1957",scene:"A vote on Algeria is coming up. France is working hard to keep it labeled an internal French matter. You have one evening with a delegation from a newly independent African country that has not made up its mind yet.",q:"How do you pitch them?",choices:["Lead with emotion, make it about shared colonial history","Lead with legal arguments, present the FLN as a real government"],outcomes:["They voted yes. The speech got around. Three more delegations shifted.","They respected the professionalism. They voted yes and told their foreign minister the FLN were serious people worth supporting."],effects:[[8,10,-5],[5,12,-3]],bold:[0,1]},{tag:"Tunis, 1958",scene:"France just bombed a Tunisian village called Sakiet, killing 70 civilians they claimed were sheltering FLN fighters. The world is paying attention. You can call a press conference right now.",q:"What do you do?",choices:["Go to the press immediately and make France pay for this","Wait for the UN investigation to do the work"],outcomes:["Sakiet photos ran in papers all over Europe. French public opinion cracked. The government in Paris fell within weeks.","The UN report was damning and airtight. It cost France two allies they were counting on for the next vote."],effects:[[10,8,8],[6,12,5]],bold:[0,1]},{tag:"Evian, preliminary talks, 1961",scene:"France is ready to negotiate but they want to keep the Sahara Desert, where oil was just discovered. The FLN leadership is split on whether to hold the line.",q:"What is your position?",choices:["The Sahara is non-negotiable, period","Give them the Sahara compromise and get to independence faster"],outcomes:["Talks stalled for months. But Algeria eventually won full control of the Sahara. That oil belonged to Algerians.","The deal came faster. But for the next decade France kept oil rights that Algeria had to fight through the courts to take back."],effects:[[3,10,5],[12,-5,3]],bold:[0,1]},{tag:"Evian, final round, 1962",scene:"A ceasefire is on the table. The terms are not perfect. French settlers keep some rights. French military bases stay for years. But the war ends.",q:"Do you sign?",choices:["Sign it, independence now even if it is messy","Push for one more round of negotiations"],outcomes:["Algeria became independent on July 5, 1962. About a million pied-noirs left. The real work of building a country started.","France walked away from the table. Fighting went on six more months. The final terms were almost exactly the same. A lot of people died."],effects:[[10,8,-5],[-8,-5,5]],bold:[0,1]}],farmer:[{tag:"Your village, Kabylie region, 1956",scene:"An FLN fighter knocks on your door after midnight. He needs food and somewhere to sleep. You know that if the French find out you helped him, you are dead.",q:"What do you do?",choices:["Let him in, he is fighting for all of you","Turn him away, you cannot risk your kids"],outcomes:["He was gone before sunrise. A week later FLN fighters tipped you off about a French sweep coming through. Your family got out in time.","He moved on and told his unit what happened. The FLN never fully trusted your village after that."],effects:[[3,10,-10],[5,-10,5]],bold:[0,1]},{tag:"Market day, 1957",scene:"A French officer pulls you aside and offers you a deal. Report anyone who contacts the FLN and your family gets a work permit and extra food. You are genuinely hungry.",q:"Do you become an informer?",choices:["Accept it, your family comes before everything","Refuse, you will not do that to your neighbors"],outcomes:["You reported nothing useful for months but eventually the FLN found out you were even talking to them. You barely got your family out alive.","The officer put you on a list as uncooperative. Life got harder. But your neighbors still look you in the eye."],effects:[[-5,-15,10],[3,8,-5]],bold:[1,0]},{tag:"A French army checkpoint, 1958",scene:"Your 17 year old son was picked up at a checkpoint and taken in for questioning. He has not come back. A French captain says he will let him go if you sign a statement saying the FLN burned your neighbor's crops.",q:"Do you sign?",choices:["Sign it and bring your son home","Refuse, a false statement helps the French story"],outcomes:["Your son came home. Neither of you has ever talked about what you signed.","They held him three more weeks. He came home different. You still do not know everything that happened in there."],effects:[[8,-10,8],[-3,5,-8]],bold:[0,1]},{tag:"The village, 1959",scene:"An FLN commander wants to hide weapons in your barn before an attack on a nearby French post. He says it will help the war effort. You know it will bring soldiers to your village.",q:"Do you agree?",choices:["Yes, you believe in what they are fighting for","No, you cannot put your whole village at risk"],outcomes:["The attack happened. French forces locked down the village for two weeks. Two of the elders were taken away and never came back.","The commander was furious. He found a different barn. Your village was spared at least that one reprisal."],effects:[[-5,8,-15],[5,-5,5]],bold:[0,1]},{tag:"News reaches the village, 1962",scene:"The radio says a ceasefire was signed at Evian. The war is over. But French settlers are still fleeing and soldiers are still moving through your area.",q:"What do you tell your family?",choices:["Tell them it is over, go outside and breathe","Wait for the soldiers to leave before you trust anything"],outcomes:["It was actually over. You stood outside for the first time without looking over your shoulder in six years.","You waited four more days. The soldiers left. Then you went outside."],effects:[[5,5,5],[8,5,5]],bold:[0,1]}],journalist:[{tag:"Algiers, 1956",scene:"You just watched French paratroopers beat a detainee in a holding facility. Your editor back in Paris says running this story will embarrass the military and will probably get you kicked out of Algeria.",q:"Do you publish?",choices:["Yes, people deserve to know what is happening","Hold it, you need your access to keep covering the war"],outcomes:["It ran on page 3. Three politicians brought it up in parliament. You were expelled from Algeria six weeks later.","You filed something softer. You kept your press pass. But you never stopped seeing that man's face."],effects:[[10,-10,10],[-5,5,-5]],bold:[0,1]},{tag:"Paris newsroom, 1957",scene:"The French military is giving you exclusive access to go embed with an operation in the Atlas mountains. You can already tell the whole thing is designed to produce good propaganda.",q:"What do you do?",choices:["Take the access and write what you actually see","Turn it down, embedded journalism is compromised journalism"],outcomes:["You wrote what you saw. It did not match their press release at all. They never offered you embed access again.","Your editor was really unhappy. But staying independent kept your credibility with Algerian sources intact."],effects:[[8,5,5],[-5,12,8]],bold:[0,1]},{tag:"Algiers, 1958",scene:"An Algerian source just handed you evidence of systematic torture happening in French detention centers during the Battle of Algiers. He is risking his life to give you this. The military will deny all of it.",q:"What do you do?",choices:["Publish it and protect your source","Wait and get more corroboration first"],outcomes:["The story went all over Europe. France denied it for decades but historians eventually found the records. Your source was never caught.","You spent six months verifying everything. By the time you published, two other journalists had already broken it. Your version was more thorough but slower."],effects:[[12,8,8],[3,10,3]],bold:[0,1]},{tag:"Paris, 1960",scene:"A French general just told you off the record that France cannot win this war. He will not say it publicly. You can either quote him anonymously or just report his general position without any attribution.",q:"What do you do?",choices:["Quote him anonymously, people need to hear this","Only use what he will say on the record"],outcomes:["The anonymous quote ran. Three cabinet ministers publicly agreed within a month. The political math in Paris started to shift.","Your story was shorter but bulletproof. It took longer but de Gaulle started moving toward negotiations for his own reasons anyway."],effects:[[10,5,5],[3,8,3]],bold:[0,1]},{tag:"Evian, 1962",scene:"Independence is about to happen. You have one last interview with an FLN negotiator who says the real story of what France never admitted will take decades to come out fully. He asks you to wait before writing it.",q:"How do you end your coverage?",choices:["Write everything now, history should not wait","Honor the request and write it properly as a book"],outcomes:["Your final piece was the best thing you ever wrote. It won an award. France tried to sue. They lost.","The book came out in 1971. Historians still cite it. Some stories are worth taking the time to get right."],effects:[[10,8,8],[5,12,5]],bold:[0,1]}]},angola:{mpla:[{tag:"Luanda, 1961",scene:"The MPLA just called for a general uprising. You are running a secret cell of twelve people. The Portuguese secret police, known as PIDE, are already arresting people all over the city.",q:"What do you do?",choices:["Activate your cell and join the uprising","Go dark and keep the network alive for later"],outcomes:["Four of your twelve got arrested. But the uprising made it clear to Portugal that Luanda was ungovernable.","Your network survived completely intact. Six months later you were back up to twenty people. The ones who died early still weigh on you."],effects:[[5,-10,-15],[8,12,5]],bold:[0,1]},{tag:"Luanda safe house, 1963",scene:"A new guy wants into your cell. He knows your contact by name and says all the right things politically. But something about him feels off. He seems a little too eager.",q:"Do you bring him in?",choices:["Let him in, the movement needs more people","Turn him down and warn your contact"],outcomes:["He was PIDE. Three members of your cell were arrested within the week.","Your instinct was right. He vanished. Your contact thanked you. The cell kept going."],effects:[[-15,-10,15],[8,12,-5]],bold:[1,0]},{tag:"Moscow funded training camp, 1965",scene:"The Soviet Union is offering weapons and military training but they want the MPLA to publicly align with Soviet foreign policy. That is a political cost some people in the movement do not want to pay.",q:"Do you take it?",choices:["Yes, weapons win wars","Push back, Angolan independence cannot be a Soviet talking point"],outcomes:["The weapons showed up and MPLA fighters were better armed than any rival faction. But the political alignment caused splits inside the movement that lasted for decades.","Negotiations dragged on. Weapons came slower. But the MPLA stayed its own thing."],effects:[[10,-8,0],[-5,12,5]],bold:[0,1]},{tag:"Luanda, 1974",scene:"A military coup in Lisbon just overthrew the Portuguese government. The new one is open to decolonization. Angolan independence is suddenly real but three different factions are all claiming to represent Angola.",q:"How does the MPLA play this?",choices:["Move fast and take control of Luanda before any rival faction does","Try to negotiate a coalition, Angola needs unity more than it needs a winner"],outcomes:["The MPLA held Luanda. But civil war broke out almost immediately. Angola's independence turned into another proxy battlefield.","The Alvor Agreement gave each faction a role. It fell apart within months. But the attempt at coalition earned real international goodwill."],effects:[[8,-10,5],[-3,10,8]],bold:[0,1]},{tag:"Independence Day minus 3 weeks, 1975",scene:"South African troops backed by the US are advancing on Luanda to put UNITA in power. Cuba has offered to send in actual combat troops to stop them. Saying yes means getting even more foreign entanglement.",q:"Do you accept?",choices:["Accept it, Angola cannot fall right now","Refuse, Angola has to win this on its own terms"],outcomes:["Cuban troops stopped the South African advance. Angola became independent on November 11. The civil war ran until 2002.","The South African advance got to the edge of Luanda. The MPLA barely held on and the casualty count was enormous."],effects:[[10,-5,10],[-10,8,-8]],bold:[0,1]}],cuban:[{tag:"Havana briefing, 1975",scene:"Fidel Castro personally signed off on this mission. Your orders are to advise the MPLA, not to fight. You land in Luanda and within days it is completely obvious that advising is not going to cut it.",q:"What do you tell Havana?",choices:["Report honestly, the MPLA needs combat troops not advisors","Stay within your orders and document what you see"],outcomes:["Havana sent 36,000 troops over the following year. Angola's independence was secured. You ended up commanding a battalion you never expected to lead.","You spent three months training fighters. When the South Africans moved, you picked up a rifle anyway."],effects:[[8,10,5],[5,5,8]],bold:[0,1]},{tag:"Front line near Caxito, 1975",scene:"Your unit just captured a South African officer. He is not Angolan and his presence proves South Africa is covertly involved in this war. The MPLA commander wants to execute him right now.",q:"What do you do?",choices:["Step in, a living prisoner is proof the world needs to see","Stay out of it, this is Angola's fight"],outcomes:["The prisoner got transferred to Luanda and put in front of journalists. The international story shifted. South Africa denied everything anyway.","The officer was shot. You filed no report. You have never talked about that day."],effects:[[10,5,5],[-8,-5,3]],bold:[0,1]},{tag:"Luanda, late 1975",scene:"You have been here four months. Your rotation is supposed to be up. But the MPLA commander says if you leave now the whole unit falls apart. You can ask for an extension or follow your orders and go home.",q:"What do you do?",choices:["Request the extension, your unit needs you here","Follow your rotation, the mission is bigger than any one unit"],outcomes:["You stayed eight more months. Your unit held the northern front. You went home to a quiet ceremony.","Your replacement came two weeks later. The unit struggled and then stabilized. Havana commended your discipline."],effects:[[8,10,-3],[3,5,8]],bold:[0,1]},{tag:"Political meeting, Luanda 1976",scene:"The MPLA is the government now but two internal factions are openly fighting each other. One is aligned with Moscow and one is more independent. A senior official asks which one Cuba should support.",q:"What do you say?",choices:["Back the Moscow faction, that is what the mission is about","Tell them Cuba should stay out of an internal Angolan argument"],outcomes:["The Moscow faction consolidated power. Angola stayed allied with Cuba and the USSR. Anyone who disagreed got suppressed.","The official looked genuinely surprised. Your response got cabled back to Havana. Castro took note of it."],effects:[[5,-8,5],[8,10,3]],bold:[1,0]},{tag:"Homecoming, 1977",scene:"You are back in Havana getting debriefed. An official wants you to write a report that frames the whole mission as a clean success. You know the real story is a lot more complicated than that.",q:"What do you write?",choices:["Write the honest account with all the complexity included","Write what they want, the cause was just even if some details were ugly"],outcomes:["Your report was classified for thirty years. When it was finally declassified historians called it the most accurate account of the war that exists.","Your report became the official version. It got published and translated into several languages. You know everything it left out."],effects:[[8,12,3],[3,-5,5]],bold:[0,1]}],settler:[{tag:"Luanda, 1961",scene:"The MPLA uprising just shocked the whole Portuguese community. Your neighbor who runs a plantation nearby is putting together a settler militia and wants you to join.",q:"What do you do?",choices:["Join up, your family lives here and someone has to protect it","Refuse, armed settlers are only going to make things worse"],outcomes:["The militia reprisals were brutal. Angolans who used to be your neighbors stopped speaking to you.","You stayed home. Your neighbor stopped talking to you. But your Angolan housekeeper Maria kept showing up."],effects:[[5,-10,-5],[-3,8,5]],bold:[1,0]},{tag:"Luanda, 1965",scene:"Your son wants to move back to Portugal. He says Angola has no future for settlers. Your wife was born here. You were born here. Portugal is a country you have visited exactly twice.",q:"What do you tell your family?",choices:["Tell him he is right and start making a plan to leave","Tell him Angola is your home and you are going to stay and figure it out"],outcomes:["Your son left in 1967. He built a decent life in Lisbon. You stayed. You were right that things would get complicated.","You stayed. Independence came in 1975. You ended up being one of the only settlers who did not run."],effects:[[5,-3,5],[-5,10,8]],bold:[1,0]},{tag:"Your farm, 1970",scene:"An MPLA organizer shows up wanting to talk. Not threaten, just talk. He says the colonial economy is hurting Angolans and settlers both. He asks if you would be willing to meet with a small group of people.",q:"Do you go?",choices:["Yes, you have always known something was deeply wrong here","No, any contact with the MPLA is too dangerous"],outcomes:["You met with them five times over two years. When independence came those relationships kept your farm intact.","You told no one. But you missed your chance to understand what was actually coming."],effects:[[3,10,5],[3,-5,3]],bold:[0,1]},{tag:"Lisbon coup news, April 1974",scene:"The radio is saying that Portugal's dictatorship just collapsed overnight. A new democratic government is negotiating Angolan independence. Settlers everywhere are panicking and abandoning everything they own.",q:"What is your plan?",choices:["Stay, Angola is your home as much as anyone else's","Leave now before things get dangerous"],outcomes:["You stayed. The transition was chaotic and sometimes violent. But you built something real in the country you were actually born in.","You left on a cargo ship in August with one suitcase. Portugal received 300,000 people like you. Nobody there was ready for any of you."],effects:[[3,10,-5],[8,-8,5]],bold:[0,1]},{tag:"Independence Day, November 11, 1975",scene:"Angola is independent. You are still here. An MPLA official who knew your family once comes by to tell you the farm might get nationalized under the new government.",q:"What do you say?",choices:["Accept it, independence means Angolan land goes back to Angolans","Make your case, you were born here too and this is your home"],outcomes:["The farm was nationalized. You were allowed to stay and keep working it. It was not what you had before but it was still home.","The official listened to you. You got to keep part of the land. The rest was redistributed."],effects:[[5,8,3],[3,5,8]],bold:[1,0]}],elder:[{tag:"Your village near the Dembos forest, 1961",scene:"Portuguese soldiers are moving through the forest hunting MPLA fighters. The MPLA has also come through your village asking for food. If the Portuguese find any sign you helped either side, the whole village pays.",q:"How do you keep your people safe?",choices:["Feed the MPLA fighters quietly and get them out fast","Tell every armed group your village is neutral and mean it"],outcomes:["The Portuguese found a cooking pot that was not yours. Three men from your village got taken away.","Staying neutral in a guerrilla war is basically impossible. But you held it two years longer than anyone thought you could."],effects:[[-10,5,-10],[-5,8,5]],bold:[1,0]},{tag:"Village meeting, 1965",scene:"FNLA fighters just showed up. They are a different faction from the MPLA and they hate each other. They want to use your village as a base of operations. Saying no to armed men is not really an option.",q:"What do you do?",choices:["Let them stay, you have no real choice here","Negotiate, tell them you want protection and food in exchange"],outcomes:["The MPLA found out you let the FNLA in. Your village got caught between two armed factions for the next two years.","The FNLA commander actually respected that you negotiated. He also told the MPLA your village was under his protection, which meant they left you alone."],effects:[[-8,-5,-5],[5,5,8]],bold:[1,0]},{tag:"The village, 1968",scene:"A Portuguese army captain is offering your village official protected status. You relocate to a fortified settlement near a military post. You lose your land but the army keeps you safe.",q:"Do you take it?",choices:["Accept it, safety is more important than land","Refuse, no one is moving your people off their land"],outcomes:["You relocated. The settlement had a school and a health post. You also had a soldier watching everything you did every single day.","You stayed put. Three other families got forcibly removed anyway. Your family was not, maybe because of who you are in the community."],effects:[[5,-8,8],[3,8,-5]],bold:[0,1]},{tag:"Near the village, 1974",scene:"A young man from your village joined the MPLA a while back. He just showed up at your door wounded and asking to be hidden. Having him here puts everyone in the village at risk.",q:"What do you do?",choices:["Hide him, he is one of yours","Turn him away, you cannot gamble the whole village on one person"],outcomes:["He recovered. When he became a regional official in 1976, your village was the first one in the district to get a school built.","He found somewhere else to go. He survived. He never came back to the village."],effects:[[3,8,-8],[-3,-5,3]],bold:[0,1]},{tag:"Independence Day, November 1975",scene:"Angola is officially independent. But three armed factions are already fighting over who actually runs the country. A commander shows up and asks for your village men to join his force.",q:"Your final decision as elder",choices:["Let them go, the new Angola is going to need fighters","Keep your village together, this is not your war to fight"],outcomes:["Fourteen young men left. Six came back. Angola's civil war lasted until 2002.","Your village survived the independence war in one piece. The civil war that came after was a whole other story."],effects:[[-8,-5,5],[8,10,-5]],bold:[1,0]}]}};
+var SCENARIOS = {
+  algeria: {
+    commander: [
+      {tag:"The Aures mountains, 1956",scene:"A French patrol grabbed two of your fighters last night. You know roughly where they are being held. A rescue mission would put your whole camp at risk but leaving them behind will destroy what little morale you have left.",q:"What do you do?",choices:["Go in at night and get them out","Leave them and keep the unit safe"],outcomes:["Your fighters made it back just before sunrise. The whole unit felt it. But now the French have a general idea of where you are.","You told your unit they were gone. Three people walked off within a week. You kept your position secret though."],effects:[[8,-5,-10],[-8,12,5]],bold:[0,1]},
+      {tag:"A village near Batna, 1957",scene:"French forces burned a village near yours that they thought was helping your unit. Survivors are showing up at your camp. You barely have enough food for your own people and taking them in will slow everything down.",q:"Do you take them in?",choices:["Yes, every Algerian life matters","No, the mission has to come first"],outcomes:["Two of the survivors turned out to know the French patrol schedules. That information saved your unit twice.","You moved on. Their story spread through the cities and a whole generation of young Algerians got radicalized because of it."],effects:[[6,10,-5],[-4,-8,3]],bold:[1,0]},
+      {tag:"A crossroads, 1958",scene:"A French officer says he wants to switch sides. He claims to have information about a big sweep operation coming your way. But this could easily be a trap to find your camp.",q:"Do you meet him?",choices:["Meet him, the intelligence could save a lot of lives","Too risky, could be a trap"],outcomes:["The intelligence was real. You avoided the sweep. The officer vanished a week later and you never found out what happened to him.","Three weeks later the sweep happens. You lose eight fighters. But you are still breathing."],effects:[[10,-3,-15],[-8,2,8]],bold:[0,1]},
+      {tag:"Radio contact, 1959",scene:"The FLN leadership in Tunisia is telling you to attack a French civilian infrastructure target. You think it will kill innocent people and completely wreck your international image.",q:"Do you follow the order?",choices:["Follow it, they see the bigger picture","Refuse and tell them why"],outcomes:["The attack worked militarily. But France used the photos in their propaganda for the next two years. You are still not sure it was worth it.","Tunisia was furious with you. But your restraint got mentioned in a foreign paper. The diplomats actually thanked you."],effects:[[-5,-8,10],[8,5,-5]],bold:[0,1]},
+      {tag:"Peace talks, 1961",scene:"Secret negotiations between France and the FLN have started in Evian. A French officer quietly tells you that your commander can get amnesty if operations stop now. It might almost be over.",q:"What do you do?",choices:["Pull back and protect your people while talks happen","Keep fighting until something is actually signed"],outcomes:["Your people survived the war. The Evian Accords were signed in 1962. Algeria was free.","Two of your people died that last year. But the FLN negotiated from a position of strength. Algeria still won."],effects:[[5,8,-5],[3,2,5]],bold:[1,0]}
+    ],
+    diplomat: [
+      {tag:"Cairo, 1956",scene:"Egypt's Nasser is offering weapons but he wants the FLN to publicly back his pan-Arab political agenda. A lot of Algerian leaders think that would compromise what they are actually fighting for.",q:"Do you take the deal?",choices:["Yes, weapons are what matter right now","No, Algeria cannot owe anyone that"],outcomes:["The weapons came through fast. But the FLN started splitting internally over the Arab vs Algerian identity question and that fight lasted decades.","Nasser was annoyed but he respected it. You found other suppliers. The FLN stayed on its own terms."],effects:[[10,-8,0],[-5,12,5]],bold:[0,1]},
+      {tag:"New York, UN General Assembly, 1957",scene:"A vote on Algeria is coming up. France is working hard to keep it labeled an internal French matter. You have one evening with a delegation from a newly independent African country that has not made up its mind yet.",q:"How do you pitch them?",choices:["Lead with emotion, make it about shared colonial history","Lead with legal arguments, present the FLN as a real government"],outcomes:["They voted yes. The speech got around. Three more delegations shifted.","They respected the professionalism. They voted yes and told their foreign minister the FLN were serious people worth supporting."],effects:[[8,10,-5],[5,12,-3]],bold:[0,1]},
+      {tag:"Tunis, 1958",scene:"France just bombed a Tunisian village called Sakiet, killing 70 civilians they claimed were sheltering FLN fighters. The world is paying attention. You can call a press conference right now.",q:"What do you do?",choices:["Go to the press immediately and make France pay for this","Wait for the UN investigation to do the work"],outcomes:["Sakiet photos ran in papers all over Europe. French public opinion cracked. The government in Paris fell within weeks.","The UN report was damning and airtight. It cost France two allies they were counting on for the next vote."],effects:[[10,8,8],[6,12,5]],bold:[0,1]},
+      {tag:"Evian, preliminary talks, 1961",scene:"France is ready to negotiate but they want to keep the Sahara Desert, where oil was just discovered. The FLN leadership is split on whether to hold the line.",q:"What is your position?",choices:["The Sahara is non-negotiable, period","Give them the Sahara compromise and get to independence faster"],outcomes:["Talks stalled for months. But Algeria eventually won full control of the Sahara. That oil belonged to Algerians.","The deal came faster. But for the next decade France kept oil rights that Algeria had to fight through the courts to take back."],effects:[[3,10,5],[12,-5,3]],bold:[0,1]},
+      {tag:"Evian, final round, 1962",scene:"A ceasefire is on the table. The terms are not perfect. French settlers keep some rights. French military bases stay for years. But the war ends.",q:"Do you sign?",choices:["Sign it, independence now even if it is messy","Push for one more round of negotiations"],outcomes:["Algeria became independent on July 5, 1962. About a million pied-noirs left. The real work of building a country started.","France walked away from the table. Fighting went on six more months. The final terms were almost exactly the same. A lot of people died."],effects:[[10,8,-5],[-8,-5,5]],bold:[0,1]}
+    ],
+    farmer: [
+      {tag:"Your village, Kabylie region, 1956",scene:"An FLN fighter knocks on your door after midnight. He needs food and somewhere to sleep. You know that if the French find out you helped him, you are dead.",q:"What do you do?",choices:["Let him in, he is fighting for all of you","Turn him away, you cannot risk your kids"],outcomes:["He was gone before sunrise. A week later FLN fighters tipped you off about a French sweep coming through. Your family got out in time.","He moved on and told his unit what happened. The FLN never fully trusted your village after that."],effects:[[3,10,-10],[5,-10,5]],bold:[0,1]},
+      {tag:"Market day, 1957",scene:"A French officer pulls you aside and offers you a deal. Report anyone who contacts the FLN and your family gets a work permit and extra food. You are genuinely hungry.",q:"Do you become an informer?",choices:["Accept it, your family comes before everything","Refuse, you will not do that to your neighbors"],outcomes:["You reported nothing useful for months but eventually the FLN found out you were even talking to them. You barely got your family out alive.","The officer put you on a list as uncooperative. Life got harder. But your neighbors still look you in the eye."],effects:[[-5,-15,10],[3,8,-5]],bold:[1,0]},
+      {tag:"A French army checkpoint, 1958",scene:"Your 17 year old son was picked up at a checkpoint and taken in for questioning. He has not come back. A French captain says he will let him go if you sign a statement saying the FLN burned your neighbor's crops.",q:"Do you sign?",choices:["Sign it and bring your son home","Refuse, a false statement helps the French story"],outcomes:["Your son came home. Neither of you has ever talked about what you signed.","They held him three more weeks. He came home different. You still do not know everything that happened in there."],effects:[[8,-10,8],[-3,5,-8]],bold:[0,1]},
+      {tag:"The village, 1959",scene:"An FLN commander wants to hide weapons in your barn before an attack on a nearby French post. He says it will help the war effort. You know it will bring soldiers to your village.",q:"Do you agree?",choices:["Yes, you believe in what they are fighting for","No, you cannot put your whole village at risk"],outcomes:["The attack happened. French forces locked down the village for two weeks. Two of the elders were taken away and never came back.","The commander was furious. He found a different barn. Your village was spared at least that one reprisal."],effects:[[-5,8,-15],[5,-5,5]],bold:[0,1]},
+      {tag:"News reaches the village, 1962",scene:"The radio says a ceasefire was signed at Evian. The war is over. But French settlers are still fleeing and soldiers are still moving through your area.",q:"What do you tell your family?",choices:["Tell them it is over, go outside and breathe","Wait for the soldiers to leave before you trust anything"],outcomes:["It was actually over. You stood outside for the first time without looking over your shoulder in six years.","You waited four more days. The soldiers left. Then you went outside."],effects:[[5,5,5],[8,5,5]],bold:[0,1]}
+    ],
+    journalist: [
+      {tag:"Algiers, 1956",scene:"You just watched French paratroopers beat a detainee in a holding facility. Your editor back in Paris says running this story will embarrass the military and will probably get you kicked out of Algeria.",q:"Do you publish?",choices:["Yes, people deserve to know what is happening","Hold it, you need your access to keep covering the war"],outcomes:["It ran on page 3. Three politicians brought it up in parliament. You were expelled from Algeria six weeks later.","You filed something softer. You kept your press pass. But you never stopped seeing that man's face."],effects:[[10,-10,10],[-5,5,-5]],bold:[0,1]},
+      {tag:"Paris newsroom, 1957",scene:"The French military is giving you exclusive access to go embed with an operation in the Atlas mountains. You can already tell the whole thing is designed to produce good propaganda.",q:"What do you do?",choices:["Take the access and write what you actually see","Turn it down, embedded journalism is compromised journalism"],outcomes:["You wrote what you saw. It did not match their press release at all. They never offered you embed access again.","Your editor was really unhappy. But staying independent kept your credibility with Algerian sources intact."],effects:[[8,5,5],[-5,12,8]],bold:[0,1]},
+      {tag:"Algiers, 1958",scene:"An Algerian source just handed you evidence of systematic torture happening in French detention centers during the Battle of Algiers. He is risking his life to give you this. The military will deny all of it.",q:"What do you do?",choices:["Publish it and protect your source","Wait and get more corroboration first"],outcomes:["The story went all over Europe. France denied it for decades but historians eventually found the records. Your source was never caught.","You spent six months verifying everything. By the time you published, two other journalists had already broken it. Your version was more thorough but slower."],effects:[[12,8,8],[3,10,3]],bold:[0,1]},
+      {tag:"Paris, 1960",scene:"A French general just told you off the record that France cannot win this war. He will not say it publicly. You can either quote him anonymously or just report his general position without any attribution.",q:"What do you do?",choices:["Quote him anonymously, people need to hear this","Only use what he will say on the record"],outcomes:["The anonymous quote ran. Three cabinet ministers publicly agreed within a month. The political math in Paris started to shift.","Your story was shorter but bulletproof. It took longer but de Gaulle started moving toward negotiations for his own reasons anyway."],effects:[[10,5,5],[3,8,3]],bold:[0,1]},
+      {tag:"Evian, 1962",scene:"Independence is about to happen. You have one last interview with an FLN negotiator who says the real story of what France never admitted will take decades to come out fully. He asks you to wait before writing it.",q:"How do you end your coverage?",choices:["Write everything now, history should not wait","Honor the request and write it properly as a book"],outcomes:["Your final piece was the best thing you ever wrote. It won an award. France tried to sue. They lost.","The book came out in 1971. Historians still cite it. Some stories are worth taking the time to get right."],effects:[[10,8,8],[5,12,5]],bold:[0,1]}
+    ]
+  },
+  angola: {
+    mpla: [
+      {tag:"Luanda, 1961",scene:"The MPLA just called for a general uprising. You are running a secret cell of twelve people. The Portuguese secret police, known as PIDE, are already arresting people all over the city.",q:"What do you do?",choices:["Activate your cell and join the uprising","Go dark and keep the network alive for later"],outcomes:["Four of your twelve got arrested. But the uprising made it clear to Portugal that Luanda was ungovernable.","Your network survived completely intact. Six months later you were back up to twenty people. The ones who died early still weigh on you."],effects:[[5,-10,-15],[8,12,5]],bold:[0,1]},
+      {tag:"Luanda safe house, 1963",scene:"A new guy wants into your cell. He knows your contact by name and says all the right things politically. But something about him feels off. He seems a little too eager.",q:"Do you bring him in?",choices:["Let him in, the movement needs more people","Turn him down and warn your contact"],outcomes:["He was PIDE. Three members of your cell were arrested within the week.","Your instinct was right. He vanished. Your contact thanked you. The cell kept going."],effects:[[-15,-10,15],[8,12,-5]],bold:[1,0]},
+      {tag:"Moscow funded training camp, 1965",scene:"The Soviet Union is offering weapons and military training but they want the MPLA to publicly align with Soviet foreign policy. That is a political cost some people in the movement do not want to pay.",q:"Do you take it?",choices:["Yes, weapons win wars","Push back, Angolan independence cannot be a Soviet talking point"],outcomes:["The weapons showed up and MPLA fighters were better armed than any rival faction. But the political alignment caused splits inside the movement that lasted for decades.","Negotiations dragged on. Weapons came slower. But the MPLA stayed its own thing."],effects:[[10,-8,0],[-5,12,5]],bold:[0,1]},
+      {tag:"Luanda, 1974",scene:"A military coup in Lisbon just overthrew the Portuguese government. The new one is open to decolonization. Angolan independence is suddenly real but three different factions are all claiming to represent Angola.",q:"How does the MPLA play this?",choices:["Move fast and take control of Luanda before any rival faction does","Try to negotiate a coalition, Angola needs unity more than it needs a winner"],outcomes:["The MPLA held Luanda. But civil war broke out almost immediately. Angola's independence turned into another proxy battlefield.","The Alvor Agreement gave each faction a role. It fell apart within months. But the attempt at coalition earned real international goodwill."],effects:[[8,-10,5],[-3,10,8]],bold:[0,1]},
+      {tag:"Independence Day minus 3 weeks, 1975",scene:"South African troops backed by the US are advancing on Luanda to put UNITA in power. Cuba has offered to send in actual combat troops to stop them. Saying yes means getting even more foreign entanglement.",q:"Do you accept?",choices:["Accept it, Angola cannot fall right now","Refuse, Angola has to win this on its own terms"],outcomes:["Cuban troops stopped the South African advance. Angola became independent on November 11. The civil war ran until 2002.","The South African advance got to the edge of Luanda. The MPLA barely held on and the casualty count was enormous."],effects:[[10,-5,10],[-10,8,-8]],bold:[0,1]}
+    ],
+    cuban: [
+      {tag:"Havana briefing, 1975",scene:"Fidel Castro personally signed off on this mission. Your orders are to advise the MPLA, not to fight. You land in Luanda and within days it is completely obvious that advising is not going to cut it.",q:"What do you tell Havana?",choices:["Report honestly, the MPLA needs combat troops not advisors","Stay within your orders and document what you see"],outcomes:["Havana sent 36,000 troops over the following year. Angola's independence was secured. You ended up commanding a battalion you never expected to lead.","You spent three months training fighters. When the South Africans moved, you picked up a rifle anyway."],effects:[[8,10,5],[5,5,8]],bold:[0,1]},
+      {tag:"Front line near Caxito, 1975",scene:"Your unit just captured a South African officer. He is not Angolan and his presence proves South Africa is covertly involved in this war. The MPLA commander wants to execute him right now.",q:"What do you do?",choices:["Step in, a living prisoner is proof the world needs to see","Stay out of it, this is Angola's fight"],outcomes:["The prisoner got transferred to Luanda and put in front of journalists. The international story shifted. South Africa denied everything anyway.","The officer was shot. You filed no report. You have never talked about that day."],effects:[[10,5,5],[-8,-5,3]],bold:[0,1]},
+      {tag:"Luanda, late 1975",scene:"You have been here four months. Your rotation is supposed to be up. But the MPLA commander says if you leave now the whole unit falls apart. You can ask for an extension or follow your orders and go home.",q:"What do you do?",choices:["Request the extension, your unit needs you here","Follow your rotation, the mission is bigger than any one unit"],outcomes:["You stayed eight more months. Your unit held the northern front. You went home to a quiet ceremony.","Your replacement came two weeks later. The unit struggled and then stabilized. Havana commended your discipline."],effects:[[8,10,-3],[3,5,8]],bold:[0,1]},
+      {tag:"Political meeting, Luanda 1976",scene:"The MPLA is the government now but two internal factions are openly fighting each other. One is aligned with Moscow and one is more independent. A senior official asks which one Cuba should support.",q:"What do you say?",choices:["Back the Moscow faction, that is what the mission is about","Tell them Cuba should stay out of an internal Angolan argument"],outcomes:["The Moscow faction consolidated power. Angola stayed allied with Cuba and the USSR. Anyone who disagreed got suppressed.","The official looked genuinely surprised. Your response got cabled back to Havana. Castro took note of it."],effects:[[5,-8,5],[8,10,3]],bold:[1,0]},
+      {tag:"Homecoming, 1977",scene:"You are back in Havana getting debriefed. An official wants you to write a report that frames the whole mission as a clean success. You know the real story is a lot more complicated than that.",q:"What do you write?",choices:["Write the honest account with all the complexity included","Write what they want, the cause was just even if some details were ugly"],outcomes:["Your report was classified for thirty years. When it was finally declassified historians called it the most accurate account of the war that exists.","Your report became the official version. It got published and translated into several languages. You know everything it left out."],effects:[[8,12,3],[3,-5,5]],bold:[0,1]}
+    ],
+    settler: [
+      {tag:"Luanda, 1961",scene:"The MPLA uprising just shocked the whole Portuguese community. Your neighbor who runs a plantation nearby is putting together a settler militia and wants you to join.",q:"What do you do?",choices:["Join up, your family lives here and someone has to protect it","Refuse, armed settlers are only going to make things worse"],outcomes:["The militia reprisals were brutal. Angolans who used to be your neighbors stopped speaking to you.","You stayed home. Your neighbor stopped talking to you. But your Angolan housekeeper Maria kept showing up."],effects:[[5,-10,-5],[-3,8,5]],bold:[1,0]},
+      {tag:"Luanda, 1965",scene:"Your son wants to move back to Portugal. He says Angola has no future for settlers. Your wife was born here. You were born here. Portugal is a country you have visited exactly twice.",q:"What do you tell your family?",choices:["Tell him he is right and start making a plan to leave","Tell him Angola is your home and you are going to stay and figure it out"],outcomes:["Your son left in 1967. He built a decent life in Lisbon. You stayed. You were right that things would get complicated.","You stayed. Independence came in 1975. You ended up being one of the only settlers who did not run."],effects:[[5,-3,5],[-5,10,8]],bold:[1,0]},
+      {tag:"Your farm, 1970",scene:"An MPLA organizer shows up wanting to talk. Not threaten, just talk. He says the colonial economy is hurting Angolans and settlers both. He asks if you would be willing to meet with a small group of people.",q:"Do you go?",choices:["Yes, you have always known something was deeply wrong here","No, any contact with the MPLA is too dangerous"],outcomes:["You met with them five times over two years. When independence came those relationships kept your farm intact.","You told no one. But you missed your chance to understand what was actually coming."],effects:[[3,10,5],[3,-5,3]],bold:[0,1]},
+      {tag:"Lisbon coup news, April 1974",scene:"The radio is saying that Portugal's dictatorship just collapsed overnight. A new democratic government is negotiating Angolan independence. Settlers everywhere are panicking and abandoning everything they own.",q:"What is your plan?",choices:["Stay, Angola is your home as much as anyone else's","Leave now before things get dangerous"],outcomes:["You stayed. The transition was chaotic and sometimes violent. But you built something real in the country you were actually born in.","You left on a cargo ship in August with one suitcase. Portugal received 300,000 people like you. Nobody there was ready for any of you."],effects:[[3,10,-5],[8,-8,5]],bold:[0,1]},
+      {tag:"Independence Day, November 11, 1975",scene:"Angola is independent. You are still here. An MPLA official who knew your family once comes by to tell you the farm might get nationalized under the new government.",q:"What do you say?",choices:["Accept it, independence means Angolan land goes back to Angolans","Make your case, you were born here too and this is your home"],outcomes:["The farm was nationalized. You were allowed to stay and keep working it. It was not what you had before but it was still home.","The official listened to you. You got to keep part of the land. The rest was redistributed."],effects:[[5,8,3],[3,5,8]],bold:[1,0]}
+    ],
+    elder: [
+      {tag:"Your village near the Dembos forest, 1961",scene:"Portuguese soldiers are moving through the forest hunting MPLA fighters. The MPLA has also come through your village asking for food. If the Portuguese find any sign you helped either side, the whole village pays.",q:"How do you keep your people safe?",choices:["Feed the MPLA fighters quietly and get them out fast","Tell every armed group your village is neutral and mean it"],outcomes:["The Portuguese found a cooking pot that was not yours. Three men from your village got taken away.","Staying neutral in a guerrilla war is basically impossible. But you held it two years longer than anyone thought you could."],effects:[[-10,5,-10],[-5,8,5]],bold:[1,0]},
+      {tag:"Village meeting, 1965",scene:"FNLA fighters just showed up. They are a different faction from the MPLA and they hate each other. They want to use your village as a base of operations. Saying no to armed men is not really an option.",q:"What do you do?",choices:["Let them stay, you have no real choice here","Negotiate, tell them you want protection and food in exchange"],outcomes:["The MPLA found out you let the FNLA in. Your village got caught between two armed factions for the next two years.","The FNLA commander actually respected that you negotiated. He also told the MPLA your village was under his protection, which meant they left you alone."],effects:[[-8,-5,-5],[5,5,8]],bold:[1,0]},
+      {tag:"The village, 1968",scene:"A Portuguese army captain is offering your village official protected status. You relocate to a fortified settlement near a military post. You lose your land but the army keeps you safe.",q:"Do you take it?",choices:["Accept it, safety is more important than land","Refuse, no one is moving your people off their land"],outcomes:["You relocated. The settlement had a school and a health post. You also had a soldier watching everything you did every single day.","You stayed put. Three other families got forcibly removed anyway. Your family was not, maybe because of who you are in the community."],effects:[[5,-8,8],[3,8,-5]],bold:[0,1]},
+      {tag:"Near the village, 1974",scene:"A young man from your village joined the MPLA a while back. He just showed up at your door wounded and asking to be hidden. Having him here puts everyone in the village at risk.",q:"What do you do?",choices:["Hide him, he is one of yours","Turn him away, you cannot gamble the whole village on one person"],outcomes:["He recovered. When he became a regional official in 1976, your village was the first one in the district to get a school built.","He found somewhere else to go. He survived. He never came back to the village."],effects:[[3,8,-8],[-3,-5,3]],bold:[0,1]},
+      {tag:"Independence Day, November 1975",scene:"Angola is officially independent. But three armed factions are already fighting over who actually runs the country. A commander shows up and asks for your village men to join his force.",q:"Your final decision as elder",choices:["Let them go, the new Angola is going to need fighters","Keep your village together, this is not your war to fight"],outcomes:["Fourteen young men left. Six came back. Angola's civil war lasted until 2002.","Your village survived the independence war in one piece. The civil war that came after was a whole other story."],effects:[[-8,-5,5],[8,10,-5]],bold:[1,0]}
+    ]
+  }
+};
 
-var war=null,role=null,scenarios=[],round=0,meters=[50,50,50],history=[],boldCount=0,cautCount=0,score=0;
+var state = {war:null, role:null, scenarios:[], round:0, meters:[50,50,50], history:[], bold:0, cautious:0, score:0};
 
-function selectWar(w){
-  war=w;
-  document.getElementById('wb-alg').classList.toggle('sel',w==='algeria');
-  document.getElementById('wb-ang').classList.toggle('sel',w==='angola');
-  role=null;
-  renderRoles();
-  checkStart();
+function el(id){ return document.getElementById(id); }
+
+function div(cls, content){
+  var d = document.createElement('div');
+  if(cls) d.className = cls;
+  if(content) d.innerHTML = content;
+  return d;
 }
 
-function renderRoles(){
-  var rl=document.getElementById('role-list');
-  rl.innerHTML='';
-  if(!war)return;
-  ROLES[war].forEach(function(r){
-    var d=document.createElement('button');
-    d.type='button';
-    d.className='role-card';
-    d.id='rc-'+r.id;
-    d.innerHTML='<div class="rtitle">'+r.title+'</div><div class="rdesc">'+r.desc+'</div>';
-    d.onclick=function(){selectRole(r.id);};
-    rl.appendChild(d);
+function btn(cls, text, fn){
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.className = cls;
+  b.textContent = text;
+  b.onclick = fn;
+  return b;
+}
+
+function render(html){
+  el('app').innerHTML = html;
+}
+
+function showIntro(){
+  state.war = null; state.role = null;
+  var html = '<h1>Liberation Wars</h1><p class="tagline">Algeria and Angola · A decision game</p>';
+  html += '<div class="intro-body">Two countries. Two wars. Two colonial powers who said they would never leave and then left. Algeria fought France from 1954 to 1962. Angola fought Portugal from 1961 to 1975. In both cases regular people had to make impossible choices. Now it is your turn. You do not need to know anything going in.</div>';
+  html += '<p class="label">Pick your war</p>';
+  html += '<div class="war-grid"><button type="button" class="warbtn" id="wb-algeria" onclick="pickWar(\'algeria\')"><span class="wname">Algeria</span><span class="wsub">vs. France · 1954 to 1962</span></button><button type="button" class="warbtn" id="wb-angola" onclick="pickWar(\'angola\')"><span class="wname">Angola</span><span class="wsub">vs. Portugal · 1961 to 1975</span></button></div>';
+  html += '<p class="label">Pick your role</p>';
+  html += '<div id="rolelist"></div>';
+  html += '<button type="button" class="startbtn" id="startbtn" onclick="startGame()" disabled>Choose a war and a role to start</button>';
+  render(html);
+}
+
+function pickWar(w){
+  state.war = w;
+  state.role = null;
+  var alg = el('wb-algeria');
+  var ang = el('wb-angola');
+  alg.style.borderColor = w==='algeria' ? '#c9a84c' : '#2e2b27';
+  alg.style.background = w==='algeria' ? '#3d2e10' : '#1a1714';
+  ang.style.borderColor = w==='angola' ? '#c9a84c' : '#2e2b27';
+  ang.style.background = w==='angola' ? '#3d2e10' : '#1a1714';
+  var rl = el('rolelist');
+  rl.innerHTML = '';
+  ROLES[w].forEach(function(r){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'rolecard';
+    b.id = 'role-'+r.id;
+    b.innerHTML = '<div class="rtitle">'+r.title+'</div><div class="rdesc">'+r.desc+'</div>';
+    b.onclick = function(){ pickRole(r.id); };
+    rl.appendChild(b);
   });
+  el('startbtn').disabled = true;
+  el('startbtn').textContent = 'Choose a war and a role to start';
 }
 
-function selectRole(rid){
-  role=rid;
-  document.querySelectorAll('.role-card').forEach(function(c){c.classList.remove('sel');});
-  var el=document.getElementById('rc-'+rid);
-  if(el)el.classList.add('sel');
-  checkStart();
-}
-
-function checkStart(){
-  var btn=document.getElementById('start-btn');
-  if(war&&role){btn.disabled=false;btn.textContent='Begin';}
-  else{btn.disabled=true;btn.textContent='Choose a war and a role to start';}
+function pickRole(rid){
+  state.role = rid;
+  var cards = document.querySelectorAll('.rolecard');
+  for(var i=0;i<cards.length;i++){
+    cards[i].style.borderColor = '#2e2b27';
+    cards[i].style.background = '#1a1714';
+  }
+  var sel = el('role-'+rid);
+  if(sel){ sel.style.borderColor='#c9a84c'; sel.style.background='#3d2e10'; }
+  el('startbtn').disabled = false;
+  el('startbtn').textContent = 'Begin';
 }
 
 function startGame(){
-  if(!war||!role)return;
-  scenarios=SCENARIOS[war][role];
-  round=0;meters=[50,50,50];history=[];boldCount=0;cautCount=0;score=0;
-  var rd=ROLES[war].filter(function(r){return r.id===role;})[0];
-  document.getElementById('hud-role').textContent=rd.title;
-  rd.meters.forEach(function(m,i){document.getElementById('ml'+i).textContent=m;});
-  show('s-game');
-  loadRound();
+  if(!state.war || !state.role) return;
+  state.scenarios = SCENARIOS[state.war][state.role];
+  state.round = 0;
+  state.meters = [50,50,50];
+  state.history = [];
+  state.bold = 0;
+  state.cautious = 0;
+  state.score = 0;
+  showRound();
 }
 
-function loadRound(){
-  var sc=scenarios[round];
-  document.getElementById('hud-round').textContent='Round '+(round+1)+' of '+scenarios.length;
-  updateMeters();
-  document.getElementById('scene-tag').textContent=sc.tag;
-  document.getElementById('scene-box').textContent=sc.scene;
-  document.getElementById('question').textContent=sc.q;
-  var cg=document.getElementById('choices');
-  cg.innerHTML='';
-  sc.choices.forEach(function(c,i){
-    var b=document.createElement('button');
-    b.type='button';
-    b.className='choice';
-    b.textContent=c;
-    b.onclick=function(){choose(i);};
-    cg.appendChild(b);
+function showRound(){
+  var sc = state.scenarios[state.round];
+  var rd = ROLES[state.war].filter(function(r){return r.id===state.role;})[0];
+  var html = '<div class="hud"><span class="hudrole">'+rd.title+'</span><span class="hudround">Round '+(state.round+1)+' of '+state.scenarios.length+'</span></div>';
+  html += '<div class="meters">';
+  var mcolors = ['#c9a84c','#c98a4c','#c94c4c'];
+  for(var i=0;i<3;i++){
+    html += '<div class="meter"><div class="mlabel">'+rd.meters[i]+'</div><div class="mtrack"><div class="mfill" id="mf'+i+'" style="width:'+state.meters[i]+'%;background:'+mcolors[i]+'"></div></div></div>';
+  }
+  html += '</div>';
+  html += '<div class="scenetag">'+sc.tag+'</div>';
+  html += '<div class="scenebox">'+sc.scene+'</div>';
+  html += '<div class="question">'+sc.q+'</div>';
+  html += '<div id="choices"></div>';
+  html += '<div id="outcomebox" style="display:none"></div>';
+  html += '<button type="button" class="nextbtn" id="nextbtn" style="display:none" onclick="goNext()">Next round</button>';
+  render(html);
+  var cbox = el('choices');
+  sc.choices.forEach(function(c, i){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'choicebtn';
+    b.textContent = c;
+    b.setAttribute('data-idx', i);
+    b.onclick = function(){ makeChoice(parseInt(this.getAttribute('data-idx'))); };
+    cbox.appendChild(b);
   });
-  var ob2=document.getElementById('outcome');
-  ob2.className='outcome';
-  ob2.style.display='none';
-  var nb2=document.getElementById('next-btn');
-  nb2.className='next-btn';
-  nb2.style.display='none';
 }
 
-function choose(i){
-  var sc=scenarios[round];
-  document.querySelectorAll('.choice').forEach(function(b,j){b.disabled=true;if(j===i)b.classList.add('picked');});
-  var fx=sc.effects[i];
-  meters[0]=Math.min(100,Math.max(0,meters[0]+fx[0]));
-  meters[1]=Math.min(100,Math.max(0,meters[1]+fx[1]));
-  meters[2]=Math.min(100,Math.max(0,meters[2]+fx[2]));
-  updateMeters();
-  if(sc.bold[i]===1)boldCount++;else cautCount++;
-  var avg=(fx[0]+fx[1]+fx[2])/3;
-  score+=Math.round(avg);
-  history.push({round:round+1,choice:sc.choices[i],outcome:sc.outcomes[i]});
-  var ob=document.getElementById('outcome');
-  ob.textContent=sc.outcomes[i];
-  ob.className='outcome show '+(avg>3?'good':avg<-3?'bad':'mid');
+function makeChoice(i){
+  var sc = state.scenarios[state.round];
+  var btns = document.querySelectorAll('.choicebtn');
+  for(var j=0;j<btns.length;j++){
+    btns[j].disabled = true;
+    btns[j].onclick = null;
+    if(j===i){
+      btns[j].style.borderColor = '#c9a84c';
+      btns[j].style.background = '#3d2e10';
+      btns[j].style.color = '#c9a84c';
+    }
+  }
+  var fx = sc.effects[i];
+  state.meters[0] = Math.min(100, Math.max(0, state.meters[0]+fx[0]));
+  state.meters[1] = Math.min(100, Math.max(0, state.meters[1]+fx[1]));
+  state.meters[2] = Math.min(100, Math.max(0, state.meters[2]+fx[2]));
+  for(var k=0;k<3;k++){
+    var mf = el('mf'+k);
+    if(mf) mf.style.width = state.meters[k]+'%';
+  }
+  if(sc.bold[i]===1) state.bold++; else state.cautious++;
+  var avg = (fx[0]+fx[1]+fx[2])/3;
+  state.score += Math.round(avg);
+  state.history.push({round:state.round+1, choice:sc.choices[i], outcome:sc.outcomes[i]});
+  var ob = el('outcomebox');
+  ob.textContent = sc.outcomes[i];
+  if(avg>3){ ob.style.background='#0e3020'; ob.style.border='1px solid #4ca87a'; ob.style.color='#a0d4bc'; }
+  else if(avg<-3){ ob.style.background='#3d1010'; ob.style.border='1px solid #c94c4c'; ob.style.color='#d4a0a0'; }
+  else { ob.style.background='#3d2410'; ob.style.border='1px solid #c98a4c'; ob.style.color='#d4bca0'; }
+  ob.style.padding='1rem 1.25rem';
+  ob.style.fontSize='14px';
+  ob.style.lineHeight='1.7';
+  ob.style.marginBottom='1rem';
+  ob.style.marginTop='4px';
   ob.style.display='block';
-  var nb=document.getElementById('next-btn');
-  nb.className='next-btn show';
+  var nb = el('nextbtn');
+  nb.textContent = state.round===state.scenarios.length-1 ? 'See how it ended' : 'Next round';
   nb.style.display='block';
-  nb.textContent=round===scenarios.length-1?'See how it ended':'Next round';
 }
 
-function updateMeters(){
-  [0,1,2].forEach(function(i){document.getElementById('mf'+i).style.width=meters[i]+'%';});
+function goNext(){
+  state.round++;
+  if(state.round >= state.scenarios.length){ showEnd(); }
+  else { showRound(); }
 }
 
-function nextRound(){
-  round++;
-  if(round>=scenarios.length)endGame();else loadRound();
+function showEnd(){
+  var avg = (state.meters[0]+state.meters[1]+state.meters[2])/3;
+  var icon, title, body;
+  if(avg>=60 && state.score>=5){
+    icon='★'; title='You held it together.';
+    body='Against pretty terrible odds, your decisions kept your people safer, your cause credible, and your conscience mostly intact. History would call this a success. Though in wars like these, success always costs way more than it ever should have.';
+  } else if(avg>=40){
+    icon='◈'; title='You survived. Barely.';
+    body='Your choices kept you alive and in the fight, but the war took its toll. Some of the things you did cannot be undone. The movement survived. Whether it actually thrived is a whole other question.';
+  } else {
+    icon='✕'; title='The war broke you.';
+    body='The choices you made or were forced into basically destroyed everything you were trying to protect. This is what happens to most people in most wars. It is not a personal failure. It is just what war does to people.';
+  }
+  var finalScore = Math.round(Math.max(0,Math.min(100,50+state.score*2)));
+  var histHTML = state.history.map(function(h){
+    return '<div class="histrow"><span class="histchoice">Round '+h.round+': "'+h.choice+'"</span>'+h.outcome+'</div>';
+  }).join('');
+  var html = '<div class="endtop"><div class="endicon">'+icon+'</div><div class="endtitle">'+title+'</div><div class="endbody">'+body+'</div></div>';
+  html += '<div class="stats"><div class="stat"><div class="statn">'+state.bold+'</div><div class="statl">Bold moves</div></div><div class="stat"><div class="statn">'+state.cautious+'</div><div class="statl">Careful moves</div></div><div class="stat"><div class="statn">'+finalScore+'</div><div class="statl">Final score</div></div></div>';
+  html += '<div class="histbox"><div class="histhead">Your decisions</div>'+histHTML+'</div>';
+  html += '<button type="button" class="againbtn" onclick="showIntro()">Play again</button>';
+  render(html);
 }
 
-function endGame(){
-  var avg=(meters[0]+meters[1]+meters[2])/3;
-  var icon,title,body;
-  if(avg>=60&&score>=5){icon='★';title='You held it together.';body='Against pretty terrible odds, your decisions kept your people safer, your cause credible, and your conscience mostly intact. History would call this a success. Though in wars like these, success always costs way more than it ever should have.';}
-  else if(avg>=40){icon='◈';title='You survived. Barely.';body='Your choices kept you alive and in the fight, but the war took its toll. Some of the things you did cannot be undone. The movement survived. Whether it actually thrived is a whole other question.';}
-  else{icon='✕';title='The war broke you.';body='The choices you made or were forced into basically destroyed everything you were trying to protect. This is what happens to most people in most wars. It is not a personal failure. It is just what war does to people.';}
-  document.getElementById('end-icon').textContent=icon;
-  document.getElementById('end-title').textContent=title;
-  document.getElementById('end-body').textContent=body;
-  document.getElementById('es-bold').textContent=boldCount;
-  document.getElementById('es-caut').textContent=cautCount;
-  document.getElementById('es-score').textContent=Math.round(Math.max(0,Math.min(100,50+score*2)));
-  document.getElementById('history-list').innerHTML=history.map(function(h){return'<div class="hist-row"><span class="hist-choice">Round '+h.round+': "'+h.choice+'"</span>'+h.outcome+'</div>';}).join('');
-  show('s-end');
-}
-
-function show(id){
-  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on');});
-  document.getElementById(id).classList.add('on');
-}
-
-function resetGame(){
-  war=null;role=null;
-  document.querySelectorAll('.war-btn').forEach(function(b){b.classList.remove('sel');});
-  show('s-intro');
-  renderRoles();
-  checkStart();
-}
+showIntro();
 </script>
 </body>
 </html>
