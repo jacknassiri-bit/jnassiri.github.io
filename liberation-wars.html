@@ -46,13 +46,13 @@ h1{font-family:Georgia,'Times New Roman',serif;font-size:36px;font-weight:700;co
 .choice:disabled{cursor:default}
 .choice.picked{border-color:var(--accent);background:var(--accent-dim);color:var(--accent)}
 .outcome{padding:1rem 1.25rem;font-size:14px;line-height:1.7;margin-bottom:1rem;display:none}
-.outcome.show{display:block}
-.outcome.good{background:var(--green-dim);border:1px solid var(--green);color:#a0d4bc}
-.outcome.bad{background:var(--red-dim);border:1px solid var(--red);color:#d4a0a0}
-.outcome.mid{background:var(--amber-dim);border:1px solid var(--amber);color:#d4bca0}
+.outcome.show{display:block !important}
+.outcome.show.good{display:block !important;background:var(--green-dim);border:1px solid var(--green);color:#a0d4bc}
+.outcome.show.bad{display:block !important;background:var(--red-dim);border:1px solid var(--red);color:#d4a0a0}
+.outcome.show.mid{display:block !important;background:var(--amber-dim);border:1px solid var(--amber);color:#d4bca0}
 .next-btn{width:100%;padding:.85rem;border:1px solid var(--border);background:transparent;color:var(--text);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,background .2s;display:none}
 .next-btn:hover{border-color:var(--accent);background:var(--surface)}
-.next-btn.show{display:block}
+.next-btn.show{display:block !important}
 .end-top{text-align:center;padding:2.5rem 1rem 2rem}
 .end-icon{font-size:52px;margin-bottom:1rem}
 .end-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;color:var(--accent);margin-bottom:.75rem}
@@ -195,8 +195,12 @@ function loadRound(){
     b.onclick=function(){choose(i);};
     cg.appendChild(b);
   });
-  document.getElementById('outcome').className='outcome';
-  document.getElementById('next-btn').className='next-btn';
+  var ob2=document.getElementById('outcome');
+  ob2.className='outcome';
+  ob2.style.display='none';
+  var nb2=document.getElementById('next-btn');
+  nb2.className='next-btn';
+  nb2.style.display='none';
 }
 
 function choose(i){
@@ -214,8 +218,10 @@ function choose(i){
   var ob=document.getElementById('outcome');
   ob.textContent=sc.outcomes[i];
   ob.className='outcome show '+(avg>3?'good':avg<-3?'bad':'mid');
+  ob.style.display='block';
   var nb=document.getElementById('next-btn');
   nb.className='next-btn show';
+  nb.style.display='block';
   nb.textContent=round===scenarios.length-1?'See how it ended':'Next round';
 }
 
