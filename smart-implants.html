@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>Smart implants can turn devices inside the body into sources of useful data.</li>
+          <li>That data can help doctors monitor healing, pressure, rhythm, or device performance.</li>
+          <li>The tradeoff is privacy, security, and deciding who controls the data.</li>
+        </ul>
+      </div>
       <p>The pacemaker in the chest of a cardiac patient in Omaha can send data to their cardiologist's phone in real time. Not on a monthly basis after a clinic visit. Not after a device download at the office. Continuously, flagging any arrhythmia the moment it occurs. Medtronic's Micra transcatheter pacing system and Abbott's Gallant series both have this capability, and hundreds of thousands of patients in the United States are already living with connected implants of this kind.</p>
       <p>This is not theoretical. The era of the connected body is already here.</p>
       <p>Smart implants are broadly defined as any implantable device that can sense physiological data and transmit it externally. The category is older than people realize. Cochlear implants have had wireless programming capability for years. Insulin pumps can talk to continuous glucose monitors and adjust insulin delivery automatically. The newer generation of cardiac devices can monitor dozens of variables simultaneously and send alerts that allow clinicians to intervene before a patient is even aware something is wrong.</p>

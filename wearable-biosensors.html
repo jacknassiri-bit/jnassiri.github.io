@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>Wearables are moving from step counters toward real health monitoring.</li>
+          <li>Better sensors can help track patterns between appointments.</li>
+          <li>More data is useful only if it leads to better decisions instead of more noise.</li>
+        </ul>
+      </div>
       <p>The first time a consumer device detected a medical condition in the wild was 2018, when Apple released an ECG feature for the Apple Watch Series 4. Within months, the internet filled up with stories of people whose watches had detected atrial fibrillation, sometimes in people who had no prior symptoms at all. The FDA had cleared the feature. A wrist-worn device was now a cardiac screening tool.</p>
       <p>What has happened in the years since has been quieter but arguably more significant.</p>
       <p>The category of wearable biosensors has expanded considerably beyond step counting and heart rate. Continuous glucose monitors, which measure blood sugar through a small sensor inserted just beneath the skin, have become standard care for Type 1 diabetics and are increasingly being adopted by Type 2 patients. The Dexcom G7 and Abbott FreeStyle Libre 3 can connect to a smartphone and share data in real time with a physician, removing the need for constant finger pricks and enabling a kind of passive, continuous monitoring that was not possible a decade ago.</p>

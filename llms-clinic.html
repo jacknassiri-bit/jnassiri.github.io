@@ -5,12 +5,12 @@
     <meta property="og:type" content="article">
   <meta property="og:title" content="LLMs in the Clinic: Should Doctors Use AI to Treat Patients?">
   <meta property="og:description" content="Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real but so is the upside.">
-  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download-1.png">
+  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.png">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LLMs in the Clinic: Should Doctors Use AI to Treat Patients?">
   <meta name="twitter:description" content="Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real but so is the upside.">
-  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download-1.png">
+  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LLMs in the Clinic: Should Doctors Use AI to Treat Patients?, The Med Frontier</title>
@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -173,7 +177,7 @@
     </div>
   </nav>
 
-  <div class="article-hero" style="background-image:url('download-1.png')">
+  <div class="article-hero" style="background-image:url('llms-clinic.png')">
     <div class="hero-overlay"></div>
   </div>
 
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>LLMs can help with notes, summaries, and some clinical reasoning tasks.</li>
+          <li>They can also sound confident when they are wrong, which is dangerous in medicine.</li>
+          <li>The safest role is assistant, not independent decision-maker.</li>
+        </ul>
+      </div>
       <p>Every time a physician sees a patient, they spend time writing notes. Not the interesting clinical reasoning part. The documentation part. Recording what the patient said, what the exam showed, what was ordered, and why. Studies consistently find that physicians spend between one and two hours on documentation for every hour they spend with patients. That ratio has gotten worse as electronic health records have become more complex.</p>
       <p>Large language models are, at their core, very good at turning spoken language into structured text. The connection to medical documentation was obvious from the moment GPT-3 was released, and several companies have built products around it. Ambient clinical intelligence systems use microphones placed in exam rooms to capture the patient encounter and automatically generate clinical notes. Microsoft, through its Nuance subsidiary, offers one. Suki AI offers another. Epic, the dominant electronic health record company, has integrated its own AI-assisted note generation tools.</p>
       <p>Physicians who use these systems report meaningful time savings. A family medicine doctor who previously spent ninety minutes on notes after a full day of patients might spend thirty minutes reviewing and approving AI-generated drafts instead. That time goes back to patients, to thinking, or to rest.</p>

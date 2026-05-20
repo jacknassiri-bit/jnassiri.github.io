@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>CRISPR is moving from a lab idea toward real treatments, but it is not universal medicine.</li>
+          <li>Editing blood cells is very different from safely editing organs inside the body.</li>
+          <li>The main question is not just whether editing works, but where it is safe enough to use.</li>
+        </ul>
+      </div>
       <p>In December 2023, the Food and Drug Administration approved Casgevy, the first CRISPR-based therapy to reach the market. It treated sickle cell disease, a painful inherited condition affecting the shape of red blood cells, and for patients who received it, the results were remarkable. Most became functionally cured. The disease they had been born with, the one that had put them in the hospital dozens of times, was gone.</p>
       <p>It was one of the most significant moments in modern medicine. It was also expensive enough to be nearly inaccessible. The price for a full course of Casgevy treatment is 2.2 million dollars.</p>
       <p>Understanding what CRISPR actually is helps make sense of both the promise and the complications. DNA is written in a four-letter code. Every cell in the body contains the full sequence, billions of letters long, and specialized proteins read and act on specific parts of it. CRISPR is a system that bacteria evolved to defend against viruses. Researchers figured out how to repurpose it as a set of molecular scissors. You design a short RNA sequence that matches the stretch of DNA you want to cut, attach it to the Cas9 protein, and it finds that specific sequence and cuts it. Then the cell's repair machinery takes over, either disabling the gene or replacing it with a corrected version.</p>

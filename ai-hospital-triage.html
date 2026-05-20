@@ -5,12 +5,12 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="AI Hospital Triage: Can Algorithms Decide Who Needs Care First?">
   <meta property="og:description" content="Emergency rooms are crowded, triage is hard, and AI promises faster risk prediction. The question is whether hospitals can use it without hiding judgment inside a black box.">
-  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download.png">
+  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/triage-er.png">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-hospital-triage.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Hospital Triage: Can Algorithms Decide Who Needs Care First?">
   <meta name="twitter:description" content="Emergency rooms are crowded, triage is hard, and AI promises faster risk prediction. The question is whether hospitals can use it without hiding judgment inside a black box.">
-  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download.png">
+  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/triage-er.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Hospital Triage: Can Algorithms Decide Who Needs Care First?, The Med Frontier</title>
@@ -49,6 +49,10 @@
     .article-body { padding:2.5rem 0 4rem; }
     .article-body p { font-size:1.05rem; line-height:1.9; color:var(--text); margin-bottom:1.6rem; }
     .article-body h2 { font-family:'Source Serif 4',serif; font-size:1.35rem; font-weight:700; letter-spacing:-.01em; color:var(--text); margin:2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .share-section { border-top:1px solid var(--border); padding:1.75rem 0 2rem; }
     .share-label { font-family:'DM Mono',monospace; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:.85rem; }
     .share-buttons { display:flex; gap:10px; flex-wrap:wrap; }
@@ -92,7 +96,7 @@
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span><span id="toggle-label">Dark</span></button>
     </div>
   </nav>
-  <div class="article-hero" style="background-image:url('download.png')"><div class="hero-overlay"></div></div>
+  <div class="article-hero" style="background-image:url('triage-er.png')"><div class="hero-overlay"></div></div>
   <div class="article-wrap">
     <div class="article-header">
       <a href="ai-medicine.html" class="back-link">← Back</a>
@@ -101,6 +105,14 @@
       <div class="article-meta"><span>April 30, 2026</span><span>·</span><span>7 min read</span></div>
     </div>
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>AI triage could help hospitals notice risk faster in crowded emergency rooms.</li>
+          <li>The risk is hiding human judgment inside a model that patients cannot question.</li>
+          <li>The best version supports clinicians instead of pretending triage can be fully automated.</li>
+        </ul>
+      </div>
       <p>Emergency departments run on prioritization. A triage nurse has to decide who needs immediate attention, who can safely wait, and who might look stable but is quietly getting worse. That decision is difficult because the information is incomplete and the stakes are high.</p>
       <p>It is not hard to see why hospitals are interested in AI here. Triage is crowded, fast, and full of partial information. A model can look at vital signs, symptoms, age, medical history, and lab data, then estimate whether a patient is likely to need admission, intensive care, or urgent intervention.</p>
       <h2>What AI could add</h2>

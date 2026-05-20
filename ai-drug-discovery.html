@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>AI can speed up parts of drug discovery, especially pattern-finding and protein work.</li>
+          <li>A promising molecule still has to survive chemistry, trials, safety testing, and regulation.</li>
+          <li>The hype gets weaker when the question changes from discovery to an approved medicine.</li>
+        </ul>
+      </div>
       <p>Drug discovery is slow by design. The process of identifying a promising compound, testing it in cells, testing it in animals, moving through three phases of human trials, and finally getting regulatory approval takes roughly twelve years and costs somewhere between one and two billion dollars. The vast majority of drug candidates fail somewhere along the way. The system is built to catch failure before it reaches patients, and that caution comes at enormous expense.</p>
       <p>AI is beginning to change this, though probably not in the way most headlines suggest.</p>
       <p>The moment that shifted the field's understanding of what machine learning could do came in 2020, when DeepMind released AlphaFold2. For fifty years, biologists had been trying to solve the protein folding problem: given a protein's amino acid sequence, predict the three-dimensional shape it folds into. Shape determines function. If you know a protein's shape, you can start designing molecules that interact with it. AlphaFold solved this problem with extraordinary accuracy across almost every known protein structure, releasing predictions for over 200 million proteins into a public database.</p>

@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>New imaging tools are making scans sharper, faster, and more information-rich.</li>
+          <li>AI can help process images, but the scan still has to answer a real clinical question.</li>
+          <li>Better imaging matters most when it changes diagnosis, treatment, or follow-up.</li>
+        </ul>
+      </div>
       <p>Medical imaging is already a field full of acronyms. MRI, CT, PET, SPECT, DEXA, ultrasound. Each modality captures different information about the body using different physical principles. An MRI creates images from magnetic fields and radio waves, with excellent soft tissue contrast. A CT scan uses X-rays taken from many angles to reconstruct cross-sectional images, with excellent bone and density detail. These technologies changed medicine fundamentally when they were introduced.</p>
       <p>What is happening now is something different. Not new modalities so much as radically better ways of using existing ones, with AI at the center of the improvement.</p>
       <p>One of the biggest examples is photon-counting CT. Traditional CT detectors measure the total energy deposited by X-ray photons without distinguishing between individual photons. Photon-counting detectors, which became clinically available in 2021 with the Siemens NAEOTOM Alpha, track individual photons and their energy levels. The result is higher spatial resolution, lower radiation dose, and the ability to separate different tissue types by their X-ray absorption signatures. Structures that were previously invisible or required invasive imaging to see are now visible on a routine scan.</p>

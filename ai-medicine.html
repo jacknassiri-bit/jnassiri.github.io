@@ -5,12 +5,12 @@
     <meta property="og:type" content="website">
   <meta property="og:title" content="AI in Medicine | The Med Frontier">
   <meta property="og:description" content="All posts on artificial intelligence in medicine, diagnostics, and clinical workflows.">
-  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download-1.png">
+  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.png">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-medicine.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI in Medicine | The Med Frontier">
   <meta name="twitter:description" content="All posts on artificial intelligence in medicine, diagnostics, and clinical workflows.">
-  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download-1.png">
+  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI in Medicine, The Med Frontier</title>
@@ -64,6 +64,7 @@
 
     .posts-section { padding: 2.5rem 0 0; }
     .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .topic-label { grid-column: 1 / -1; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin: 0.75rem 0 -0.35rem; }
 
     .post-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.15s, background 0.25s; text-decoration: none; color: var(--text); display: flex; flex-direction: column; }
     .post-card:hover { border-color: var(--blue-mid); transform: translateY(-3px); }
@@ -170,8 +171,10 @@
     <div class="posts-section">
       <div class="posts-grid">
 
+        <div class="topic-label">Hospital workflow</div>
+
         <a href="ai-hospital-triage.html" class="post-card">
-          <div class="card-thumb" style="background-image:url('download.png');background-size:cover;background-position:center;"></div>
+          <div class="card-thumb" style="background-image:url('triage-er.png');background-size:cover;background-position:center;"></div>
           <div class="card-body">
             <div class="card-tag">AI in Medicine</div>
             <div class="card-title">AI Hospital Triage: Can Algorithms Decide Who Needs Care First?</div>
@@ -191,8 +194,10 @@
         </a>
 
 
+        <div class="topic-label">Diagnostics and imaging</div>
+
         <a href="ai-radiologist.html" class="post-card">
-          <div class="card-thumb" style="background-image:url('download-2.png');background-size:cover;background-position:center;"></div>
+          <div class="card-thumb" style="background-image:url('radiology-xrays.png');background-size:cover;background-position:center;"></div>
           <div class="card-body">
             <div class="card-tag">AI in Medicine</div>
             <div class="card-title">Can an AI outdiagnose a radiologist? The evidence so far.</div>
@@ -200,6 +205,8 @@
             <div class="card-foot"><span>Apr 15 · 7 min</span></div>
           </div>
         </a>
+
+        <div class="topic-label">Drug discovery</div>
 
         <a href="ai-drug-discovery.html" class="post-card">
           <div class="card-thumb" style="background-image:url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&h=170&q=80');background-size:cover;background-position:center;"></div>
@@ -211,8 +218,10 @@
           </div>
         </a>
 
+        <div class="topic-label">Clinical assistants</div>
+
         <a href="llms-clinic.html" class="post-card">
-          <div class="card-thumb" style="background-image:url('download-1.png');background-size:cover;background-position:center;"></div>
+          <div class="card-thumb" style="background-image:url('llms-clinic.png');background-size:cover;background-position:center;"></div>
           <div class="card-body">
             <div class="card-tag">AI in Medicine</div>
             <div class="card-title">LLMs in the clinic: should doctors use AI to treat patients?</div>
@@ -220,6 +229,8 @@
             <div class="card-foot"><span>Apr 7 · 6 min</span></div>
           </div>
         </a>
+
+        <div class="topic-label">Pathology and mental health</div>
 
         <a href="ai-pathology.html" class="post-card">
           <div class="card-thumb" style="background-image:url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&h=170&q=80');background-size:cover;background-position:center;"></div>

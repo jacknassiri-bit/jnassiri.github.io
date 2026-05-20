@@ -5,12 +5,12 @@
     <meta property="og:type" content="article">
   <meta property="og:title" content="Can an AI Outdiagnose a Radiologist? The Evidence So Far">
   <meta property="og:description" content="Deep learning models are reading X-rays and MRI scans with striking accuracy. But lab performance and real-world performance are very different things.">
-  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download-2.png">
+  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/radiology-xrays.png">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-radiologist.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Can an AI Outdiagnose a Radiologist? The Evidence So Far">
   <meta name="twitter:description" content="Deep learning models are reading X-rays and MRI scans with striking accuracy. But lab performance and real-world performance are very different things.">
-  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/download-2.png">
+  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/radiology-xrays.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Can an AI Outdiagnose a Radiologist? The Evidence So Far, The Med Frontier</title>
@@ -73,6 +73,10 @@
     .article-body { padding: 2.5rem 0 4rem; }
     .article-body p { font-size: 1.05rem; line-height: 1.9; color: var(--text); margin-bottom: 1.6rem; }
     .article-body h2 { font-family: 'Source Serif 4', serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 2.5rem 0 1rem; }
+    .quick-takeaways { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.4rem; margin:0 0 2rem; }
+    .quick-takeaways h2 { margin:0 0 .75rem; font-size:1rem; }
+    .quick-takeaways ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .quick-takeaways li { color:var(--text); line-height:1.65; }
     .whos-writing { border-top: 1px solid var(--border); padding: 2.5rem 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .whos-left { display: flex; align-items: center; gap: 1.25rem; }
     .whos-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
@@ -173,7 +177,7 @@
     </div>
   </nav>
 
-  <div class="article-hero" style="background-image:url('download-2.png')">
+  <div class="article-hero" style="background-image:url('radiology-xrays.png')">
     <div class="hero-overlay"></div>
   </div>
 
@@ -188,6 +192,14 @@
     </div>
 
     <div class="article-body">
+      <div class="quick-takeaways">
+        <h2>Quick takeaways</h2>
+        <ul>
+          <li>AI can read some imaging tasks extremely well in controlled settings.</li>
+          <li>Real hospitals are messier than benchmark datasets, so performance does not transfer perfectly.</li>
+          <li>The strongest use case is helping radiologists catch misses, not replacing them outright.</li>
+        </ul>
+      </div>
       <p>There is a test that researchers have run dozens of times over the past five years. They show a deep learning model a chest X-ray, ask it to identify signs of pneumonia or cancer, and then compare its accuracy against a panel of board-certified radiologists. In several studies, the AI has won. Or at least tied. Depending on how you define winning, the results are genuinely remarkable.</p>
       <p>The most cited example comes from Stanford, where a team trained a convolutional neural network on over 100,000 chest X-rays. When tested against ten radiologists, the model matched or exceeded their accuracy at detecting pneumonia. A few years later, Google published similar results for detecting diabetic retinopathy, a leading cause of blindness. The AI caught early-stage damage that human reviewers sometimes missed.</p>
       <p>So why is every radiologist in the country still employed?</p>
