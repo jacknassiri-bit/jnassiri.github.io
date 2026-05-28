@@ -63,8 +63,19 @@
     .page-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; max-width: 560px; }
 
     .posts-section { padding: 2.5rem 0 0; }
-    .posts-grid { display: grid; grid-template-columns: repeat(2, minmax(280px, 1fr)); gap: 20px; max-width: 920px; margin: 0 auto; }
-    .topic-label { grid-column: 1 / -1; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin: 0.75rem 0 -0.35rem; }
+    .view-toolbar { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+    .view-toggle { display: inline-flex; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 3px; gap: 2px; }
+    .view-btn { width: 38px; height: 32px; border: none; border-radius: 6px; background: transparent; color: var(--text-muted); cursor: pointer; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s; }
+    .view-btn:hover, .view-btn.active { background: var(--bg-card); color: var(--blue-mid); }
+    .posts-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0 auto; }
+    .topic-label { display: none; grid-column: 1 / -1; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin: 0.75rem 0 -0.35rem; }
+    .posts-section[data-view="list"] .posts-grid { display: flex; flex-direction: column; gap: 14px; max-width: 920px; }
+    .posts-section[data-view="list"] .topic-label { display: block; margin: 1rem 0 0.15rem; }
+    .posts-section[data-view="list"] .post-card { display: grid; grid-template-columns: 180px minmax(0, 1fr); min-height: 138px; }
+    .posts-section[data-view="list"] .post-card:hover { transform: translateY(-2px); }
+    .posts-section[data-view="list"] .card-thumb { height: 100%; min-height: 138px; border-radius: 6px 0 0 6px; }
+    .posts-section[data-view="list"] .card-body { padding: 1rem 1.15rem; }
+    .posts-section[data-view="list"] .card-desc { margin-bottom: 0.8rem; }
 
     .post-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.15s, background 0.25s; text-decoration: none; color: var(--text); display: flex; flex-direction: column; }
     .post-card:hover { border-color: var(--blue-mid); transform: translateY(-3px); }
@@ -91,8 +102,9 @@
     footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
-    @media (max-width: 900px) { .posts-grid { grid-template-columns: repeat(2, 1fr); max-width: none; } .nav-links { display: none; } .whos-writing { flex-direction: column; align-items: flex-start; } footer { flex-direction: column; gap: 8px; } }
-    @media (max-width: 580px) { .posts-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } .whos-writing { flex-direction: column; align-items: flex-start; } footer { flex-direction: column; gap: 8px; } }
+    @media (max-width: 700px) { .posts-section[data-view="list"] .post-card { grid-template-columns: 140px minmax(0, 1fr); } }
+    @media (max-width: 580px) { .posts-grid { grid-template-columns: 1fr; } .view-toolbar { justify-content: flex-start; } .posts-section[data-view="list"] .post-card { display: flex; } .posts-section[data-view="list"] .card-thumb { height: 170px; border-radius: 6px 6px 0 0; } }
 
     /* BACK TO TOP */
     #back-top { position:fixed; bottom:28px; right:28px; width:42px; height:42px; border-radius:50%; background:var(--blue); color:#fff; border:none; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.25s; z-index:900; box-shadow:0 4px 14px rgba(0,0,0,0.18); }
@@ -168,7 +180,13 @@
       <p class="page-desc">How machine learning, large language models, and computer vision are reshaping diagnosis, drug discovery, and clinical decision-making.</p>
     </div>
 
-    <div class="posts-section">
+    <div class="posts-section" data-view="grid">
+      <div class="view-toolbar" aria-label="Article view options">
+        <div class="view-toggle">
+          <button class="view-btn active" type="button" data-view="grid" aria-label="Grid view" title="Grid view">▦</button>
+          <button class="view-btn" type="button" data-view="list" aria-label="List view" title="List view">☰</button>
+        </div>
+      </div>
       <div class="posts-grid">
 
         <div class="topic-label">Hospital workflow</div>
@@ -369,6 +387,26 @@
       document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(function(a){
         if(a.getAttribute('href') === page) a.classList.add('active');
       });
+    })();
+    // Grid/list view toggle
+    (function(){
+      var section = document.querySelector('.posts-section');
+      var buttons = document.querySelectorAll('.view-btn');
+      if(!section || !buttons.length) return;
+      var key = 'tmf-view-' + (window.location.pathname.split('/').pop() || 'ai-medicine.html');
+      function setView(view){
+        section.setAttribute('data-view', view);
+        buttons.forEach(function(btn){
+          var active = btn.getAttribute('data-view') === view;
+          btn.classList.toggle('active', active);
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        localStorage.setItem(key, view);
+      }
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){ setView(btn.getAttribute('data-view')); });
+      });
+      setView(localStorage.getItem(key) || 'grid');
     })();
     // Timeline: make hover cards usable on touch screens and keyboards.
     document.querySelectorAll('.ai-timeline-event').forEach(function(event){
