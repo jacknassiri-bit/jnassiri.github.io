@@ -30,7 +30,7 @@
     .nav-logo { font-family:'Source Serif 4',serif; font-size:1.15rem; font-weight:800; color:var(--text); text-decoration:none; }
     .nav-logo span { color:var(--blue-mid); }
     .nav-right { display:flex; align-items:center; gap:2rem; }
-    .nav-links { display:flex; gap:2.5rem; list-style:none; align-items:center; }
+    .nav-links { display:flex; gap:1.35rem; list-style:none; align-items:center; }
     .nav-links a { text-decoration:none; font-size:.82rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); transition:color .2s; }
     .nav-links a:hover, .nav-links a.active { color:var(--blue-mid); }
     .nav-cta { background:var(--blue) !important; color:#fff !important; padding:7px 16px !important; border-radius:6px; }
@@ -92,7 +92,8 @@
         <li><a href="sources.html">Sources</a></li>
         <li><a href="how-i-write.html">How I Write</a></li>
         <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
-        <li><a href="about.html" class="nav-cta">About Me</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="mailto:jack.nassiri@lhsla.org" class="nav-cta">Contact Me</a></li>
       </ul>
       <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span><span id="toggle-label">Dark</span></button>
     </div>
@@ -103,7 +104,7 @@
       <a href="ai-medicine.html" class="back-link">← Back</a>
       <div class="article-tag-ai">AI in Medicine</div>
       <h1 class="article-title">AI Hospital Triage: Can Algorithms Decide Who Needs Care First?</h1>
-      <div class="article-meta"><span>April 30, 2026</span><span>·</span><span>7 min read</span></div>
+      <div class="article-meta"><span>April 13, 2026</span><span>·</span><span>7 min read</span></div>
     </div>
     <div class="article-body">
       <div class="quick-takeaways">
@@ -111,7 +112,7 @@
         <ul>
           <li>AI triage could help hospitals notice risk faster in crowded emergency rooms.</li>
           <li>The risk is hiding human judgment inside a model that patients cannot question.</li>
-          <li>The best version supports clinicians instead of pretending triage can be fully automated.</li>
+          <li>The useful version gives triage nurses another warning signal without pretending the whole job can be automated.</li>
         </ul>
       </div>
       <p>Emergency departments run on prioritization. A triage nurse has to decide who needs immediate attention, who can safely wait, and who might look stable but is quietly getting worse. That decision is difficult because the information is incomplete and the stakes are high.</p>
@@ -123,7 +124,7 @@
       <p>The problem is that triage is not only prediction. It is also judgment. If an algorithm says a patient is low risk, the staff still needs to know why. Was the model trained on patients like this one? Does it work equally well across age groups, races, languages, and hospitals? What happens when the data going into the system is incomplete?</p>
       <p>A bad triage tool could make overcrowding worse by creating false confidence. The worst version would not replace bias; it would automate it, making unfair patterns look objective because a computer produced them.</p>
       <h2>The realistic future</h2>
-      <p>The most believable version of AI triage is not a robot deciding who gets care. It is a second layer of risk detection that supports the triage nurse. The algorithm flags patients whose risk may be underestimated, while clinicians keep authority and accountability.</p>
+      <p>The most believable version of AI triage is a second layer of risk detection for the nurse. The algorithm flags patients whose risk may be underestimated, and the clinical team still has to decide what happens next.</p>
       <p>Used carefully, AI triage could be a useful warning light. Used lazily, it becomes one more system patients are asked to trust without being able to see how it works. That is the part hospitals have to get right before this becomes normal.</p>
     </div>
     <div class="share-section">
@@ -151,7 +152,7 @@
     </div>
   </div>
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; <a href="mailto:jack.nassiri@lhsla.org">jack.nassiri@lhsla.org</a> &nbsp;·&nbsp; Built with GitHub Pages</p>
+    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
     <p>Where AI meets the human body.</p>
   </footer>
   <script>
