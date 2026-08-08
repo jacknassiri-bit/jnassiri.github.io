@@ -102,7 +102,7 @@
     .hero-btn:hover { opacity: 0.85; }
     .hero-right { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--bg-surface); transition: background 0.25s; }
     .featured-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
-    .featured-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; border-top: 3px solid var(--purple-mid); transition: background 0.25s, border-color 0.25s; }
+    .featured-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; border-top: 3px solid var(--purple-mid); transition: background 0.25s, border-color 0.25s; text-decoration: none; color: inherit; }
     .fc-tag { display: inline-block; background: var(--thumb-tech); color: var(--purple); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 0.85rem; }
     .featured-card h2 { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 0.75rem; color: var(--text); }
     .featured-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; }
@@ -255,16 +255,16 @@
       <div class="hero-kicker">Student medical journalism</div>
       <h1>Where <em>AI</em> meets<br>the human body.</h1>
       <p class="hero-sub">Weekly writing on two things I keep coming back to: how AI is entering real medical care, and how evidence-based anabolics shape training, recovery, and the body.</p>
-      <a href="#posts" class="hero-btn">Read the latest →</a>
+      <a href="testosterone-muscle.html" class="hero-btn">Read the latest →</a>
     </div>
     <div class="hero-right">
       <div class="featured-label">Latest post</div>
-      <div class="featured-card">
+      <a class="featured-card" href="testosterone-muscle.html">
         <div class="fc-tag">Anabolics</div>
         <h2>Testosterone and Muscle Growth: What Is Real and What Gets Exaggerated</h2>
         <p>Testosterone clearly affects muscle, but the gym version usually skips the medical risks and long-term tradeoffs.</p>
         <div class="fc-meta"><span>July 20, 2026</span><span>·</span><span>7 min read</span></div>
-      </div>
+      </a>
     </div>
   </section>
 
