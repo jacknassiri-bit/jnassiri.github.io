@@ -86,16 +86,13 @@
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="ai-medicine.html">AI in Medicine</a></li>
-        <li><a href="anabolic-nutrition.html">Anabolics</a></li>
         <li><a href="all-articles.html">All Articles</a></li>
         <li><a href="sources.html">Sources</a></li>
-        <li><a href="how-i-write.html">How I Write</a></li>
-        <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
+        <li><a href="search.html" title="Search" aria-label="Search" style="display:inline-flex;width:28px;height:28px;border:1px solid currentColor;border-radius:50%;align-items:center;justify-content:center;font-size:1rem;line-height:1;">⌕</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="contact.html" class="nav-cta">Contact Me</a></li>
       </ul>
-      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span><span id="toggle-label">Dark</span></button>
+      <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span></button>
     </div>
   </nav>
   <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=420&q=80')"><div class="hero-overlay"></div></div>
@@ -156,8 +153,8 @@
     <p>Where AI meets the human body.</p>
   </footer>
   <script>
-    function toggleTheme(){const html=document.documentElement;const isDark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',isDark?'light':'dark');document.getElementById('toggle-icon').textContent=isDark?'🌙':'☀️';document.getElementById('toggle-label').textContent=isDark?'Dark':'Light';localStorage.setItem('theme',isDark?'light':'dark');}
-    const saved=localStorage.getItem('theme');if(saved==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('toggle-icon').textContent='☀️';document.getElementById('toggle-label').textContent='Light';}
+    function toggleTheme(){const html=document.documentElement;const isDark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',isDark?'light':'dark');document.getElementById('toggle-icon').textContent=isDark?'🌙':'☀️';localStorage.setItem('theme',isDark?'light':'dark');}
+    const saved=localStorage.getItem('theme');if(saved==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('toggle-icon').textContent='☀️';}
     function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var c=document.getElementById('copy-confirm');c.style.display='inline';setTimeout(function(){c.style.display='none';},2000);});}
     var btt=document.getElementById('back-top');if(btt){window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>350);});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
     (function(){var page=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')===page)a.classList.add('active');});})();

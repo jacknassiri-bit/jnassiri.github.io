@@ -125,18 +125,15 @@
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="ai-medicine.html">AI in Medicine</a></li>
-        <li><a href="anabolic-nutrition.html">Anabolics</a></li>
         <li><a href="all-articles.html">All Articles</a></li>
         <li><a href="sources.html">Sources</a></li>
-        <li><a href="how-i-write.html">How I Write</a></li>
-        <li><a href="search.html" title="Search" style="font-size:1.1rem;line-height:1;">🔍</a></li>
+        <li><a href="search.html" title="Search" aria-label="Search" style="display:inline-flex;width:28px;height:28px;border:1px solid currentColor;border-radius:50%;align-items:center;justify-content:center;font-size:1rem;line-height:1;">⌕</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="contact.html" class="nav-cta">Contact Me</a></li>
       </ul>
-      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
+      <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
         <span id="toggle-icon">🌙</span>
-        <span id="toggle-label">Dark</span>
+
       </button>
     </div>
   </nav>
@@ -151,21 +148,23 @@
   <div class="wrap">
     <div class="about-content">
       <div class="about-body">
-        <p>I'm a rising junior at Loyola High School in Los Angeles, where I write for the school newspaper, <em>The Loyalist</em>. I started The Med Frontier because I wanted a place to write about the health and science topics I keep getting pulled into, without having to wait for the next print issue.</p>
+        <p>My name is Jack Nassiri. I'm a rising junior at Loyola High School in Los Angeles, where I write for the school newspaper, <em>The Loyalist</em>. I started The Med Frontier because I wanted a place to write about the health and science topics I keep getting pulled into, without having to wait for the next print issue.</p>
         <p>The two areas I come back to most are AI in medicine and anabolics. They seem pretty different at first, but both are about the same thing: people making big claims about the body, and then the evidence either backing those claims up or not.</p>
         <p>My goal is to make complicated research readable while still being honest about what we do not know yet. I do not want the site to sound like a press release or a textbook. I want it to feel like someone actually worked through the question and is explaining what he found.</p>
         <h2>What I focus on</h2>
         <p><strong>AI in medicine:</strong> diagnostics, clinical decision support, radiology/pathology, ambient documentation, hospital triage, drug discovery, and the places where algorithms meet real patient care.</p>
         <p><strong>Anabolics:</strong> protein, calories, creatine, carbohydrate timing, recovery, sleep, hormones, and the evidence behind muscle growth claims. I am especially interested in the line between useful performance nutrition and overhyped shortcuts.</p>
         <p>The question I keep asking is simple: what does this actually change for a real person? A model, supplement, or intervention should still make sense once you look past the headline.</p>
+        <h2>How I Write</h2>
+        <p>Most articles start with a study, medical headline, or question that I realize I do not fully understand yet. I begin with the original research whenever I can, then compare it with reviews, clinical guidance, and other studies that challenge or support the same claim.</p>
+        <p>I try to separate what researchers actually found from what a headline makes the result sound like. That means checking the study design, the number and type of participants, the outcome being measured, and whether the finding has been tested in real patients or only in a controlled dataset.</p>
+        <p>Once I understand the evidence, I write the explanation I would want to read myself: clear, direct, and honest about what is still uncertain. Every article includes its references so readers can see where the claims came from and decide what they think.</p>
         <div class="disclaimer"><strong>Note:</strong> I'm a high school student, not a medical professional. Nothing on this blog is medical advice. I aim for accuracy and always link to primary sources, but please consult a doctor for anything health-related.</div>
         <h2>Why "The Med Frontier"?</h2>
         <p>A frontier is where the known stuff starts running into the unknown stuff. That feels like medicine right now, especially with AI, and it also feels true in the performance world where people are constantly arguing about what works. This blog is my attempt to sort through that edge clearly.</p>
       </div>
       <div class="sidebar">
         <div class="sidebar-card"><h4>Where I write</h4><p>Loyola High School, Los Angeles. Also a writer for The Loyalist, the school newspaper.</p></div>
-        <div class="sidebar-card"><h4>Posting schedule</h4><p>Once a week, typically on Mondays. AI in Medicine and Anabolics posts alternate.</p></div>
-        <div class="sidebar-card"><h4>Sources I trust</h4><p>Nature Medicine, JAMA, The Lancet, NEJM, BMJ, Sports Medicine, JISSN, NIH, FDA, and major systematic reviews. Always linked in every post.</p></div>
         <div class="sidebar-card"><h4>Get in touch</h4><p>Topic ideas, feedback, or questions: reach out via the contact link in the footer.</p></div>
       </div>
     </div>
@@ -182,14 +181,14 @@
       const isDark = html.getAttribute('data-theme') === 'dark';
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
       document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
-      document.getElementById('toggle-label').textContent = isDark ? 'Dark' : 'Light';
+
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     }
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.getElementById('toggle-icon').textContent = '☀️';
-      document.getElementById('toggle-label').textContent = 'Light';
+
     }
 
     // Back to top

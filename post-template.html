@@ -95,16 +95,14 @@
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="ai-medicine.html">AI in Medicine</a></li>
-        <li><a href="anabolic-nutrition.html">Anabolics</a></li>
         <li><a href="all-articles.html">All Articles</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="contact.html" class="nav-cta">Contact Me</a></li>
       </ul>
-      <button class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
+      <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
         <span id="toggle-icon">🌙</span>
-        <span id="toggle-label">Dark</span>
+
       </button>
     </div>
   </nav>
@@ -174,14 +172,14 @@
       const isDark = html.getAttribute('data-theme') === 'dark';
       html.setAttribute('data-theme', isDark ? 'light' : 'dark');
       document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
-      document.getElementById('toggle-label').textContent = isDark ? 'Dark' : 'Light';
+
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     }
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.getElementById('toggle-icon').textContent = '☀️';
-      document.getElementById('toggle-label').textContent = 'Light';
+
     }
   </script>
 
