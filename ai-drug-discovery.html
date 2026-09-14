@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
     <meta property="og:type" content="article">
   <meta property="og:title" content="How AI Is Accelerating Drug Discovery and Where the Hype Ends">
-  <meta property="og:description" content="AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.">
+  <meta property="og:description" content="AlphaFold made protein structures easier to predict. A useful drug still has to survive chemistry and years of human testing.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-drug-discovery.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How AI Is Accelerating Drug Discovery and Where the Hype Ends">
-  <meta name="twitter:description" content="AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.">
+  <meta name="twitter:description" content="AlphaFold made protein structures easier to predict. A useful drug still has to survive chemistry and years of human testing.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&h=630&q=80">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -176,7 +176,7 @@
     </div>
   </nav>
 
-  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&h=420&q=80')">
+  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=2400&q=90')">
     <div class="hero-overlay"></div>
   </div>
 
@@ -199,15 +199,37 @@
           <li>The hype gets weaker when the question changes from discovery to an approved medicine.</li>
         </ul>
       </div>
-      <p>Drug discovery is slow by design. The process of identifying a promising compound, testing it in cells, testing it in animals, moving through three phases of human trials, and finally getting regulatory approval takes roughly twelve years and costs somewhere between one and two billion dollars. The vast majority of drug candidates fail somewhere along the way. The system is built to catch failure before it reaches patients, and that caution comes at enormous expense.</p>
-      <p>AI is beginning to change this, though probably not in the way most headlines suggest.</p>
-      <p>The moment that shifted the field's understanding of what machine learning could do came in 2020, when DeepMind released AlphaFold2. For fifty years, biologists had been trying to solve the protein folding problem: given a protein's amino acid sequence, predict the three-dimensional shape it folds into. Shape determines function. If you know a protein's shape, you can start designing molecules that interact with it. AlphaFold solved this problem with extraordinary accuracy across almost every known protein structure, releasing predictions for over 200 million proteins into a public database.</p>
-      <p>That was genuinely revolutionary. Drug discovery has historically required crystallography or cryo-electron microscopy to determine protein structures, processes that take months and significant expertise. AlphaFold made the structural prediction step nearly instantaneous.</p>
-      <p>But structural prediction is only one step in a process that has many. Knowing the shape of a protein does not tell you how to design a molecule that binds to it safely and effectively. It does not predict how that molecule will behave in a living system, how it will be metabolized, whether it will cross the blood-brain barrier, or whether it will cause side effects that only appear after years of use.</p>
-      <p>Companies like Insilico Medicine, Recursion Pharmaceuticals, and Exscientia have been racing to automate more of the pipeline. Insilico made headlines in 2023 when it moved a drug candidate from AI-generated hypothesis to Phase 1 clinical trials in under 18 months, a fraction of the normal timeline. Recursion uses computer vision to analyze how cells respond to drug candidates at massive scale, generating data that would take traditional labs years to collect.</p>
-      <p>The honest picture is that AI has meaningfully shortened the early stages of drug discovery. It is helping researchers generate better candidates faster and screen out obvious failures earlier. What it has not done is change the fundamental biology of human clinical trials, which still require time, large populations, and careful monitoring that no software can accelerate.</p>
-      <p>There is also a concern that the enthusiasm for AI drug discovery is outpacing the evidence. Several high-profile AI-designed compounds have entered trials and failed, which is normal for drug development but raises questions about whether AI screening is actually better at predicting clinical success or just better at predicting early-stage lab results.</p>
-      <p>My thoughts: AI already looks useful early in the process, especially for narrowing down targets and molecules. The bigger claim, that it can reliably turn early discovery into approved drugs faster, still needs more proof. Drug development has a way of humbling every shortcut.</p>
+
+<p>Drug discovery takes years because most ideas fail. A molecule can look great in a computer model and die in a dish. It can work in animals and turn out to be useless or unsafe in people. By the time one drug reaches a pharmacy, researchers may have abandoned thousands of candidates.</p>
+
+
+<p>That makes the AI pitch easy to sell: find the dead ends earlier. I think that part is believable. The claims get shakier when “faster search” turns into “faster cure.”</p>
+
+
+<p>AlphaFold2 showed why researchers were excited. Given a protein's amino-acid sequence, it could predict a likely three-dimensional structure with accuracy that shocked people in the field. DeepMind later released more than 200 million predicted structures. A question that could require months of lab work now had a useful computational starting point.</p>
+
+
+<p>I remember reading the “protein-folding problem solved” headlines and assuming the next step was basically a drug. It is nowhere near that simple.</p>
+
+
+<p>But structural prediction is only one step in a process that has many. Knowing the shape of a protein does not tell you how to design a molecule that binds to it safely and effectively. It does not predict how that molecule will behave in a living system, how it will be metabolized, whether it will cross the blood-brain barrier, or whether it will cause side effects that only appear after years of use.</p>
+
+
+<p>Insilico Medicine used its software to choose a biological target and help design a pulmonary-fibrosis drug that reached human testing. Recursion takes a different approach, using images of treated cells to look for patterns across huge experiments. These tools can narrow the search. Researchers still have to make the compound and prove that it does something useful in a body.</p>
+
+
+<p>So far, the strongest case for AI is near the beginning of the process. It can suggest targets and discard obvious failures before a team spends years on them. Human trials still take time because side effects may be rare and a real benefit may take months to measure. Software cannot hurry that evidence without weakening it.</p>
+
+
+<p>There is also a concern that the enthusiasm for AI drug discovery is outpacing the evidence. Several high-profile AI-designed compounds have entered trials and failed, which is normal for drug development but raises questions about whether AI screening is actually better at predicting clinical success or just better at predicting early-stage lab results.</p>
+
+
+<p>My read is simple. AI has earned a place in the search phase. It has not earned the victory lap. I want to see whether AI-selected drugs survive late trials more often than ordinary candidates. Until then, faster beginnings are useful, but they are still beginnings.</p>
+<h2>The comparison I want to see</h2>
+<p>Companies often announce how quickly a target or molecule was found. I would rather see a group of AI-assisted candidates compared with ordinary candidates over the whole pipeline. How many enter trials? How many fail for toxicity? How many show a useful effect?</p>
+<p>That comparison will take years, which is inconvenient for a fast-moving AI story. It is still the only way to know whether the software improved drug discovery or simply produced more candidates sooner.</p>
+<p>Rentosertib gives the field one real case to follow. Its next trials will tell us more than another list of molecules a model generated.</p>
+
     </div>
 
 
@@ -232,7 +254,9 @@
         <div class="whos-avatar">✍️</div>
         <div class="whos-text">
           <h3>Who's writing this?</h3>
-          <p>A Loyola High School student writing about medical AI, nutrition, and the parts of health research that are easy to oversimplify.</p>
+
+<p>I'm Jack Nassiri, a Loyola High School student who reads medical and training research because the claims are usually more interesting once you open the paper.</p>
+
         </div>
       </div>
       <a href="about.html" class="bio-btn">Read Bio →</a>
@@ -240,8 +264,12 @@
   </div>
 
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
+
+<p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
+
+
+<p>Where AI meets the human body.</p>
+
   </footer>
 
   <script>

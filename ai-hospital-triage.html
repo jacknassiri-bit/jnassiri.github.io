@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="article">
   <meta property="og:title" content="AI Hospital Triage: Can Algorithms Decide Who Needs Care First?">
-  <meta property="og:description" content="Emergency rooms are crowded, triage is hard, and AI promises faster risk prediction. The question is whether hospitals can use it without hiding judgment inside a black box.">
-  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/triage-er.png">
+  <meta property="og:description" content="A triage score can catch a patient who looks stable and is getting worse. Hospitals still need to show who acts on the warning.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&amp;fit=crop&amp;w=2400&amp;q=90">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-hospital-triage.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Hospital Triage: Can Algorithms Decide Who Needs Care First?">
-  <meta name="twitter:description" content="Emergency rooms are crowded, triage is hard, and AI promises faster risk prediction. The question is whether hospitals can use it without hiding judgment inside a black box.">
-  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/triage-er.png">
+  <meta name="twitter:description" content="A triage score can catch a patient who looks stable and is getting worse. Hospitals still need to show who acts on the warning.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&amp;fit=crop&amp;w=2400&amp;q=90">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Hospital Triage: Can Algorithms Decide Who Needs Care First?, The Med Frontier</title>
@@ -95,7 +95,7 @@
       <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span></button>
     </div>
   </nav>
-  <div class="article-hero" style="background-image:url('triage-er.png')"><div class="hero-overlay"></div></div>
+  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&amp;fit=crop&amp;w=2400&amp;q=90')"><div class="hero-overlay"></div></div>
   <div class="article-wrap">
     <div class="article-header">
       <a href="ai-medicine.html" class="back-link">← Back</a>
@@ -112,17 +112,37 @@
           <li>The useful version gives triage nurses another warning signal without pretending the whole job can be automated.</li>
         </ul>
       </div>
-      <p>Emergency departments run on prioritization. A triage nurse has to decide who needs immediate attention, who can safely wait, and who might look stable but is quietly getting worse. That decision is difficult because the information is incomplete and the stakes are high.</p>
-      <p>It is not hard to see why hospitals are interested in AI here. Triage is crowded, fast, and full of partial information. A model can look at heart rate, blood pressure, oxygen level, temperature, symptoms, age, medical history, and lab data, then estimate whether a patient is likely to need admission, intensive care, or urgent intervention.</p>
+
+<p>Emergency departments run on prioritization. A triage nurse has to decide who needs immediate attention, who can safely wait, and who might look stable but is quietly getting worse. That decision is difficult because the information is incomplete and the stakes are high.</p>
+
+
+<p>It is not hard to see why hospitals are interested in AI here. Triage is crowded, fast, and full of partial information. A model can look at heart rate, blood pressure, oxygen level, temperature, symptoms, age, medical history, and lab data, then estimate whether a patient is likely to need admission, intensive care, or urgent intervention.</p>
+
       <h2>What AI could add</h2>
-      <p>The strongest argument for AI triage is consistency. Human triage depends on training, experience, workload, and the chaos of the room. Algorithms can apply the same model every time. They can also pick up patterns from thousands of past cases that a person may not see during a two-minute assessment.</p>
-      <p>Reviews of AI in emergency triage suggest that machine learning models can sometimes outperform traditional triage scores at predicting outcomes like hospitalization or critical illness <a href="#ref-1">(Sanchez-Salmeron et al.)</a>. Raita et al. built models using emergency department data to predict outcomes such as hospital admission, critical care, and emergency procedures, which shows the basic appeal of the approach <a href="#ref-2">(Raita et al.)</a>. That does not mean the AI understands the patient. It means it can be good at statistical pattern recognition.</p>
+
+<p>The strongest argument for AI triage is consistency. Human triage depends on training, experience, workload, and the chaos of the room. Algorithms can apply the same model every time. They can also pick up patterns from thousands of past cases that a person may not see during a two-minute assessment.</p>
+
+
+<p>Reviews of AI in emergency triage suggest that machine learning models can sometimes outperform traditional triage scores at predicting outcomes like hospitalization or critical illness <a href="#ref-1">(Sanchez-Salmeron et al.)</a>. Raita et al. built models using emergency department data to predict outcomes such as hospital admission, critical care, and emergency procedures, which shows the basic appeal of the approach <a href="#ref-2">(Raita et al.)</a>. That does not mean the AI understands the patient. It means it can be good at statistical pattern recognition.</p>
+
       <h2>The danger of hidden judgment</h2>
-      <p>The problem is that triage is not only prediction. It is also judgment. If an algorithm says a patient is low risk, the staff still needs to know why. Was the model trained on patients like this one? Does it work equally well across age groups, races, languages, and hospitals? What happens when the data going into the system is incomplete?</p>
-      <p>A bad triage tool could make overcrowding worse by creating false confidence. The worst version would not replace bias; it would automate it, making unfair patterns look objective because a computer produced them.</p>
+
+<p>The problem is that triage is not only prediction. It is also judgment. If an algorithm says a patient is low risk, the staff still needs to know why. Was the model trained on patients like this one? Does it work equally well across age groups, races, languages, and hospitals? What happens when the data going into the system is incomplete?</p>
+
+
+<p>A bad triage tool could make overcrowding worse by creating false confidence. The worst version would not replace bias; it would automate it, making unfair patterns look objective because a computer produced them.</p>
+
       <h2>The realistic future</h2>
-      <p>The most believable version of AI triage is a second layer of risk detection for the nurse. The algorithm flags patients whose risk may be underestimated, and the clinical team still has to decide what happens next.</p>
-      <p>Used carefully, AI triage could be a useful warning light. Used lazily, it becomes one more system patients are asked to trust without being able to see how it works. That is the part hospitals have to get right before this becomes normal.</p>
+
+<p>The most believable version of AI triage is a second layer of risk detection for the nurse. The algorithm flags patients whose risk may be underestimated, and the clinical team still has to decide what happens next.</p>
+
+
+<p>Used carefully, AI triage could be a useful warning light. Used lazily, it becomes one more system patients are asked to trust without being able to see how it works. That is the part hospitals have to get right before this becomes normal.</p>
+<h2>The queue still belongs to people</h2>
+<p>A model can rank risk, but the emergency department has to live with the ranking. Beds may be full. A specialist may be unavailable. One patient may look stable on paper and clearly look wrong to the nurse standing beside them.</p>
+<p>I would never hide the score or let it silently move someone down the list. The nurse should see why it changed priority and be able to override it without fighting the software. Hospitals should then review those overrides. They may reveal a clinician ignoring a useful warning, or a model missing something obvious.</p>
+<p>The strongest test would compare more than prediction accuracy. Did waiting time change for the sickest patients? Did anyone get delayed because the score was wrong? That is the evidence I would want before calling the system an improvement.</p>
+
     </div>
     <div class="share-section">
       <div class="share-label">Share this post</div>
@@ -143,14 +163,20 @@
     <div class="whos-writing">
       <div class="whos-left">
         <div class="whos-avatar">✍️</div>
-        <div class="whos-text"><h3>Who's writing this?</h3><p>A Loyola High School student writing about medical AI, nutrition, and the parts of health research that are easy to oversimplify.</p></div>
+        <div class="whos-text"><h3>Who's writing this?</h3>
+<p>I'm Jack Nassiri, a Loyola High School student who reads medical and training research because the claims are usually more interesting once you open the paper.</p>
+</div>
       </div>
       <a href="about.html" class="bio-btn">Read Bio →</a>
     </div>
   </div>
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
+
+<p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
+
+
+<p>Where AI meets the human body.</p>
+
   </footer>
   <script>
     function toggleTheme(){const html=document.documentElement;const isDark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',isDark?'light':'dark');document.getElementById('toggle-icon').textContent=isDark?'🌙':'☀️';localStorage.setItem('theme',isDark?'light':'dark');}

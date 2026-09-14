@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
     <meta property="og:type" content="article">
-  <meta property="og:title" content="LLMs in the Clinic: Should Doctors Use AI to Treat Patients?">
-  <meta property="og:description" content="Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real but so is the upside.">
-  <meta property="og:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.png">
+  <meta property="og:title" content="LLMs in the Clinic: Where I Think Doctors Should Draw the Line">
+  <meta property="og:description" content="AI can give doctors time back and still make a dangerously convincing mistake. The job we give it makes all the difference.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&amp;fit=crop&amp;w=2400&amp;q=90">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LLMs in the Clinic: Should Doctors Use AI to Treat Patients?">
-  <meta name="twitter:description" content="Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real but so is the upside.">
-  <meta name="twitter:image" content="https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.png">
+  <meta name="twitter:title" content="LLMs in the Clinic: Where I Think Doctors Should Draw the Line">
+  <meta name="twitter:description" content="AI can give doctors time back and still make a dangerously convincing mistake. The job we give it makes all the difference.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&amp;fit=crop&amp;w=2400&amp;q=90">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLMs in the Clinic: Should Doctors Use AI to Treat Patients?, The Med Frontier</title>
+  <title>LLMs in the Clinic: Where I Think Doctors Should Draw the Line, The Med Frontier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Serif+4:wght@600;700;800&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -176,7 +176,7 @@
     </div>
   </nav>
 
-  <div class="article-hero" style="background-image:url('llms-clinic.png')">
+  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&amp;fit=crop&amp;w=2400&amp;q=90')">
     <div class="hero-overlay"></div>
   </div>
 
@@ -184,7 +184,7 @@
     <div class="article-header">
       <a href="ai-medicine.html" class="back-link">← Back</a>
       <div class="article-tag-ai">AI in Medicine</div>
-      <h1 class="article-title">LLMs in the Clinic: Should Doctors Use AI to Treat Patients?</h1>
+      <h1 class="article-title">LLMs in the Clinic: Where I Think Doctors Should Draw the Line</h1>
       <div class="article-meta">
         <span>February 9, 2026</span><span>·</span><span>6 min read</span>
       </div>
@@ -194,26 +194,54 @@
       <div class="quick-takeaways">
         <h2>Quick takeaways</h2>
         <ul>
-          <li>LLMs can help with notes, summaries, and some clinical reasoning tasks.</li>
-          <li>They can also sound confident when they are wrong, which is dangerous in medicine.</li>
-          <li>The safest role is assistant, not independent decision-maker.</li>
+          <li>Drafting a note is a much safer assignment than choosing a diagnosis or treatment.</li>
+          <li>A passing medical-exam score does not show that a model can handle a messy patient visit.</li>
+          <li>I would let an LLM prepare work for a doctor. I would not let it own the decision.</li>
         </ul>
       </div>
-      <p>Every time a physician sees a patient, they spend time writing notes. Not the interesting clinical reasoning part. The documentation part. Recording what the patient said, what the exam showed, what was ordered, and why. Studies consistently find that physicians spend between one and two hours on documentation for every hour they spend with patients. That ratio has gotten worse as electronic health records have become more complex.</p>
-      <p>Large language models are, at their core, very good at turning spoken language into structured text. The connection to medical documentation was obvious from the moment GPT-3 was released, and several companies have built products around it. Ambient clinical intelligence systems use microphones placed in exam rooms to capture the patient encounter and automatically generate clinical notes. Microsoft, through its Nuance subsidiary, offers one. Suki AI offers another. Epic, the dominant electronic health record company, has integrated its own AI-assisted note generation tools.</p>
-      <p>Physicians who use these systems report meaningful time savings. A family medicine doctor who previously spent ninety minutes on notes after a full day of patients might spend thirty minutes reviewing and approving AI-generated drafts instead. That time goes back to patients, to thinking, or to rest.</p>
-      <p>But the use of large language models in medicine goes further than documentation, and that is where the stakes get considerably higher.</p>
-      <p>Med-PaLM 2, developed by Google, was designed specifically for medical question answering. When tested on the United States Medical Licensing Examination, it scored at or above the passing threshold. When evaluated by physicians on the quality and safety of its responses to medical questions, it rated at expert level on several benchmarks. OpenAI has reported similar results for GPT-4 on medical licensing exams.</p>
-      <p>What this has led to is a genuine debate about whether AI should be used for clinical decision support, helping physicians make diagnoses or treatment decisions rather than just writing their notes. Some hospitals have begun piloting tools that surface relevant clinical evidence during a patient encounter, flagging potential drug interactions or suggesting differential diagnoses the physician might not have considered.</p>
-      <p>The risks are real. Language models can be confidently wrong. They can produce responses that are fluent, plausible, and incorrect in ways that a physician without deep expertise in a specific area might not catch. The term hallucination describes when these models produce fabricated information presented as fact, and that is a particularly concerning failure mode in a medical context.</p>
-      <p>I do not think the serious question is "AI or no AI" anymore. Doctors are already using these tools in some form, even if the hospital policy has not caught up. The real question is where the line gets drawn: what can the model draft, what can it suggest, and what still has to clearly belong to the physician.</p>
+
+<p>Ask a doctor what part of the job follows them home and there is a good chance the answer involves notes. After the appointment comes the documentation: symptoms, exam findings, orders, reasoning, follow-up. None of it is optional. It is also hard to give a patient your full attention when you know a screen full of unfinished charts is waiting.</p>
+
+
+<p>This is the first hospital job I would hand to a large language model. An ambient scribe listens during the visit and turns the conversation into a draft note. The doctor checks it, changes it and signs it. Nuance, Suki and Epic all have versions of this idea. It is easy to see the appeal. Less typing after clinic can mean more eye contact during clinic.</p>
+
+
+<p>The word <em>draft</em> is doing a lot of work there. The model has not examined the patient. It does not know whether a pause meant confusion or whether a symptom sounded more serious in the room than it looks on a transcript. Its output should begin the paperwork. It should not quietly become the medical record without a person checking it.</p>
+
+      <h2>Exam scores are an interesting start</h2>
+
+<p>Google built Med-PaLM 2 for medical question answering. In the Nature paper, it reached 86.5 percent accuracy on questions modeled after the U.S. Medical Licensing Examination <a href="#ref-1">(Singhal et al.)</a>. GPT-4 also performed well on medical challenge problems <a href="#ref-2">(Nori et al.)</a>. Those numbers got attention for a reason. A general language model could answer a lot of difficult medical questions.</p>
+
+
+<p>I still would not confuse that with treating a patient. A test question is designed to contain the clues needed for one best answer. A real patient may forget a medication, describe pain strangely or have two conditions at once. The doctor also has to notice what was never typed into the prompt.</p>
+
+
+<p>That gap is where benchmark excitement can get misleading. An LLM can produce a polished explanation with the right diagnosis in it. It can produce the same polished explanation with the wrong diagnosis too. Fluency makes the error harder to spot because the answer does not look uncertain.</p>
+
+      <h2>The assignment changes the risk</h2>
+
+<p>I see a useful dividing line. Let the model retrieve a guideline, organize a long chart or suggest questions the doctor may want to ask. Those jobs make information easier to handle. The physician still decides what the information means for this patient.</p>
+
+
+<p>Medication doses and final diagnoses are different. A wrong summary wastes time. A wrong dose can hurt someone before the error is caught. Shah and colleagues argue that hospitals need deliberate evaluation and adoption rules for clinical LLMs, which sounds obvious until you remember how quickly ordinary software tools spread through a workplace <a href="#ref-3">(Shah et al.)</a>.</p>
+
+
+<p>There is another problem I do not think gets enough attention: automation bias. Once a suggestion appears neatly inside the chart, disagreeing with it takes effort. A rushed clinician may give the model more credit than it earned. Requiring a human click is weak protection if everyone learns to click through.</p>
+
+      <h2>Where I draw the line</h2>
+
+<p>I am in favor of doctors using LLMs. Pretending the tools will stay outside medicine is unrealistic, and banning a useful note draft because the model might make an error makes little sense when a doctor is reviewing it. The hospital should test the system on its own patients and keep measuring what it misses.</p>
+
+
+<p>I would stop before the model becomes the person responsible for care. It can prepare, search and draft. The diagnosis, treatment choice and explanation to the patient still belong to a clinician who can be questioned and held accountable. That is not a small distinction. It is the whole deal.</p>
+
     </div>
 
 
     <div class="share-section">
       <div class="share-label">Share this post</div>
       <div class="share-buttons">
-        <a href="https://twitter.com/intent/tweet?url=https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.html&text=LLMs%20in%20the%20clinic:%20should%20doctors%20use%20AI%20to%20treat%20patients?&via=TheMedFrontier" target="_blank" rel="noopener" class="share-btn">Post on X</a>
+        <a href="https://twitter.com/intent/tweet?url=https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.html&text=LLMs%20in%20the%20Clinic%3A%20Where%20I%20Think%20Doctors%20Should%20Draw%20the%20Line&via=TheMedFrontier" target="_blank" rel="noopener" class="share-btn">Post on X</a>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://jacknassiri-bit.github.io/jnassiri.github.io/llms-clinic.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
         <button class="share-btn share-copy" onclick="copyLink()" id="copy-btn">&#128279; Copy Link<span id="copy-confirm">Copied!</span></button>
       </div>
@@ -231,7 +259,9 @@
         <div class="whos-avatar">✍️</div>
         <div class="whos-text">
           <h3>Who's writing this?</h3>
-          <p>A Loyola High School student writing about medical AI, nutrition, and the parts of health research that are easy to oversimplify.</p>
+
+<p>I'm Jack Nassiri, a Loyola High School student who reads medical and training research because the claims are usually more interesting once you open the paper.</p>
+
         </div>
       </div>
       <a href="about.html" class="bio-btn">Read Bio →</a>
@@ -239,8 +269,12 @@
   </div>
 
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
+
+<p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
+
+
+<p>Where AI meets the human body.</p>
+
   </footer>
 
   <script>

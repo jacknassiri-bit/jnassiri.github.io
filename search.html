@@ -140,7 +140,7 @@
     <div class="wrap">
       <h1>Search articles</h1>
       <div class="search-box-wrap">
-        <input type="text" class="search-input" id="searchInput" placeholder="Try: HGH, protein, creatine..." autofocus>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search a topic, study, or supplement" autofocus>
         <span class="search-icon">🔍</span>
       </div>
     </div>
@@ -151,7 +151,7 @@
       <div class="results-grid" id="resultsGrid"></div>
       <div class="no-results" id="noResults" style="display:none">
         <div style="font-size:2rem">🔍</div>
-        <p>No articles match that search. Try a different term.</p>
+        <p>I could not find that one. Try a shorter search.</p>
       </div>
     </div>
   </div>
@@ -163,7 +163,7 @@
     const ARTICLES = [
       {
             "title": "Medical AI Enters the Real World: The Results Are More Complicated Than Expected",
-            "desc": "Clinical trials are finally testing whether medical AI improves patient care. The first results show why accuracy is only the beginning.",
+            "desc": "I read the clinical trials behind medical AI. Some systems helped the workflow. Others did their assigned job without improving patient care.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "September 7, 2026",
@@ -171,7 +171,7 @@
       },
       {
             "title": "AI as a Second Reader: The System That Found Overlooked Liver Cancers",
-            "desc": "A new liver-imaging study shows how AI could work as a clinical safety net while leaving the main decision with doctors.",
+            "desc": "In a live hospital workflow, LiON helped reviewers find 15 malignancies that had been overlooked on liver scans.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "August 31, 2026",
@@ -179,7 +179,7 @@
       },
       {
             "title": "Testing Medical AI: Why the FDA Is Borrowing an Idea From Physician Training",
-            "desc": "The FDA is considering competency tests, clinical confirmation, and continued monitoring for generative-AI medical devices.",
+            "desc": "The FDA's draft idea would test a medical AI before release, confirm it in a clinic, and keep checking it after updates.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "August 24, 2026",
@@ -187,7 +187,7 @@
       },
       {
             "title": "An AI-Designed Drug Reaches Patients: What Rentosertib Actually Proved",
-            "desc": "Rentosertib reached a randomized phase 2a trial. The milestone is real, while evidence of benefit remains early.",
+            "desc": "A 71-person phase 2a trial moved rentosertib beyond an AI discovery claim. The lung-function result still needs a larger test.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "July 13, 2026",
@@ -195,15 +195,15 @@
       },
       {
             "title": "AI and Mammography: Are Some Scans Ready to Skip the Radiologist?",
-            "desc": "A clinical trial let AI clear low-risk mammograms without human reading. The workload gains were large, but so were the questions.",
+            "desc": "In a 31,301-woman trial, AI cleared low-risk mammograms and cut reading workload by 63.6%. It also increased recalls.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "June 22, 2026",
             "url": "ai-mammography-autonomous.html"
       },
       {
-            "title": "Beta-Alanine and Endurance: What the Tingling Actually Means",
-            "desc": "Beta-alanine can help with hard efforts that last long enough to burn, but it is a slow-loading supplement with a pretty specific use case.",
+            "title": "Beta-Alanine: Who Benefits From the Tingling Supplement",
+            "desc": "Beta-alanine builds muscle carnosine over time. It helps most when a hard effort lasts roughly one to four minutes.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "August 13, 2026",
@@ -211,7 +211,7 @@
       },
       {
             "title": "AI Sepsis Alerts: Early Warning System or Alarm Fatigue?",
-            "desc": "Sepsis AI is promising because timing can change care, but the best evidence shows the alert only helps when clinicians can actually respond.",
+            "desc": "A sepsis alert is useful only when someone responds. The strongest hospital studies make that painfully clear.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "August 10, 2026",
@@ -219,7 +219,7 @@
       },
       {
             "title": "Testosterone and Muscle Growth: What Is Real and What Gets Exaggerated",
-            "desc": "Testosterone clearly affects muscle, but the gym version usually skips the medical risks and long-term tradeoffs.",
+            "desc": "Testosterone can add muscle. Using it without a medical need also suppresses natural production and creates risks gym advice tends to skip.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "July 20, 2026",
@@ -227,7 +227,7 @@
       },
       {
             "title": "Can AI Predict a Heart Attack Before Symptoms Start?",
-            "desc": "AI can find risk patterns in scans, ECGs, and medical records, but prediction only helps if it leads to smarter prevention.",
+            "desc": "An AI risk score has value when it leads to a concrete change, such as treating LDL or ordering the right follow-up scan.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "July 13, 2026",
@@ -235,15 +235,15 @@
       },
       {
             "title": "SARMs: Marketed Like Supplements, Acting More Like Drugs",
-            "desc": "SARMs are sold online as cleaner muscle builders, but the safety, labeling, and hormone risks are the part people skip.",
+            "desc": "Researchers tested 44 products sold online as SARMs. Only about half actually contained a SARM.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "July 6, 2026",
             "url": "sarms-risk.html"
       },
       {
-            "title": "AI in Cancer Screening: Second Opinion or Risky Shortcut?",
-            "desc": "AI can help screen for cancer faster, but screening still has to deal with false positives, missed cancers, and patient anxiety.",
+            "title": "AI in Cancer Screening: What Happens After the Model Flags a Scan",
+            "desc": "The MASAI trial included more than 80,000 women. AI support cut reading workload while finding at least as many cancers.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "June 29, 2026",
@@ -251,39 +251,39 @@
       },
       {
             "title": "Protein Timing: How Much the Anabolic Window Actually Changes",
-            "desc": "Protein timing counts less than total daily intake, but spreading protein still makes the plan easier to execute.",
+            "desc": "The 30-minute anabolic window is mostly gym mythology. Total daily protein comes first; meal timing is a smaller detail.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "June 22, 2026",
             "url": "protein-timing.html"
       },
       {
-            "title": "Medical Chatbots: When Health Advice Starts Sounding Too Confident",
-            "desc": "Chatbots can explain medical topics clearly, but confidence is dangerous when the answer is incomplete, outdated, or wrong.",
+            "title": "Medical Chatbots: One Missing Detail Can Change the Answer",
+            "desc": "A chatbot can make a medical answer sound clear even when it missed the one detail that changes the advice.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "June 15, 2026",
             "url": "medical-chatbots-danger.html"
       },
       {
-            "title": "Will AI Replace Radiologists? Probably Not the Way People Think",
-            "desc": "Radiology is changing fast, but the likely future is supervision, faster workflows, and new responsibility rather than instant replacement.",
+            "title": "AI and Radiologists: What the Replacement Headlines Miss",
+            "desc": "AI already flags scans and drafts reports. Radiologists still have to handle the strange cases and own the final call.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "June 8, 2026",
             "url": "ai-replacing-radiologists.html"
       },
       {
-            "title": "Caffeine and Performance: Useful Boost or Just Better Hype?",
-            "desc": "Caffeine can improve performance, but dose, timing, sleep, and tolerance decide whether it actually helps.",
+            "title": "Caffeine and Performance: The Dose I Would Start With",
+            "desc": "Caffeine helps performance at surprisingly ordinary doses. Taking more mostly raises the chance that sleep pays for it later.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "June 1, 2026",
             "url": "caffeine-performance.html"
       },
       {
-            "title": "Sleep and Testosterone: The Recovery Link People Underrate",
-            "desc": "Sleep affects hormones, training quality, appetite, and recovery, which makes it hard to separate from muscle growth.",
+            "title": "Sleep and Testosterone: What One Week of Short Nights Did",
+            "desc": "One week of five-hour nights lowered daytime testosterone in a small study of healthy young men. The pattern matters more than one late night.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "May 25, 2026",
@@ -291,31 +291,31 @@
       },
       {
             "title": "Ozempic, Weight Loss, and Muscle: What Gets Lost Besides Fat?",
-            "desc": "GLP-1 drugs can drive major weight loss, but muscle retention depends on protein, resistance training, and medical follow-up.",
+            "desc": "Fast weight loss can include lean mass. Resistance training and enough protein should be part of the plan from day one.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "May 18, 2026",
             "url": "ozempic-muscle-loss.html"
       },
       {
-            "title": "BPC-157 and Peptides: Healing Hype or Real Recovery Tool?",
-            "desc": "Peptides like BPC-157 are marketed for injury recovery, but human evidence is thin and the risk side is under-discussed.",
+            "title": "BPC-157: The Human Evidence Is Almost Empty",
+            "desc": "BPC-157 has a huge online reputation and almost no convincing human evidence for healing an injury.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "May 11, 2026",
             "url": "bpc157-peptides.html"
       },
       {
-            "title": "Supplements With Evidence vs Supplements With Marketing",
-            "desc": "Some supplements have real support, but most products are better at selling certainty than building muscle.",
+            "title": "Supplements: What Earned a Place in My Gym Bag",
+            "desc": "Creatine and caffeine have evidence. Most of the supplement aisle has marketing copy and a much thinner research file.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "May 4, 2026",
             "url": "supplements-evidence.html"
       },
       {
-            "title": "Protein for Muscle Growth: What Actually Helps",
-            "desc": "Protein helps build muscle, but the useful question is how much, how often, and how consistently you can hit it.",
+            "title": "Protein for Muscle Growth: The Amount That Usually Covers It",
+            "desc": "A large meta-analysis found the added benefit leveling off around 1.6 grams of protein per kilogram per day.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "April 27, 2026",
@@ -323,7 +323,7 @@
       },
       {
             "title": "HGH and Muscle Growth: Bigger Lean Mass Is Not the Same as More Strength",
-            "desc": "Human growth hormone can change body composition, but the research is much less impressive when the question becomes strength, performance, and risk.",
+            "desc": "In healthy adults, HGH can raise measured lean mass without producing the strength gains its reputation suggests.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "April 20, 2026",
@@ -331,15 +331,15 @@
       },
       {
             "title": "AI Hospital Triage: Can Algorithms Decide Who Needs Care First?",
-            "desc": "Emergency rooms are crowded, triage is hard, and AI promises faster risk prediction. The question is whether hospitals can use it without hiding judgment inside a black box.",
+            "desc": "A triage score can catch a patient who looks stable and is getting worse. Hospitals still need to show who acts on the warning.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "April 13, 2026",
             "url": "ai-hospital-triage.html"
       },
       {
-            "title": "Creatine: The Supplement That Actually Earned Its Reputation",
-            "desc": "Creatine is not flashy, but it is one of the few sports supplements with a deep research base behind it.",
+            "title": "Creatine: Why Three to Five Grams Is Usually Enough",
+            "desc": "Creatine monohydrate is cheap, heavily studied, and useful for repeated hard efforts. Three to five grams a day is enough for most people.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "April 6, 2026",
@@ -347,7 +347,7 @@
       },
       {
             "title": "Ambient AI Scribes: The First Medical AI Patients May Actually Notice",
-            "desc": "Instead of diagnosing disease, ambient AI listens to visits and drafts clinical notes. That sounds small, but it could change how doctors and patients talk.",
+            "desc": "An ambient scribe drafts the visit note while the doctor talks with the patient. The useful outcome may be more eye contact.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "March 30, 2026",
@@ -355,7 +355,7 @@
       },
       {
             "title": "Carbs Around Training: Fuel, Recovery, and the Myth of the Perfect Window",
-            "desc": "Carbohydrates are not automatically good or bad. For training, they are mainly a question of timing, workload, and recovery.",
+            "desc": "Carbohydrate needs change with the work. A long practice burns through more glycogen than a short lifting session.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "March 23, 2026",
@@ -363,23 +363,23 @@
       },
       {
             "title": "The Lean Bulk: How to Gain Muscle Without Treating Calories Like a Guess",
-            "desc": "A lean bulk is not about eating as much as possible. It is about giving the body enough surplus to grow without letting the plan turn sloppy.",
+            "desc": "A small calorie surplus gives training room to work. Eating far past it mostly makes the later cut longer.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "March 16, 2026",
             "url": "lean-bulk.html"
       },
       {
-            "title": "Sleep, Recovery, and Muscle Growth: The Part Most People Underestimate",
-            "desc": "Training starts the adaptation process, but recovery decides how much of that work the body can actually use.",
+            "title": "Sleep and Muscle Growth: The Free Part of the Program",
+            "desc": "The workout creates fatigue. Sleep is when the body gets a chance to adapt before the next one.",
             "tag": "Anabolics",
             "tagClass": "tag-tech",
             "date": "March 9, 2026",
             "url": "sleep-muscle-growth.html"
       },
       {
-            "title": "The New Wave of Robotic Surgery: What Patients Should Know",
-            "desc": "Surgical robots are no longer science fiction. Here is how they actually work, and where the technology still falls short.",
+            "title": "Robotic Surgery: The Machine Still Follows the Surgeon",
+            "desc": "A surgical robot follows the surgeon's hands. Whether it helps depends on the operation and the experience of the person at the console.",
             "tag": "Med Tech",
             "tagClass": "tag-ai",
             "date": "March 2, 2026",
@@ -387,23 +387,23 @@
       },
       {
             "title": "How AI Is Accelerating Drug Discovery and Where the Hype Ends",
-            "desc": "AlphaFold changed protein folding overnight. But turning a protein structure into a working drug is still an enormous challenge.",
+            "desc": "AlphaFold made protein structures easier to predict. A useful drug still has to survive chemistry and years of human testing.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "February 23, 2026",
             "url": "ai-drug-discovery.html"
       },
       {
-            "title": "Wearable Biosensors Are Getting Serious: A Look at What Is Coming",
-            "desc": "From continuous glucose monitors to sweat sensors, wearables are moving far beyond step counts.",
+            "title": "Wearable Biosensors: When More Data Helps and When It Does Not",
+            "desc": "Continuous glucose monitors already guide treatment. Many other wearable signals still create more data than clear medical decisions.",
             "tag": "Med Tech",
             "tagClass": "tag-ai",
             "date": "February 16, 2026",
             "url": "wearable-biosensors.html"
       },
       {
-            "title": "LLMs in the Clinic: Should Doctors Use AI to Treat Patients?",
-            "desc": "Some hospitals are already deploying AI assistants for clinical notes and diagnoses. The risks are real but so is the upside.",
+            "title": "LLMs in the Clinic: Where I Think Doctors Should Draw the Line",
+            "desc": "AI can give doctors time back and still make a dangerously convincing mistake. The job we give it makes all the difference.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "February 9, 2026",
@@ -411,7 +411,7 @@
       },
       {
             "title": "CRISPR in 2026: What Gene Editing Can and Cannot Do Yet",
-            "desc": "The first CRISPR therapies are now FDA approved. That is a big deal. Here is what actually changed and what has not.",
+            "desc": "In the Casgevy trial, 29 of 31 evaluable patients avoided severe sickle-cell pain crises for at least a year.",
             "tag": "Med Tech",
             "tagClass": "tag-ai",
             "date": "February 2, 2026",
@@ -419,23 +419,23 @@
       },
       {
             "title": "AI in Pathology: Teaching Computers to Spot Cancer in a Slide",
-            "desc": "Pathologists analyze tissue samples for hours. AI models are now doing it in seconds and sometimes catching what humans miss.",
+            "desc": "AI can mark a suspicious patch on a digital slide. A pathologist still decides what those cells mean for the patient.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "January 26, 2026",
             "url": "ai-pathology.html"
       },
       {
-            "title": "Smart Implants: The Devices Living Inside Patients and Sending Data Back",
-            "desc": "A new generation of implants can monitor your heart, brain, or spine in real time and send that data straight to your doctor.",
+            "title": "Smart Implants: Who Watches the Data From Inside the Body?",
+            "desc": "Connected implants can report a rhythm change or device problem from home. Someone still has to watch the alert.",
             "tag": "Med Tech",
             "tagClass": "tag-ai",
             "date": "January 19, 2026",
             "url": "smart-implants.html"
       },
       {
-            "title": "The Imaging Revolution: How AI Is Reinventing the Medical Scan",
-            "desc": "MRI scans that take minutes instead of hours. CT scanners that use a fraction of the radiation. The imaging revolution is already here.",
+            "title": "Medical Imaging Is Changing: Faster Scans and Smaller Machines",
+            "desc": "Photon-counting CT, shorter MRI scans, and portable machines are changing who can get a useful image and how long it takes.",
             "tag": "Med Tech",
             "tagClass": "tag-ai",
             "date": "January 12, 2026",
@@ -443,7 +443,7 @@
       },
       {
             "title": "Can AI Detect Depression Before You Can?",
-            "desc": "Voice biomarkers, speech patterns, and passive monitoring. Researchers are finding ways to detect mental illness before symptoms are obvious.",
+            "desc": "Speech may contain clues about depression. Using those clues without consent would turn a screening idea into surveillance.",
             "tag": "AI in Medicine",
             "tagClass": "tag-ai",
             "date": "January 5, 2026",

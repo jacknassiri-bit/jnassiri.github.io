@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
     <meta property="og:type" content="article">
   <meta property="og:title" content="AI in Pathology: Teaching Computers to Spot Cancer in a Slide">
-  <meta property="og:description" content="Pathologists analyze tissue samples for hours. AI models are now doing it in seconds and sometimes catching what humans miss.">
+  <meta property="og:description" content="AI can mark a suspicious patch on a digital slide. A pathologist still decides what those cells mean for the patient.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-pathology.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI in Pathology: Teaching Computers to Spot Cancer in a Slide">
-  <meta name="twitter:description" content="Pathologists analyze tissue samples for hours. AI models are now doing it in seconds and sometimes catching what humans miss.">
+  <meta name="twitter:description" content="AI can mark a suspicious patch on a digital slide. A pathologist still decides what those cells mean for the patient.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&h=630&q=80">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -176,7 +176,7 @@
     </div>
   </nav>
 
-  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&h=420&q=80')">
+  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=2400&q=90')">
     <div class="hero-overlay"></div>
   </div>
 
@@ -199,14 +199,34 @@
           <li>The pathologist still has to interpret the case in clinical context.</li>
         </ul>
       </div>
-      <p>A pathologist's workday looks nothing like television. Most of it is quiet, precise work: a microscope, a stack of glass slides, and hours spent looking for small details that change a diagnosis. When a patient has a biopsy, the sample is stained, sliced thin, mounted on a slide, and examined for signs of cancer, infection, inflammation, or other disease. The report that comes out of that process can shape the entire treatment plan.</p>
-      <p>It is painstaking work, and there are not enough people trained to do it.</p>
-      <p>The global shortage of pathologists is a slow-moving crisis in the field. High-income countries are facing retirements that are outpacing training pipelines. Low-income countries often have only a handful of pathologists for millions of patients. The result is delayed diagnoses, which in oncology translates directly into delayed treatment and worse outcomes.</p>
-      <p>Digital pathology, which involves scanning slides at high resolution and working with images on a screen rather than through a physical microscope, has been gaining ground for several years. The transition to digital created the conditions for AI to enter the picture. A digital slide is, at its core, a very large image. And reading patterns in large images is something deep learning models do extremely well.</p>
-      <p>PathAI and Paige.AI are among the companies that have built AI systems for analyzing pathology slides. Paige received FDA clearance in 2021 for its prostate cancer detection tool, the first AI system cleared for primary diagnosis in pathology. Studies published in Nature Medicine showed that pathologists working with AI assistance caught more cancers than those working without it, particularly in subtle cases that a single reviewer might miss.</p>
-      <p>The AI systems are not diagnosing independently. They are highlighting regions of interest on a slide, essentially telling the pathologist where to look more carefully. For a pathologist reviewing fifty slides in a day, that kind of triage has real value. It reduces the chance that a small cluster of abnormal cells gets overlooked because of fatigue or volume.</p>
-      <p>What the technology does particularly well is consistency. Human pathologists are subject to fatigue and variation between reviewers. Studies have shown meaningful disagreement between experienced pathologists reading the same slides, particularly for cancers with complex grading systems like breast cancer and prostate cancer. An AI system, once trained, applies the same criteria every single time.</p>
-      <p>The version of this that makes the most sense is practical: AI helps with the volume problem by flagging routine cases, pointing out suspicious regions, and giving pathologists more time for the cases that need judgment and clinical context.</p>
+
+<p>Pathology does not look dramatic. A biopsy becomes a thin stained slice on glass, and a pathologist searches it for cells that do not belong. One small region can change the diagnosis and the treatment that follows.</p>
+
+
+<p>It is painstaking work, and there are not enough people trained to do it.</p>
+
+
+<p>The global shortage of pathologists is a slow-moving crisis in the field. High-income countries are facing retirements that are outpacing training pipelines. Low-income countries often have only a handful of pathologists for millions of patients. The result is delayed diagnoses, which in oncology translates directly into delayed treatment and worse outcomes.</p>
+
+
+<p>Once hospitals began scanning slides at high resolution, AI had something it could read. The files are enormous, and a suspicious cluster may occupy a tiny part of one. That makes pathology a sensible place for a tool that can mark where a human should look twice.</p>
+
+
+<p>PathAI and Paige.AI are among the companies that have built AI systems for analyzing pathology slides. Paige received FDA clearance in 2021 for its prostate cancer detection tool, the first AI system cleared for primary diagnosis in pathology. Studies published in Nature Medicine showed that pathologists working with AI assistance caught more cancers than those working without it, particularly in subtle cases that a single reviewer might miss.</p>
+
+
+<p>The AI systems are not diagnosing independently. They are highlighting regions of interest on a slide, essentially telling the pathologist where to look more carefully. For a pathologist reviewing fifty slides in a day, that kind of triage has real value. It reduces the chance that a small cluster of abnormal cells gets overlooked because of fatigue or volume.</p>
+
+
+<p>The computer brings consistency, though consistency can include a consistent mistake. If its training slides came from different scanners or patient groups, the same threshold may stop working. That is why local testing matters before a hospital treats the software like an extra pair of eyes.</p>
+
+
+<p>I would use it as a highlighter. Let the model point to the region it finds suspicious. Then let the pathologist decide what the cells mean in the rest of the case. That narrower job sounds much more useful than an “AI diagnoses cancer” headline.</p>
+<h2>The slide is only part of the case</h2>
+<p>A pathologist may compare several stains, the biopsy location and the patient's history before naming a disease. A model trained on one image type does not automatically understand the rest of that evidence.</p>
+<p>There is also a practical question: what does the software do when the slide is folded, blurry or stained differently? A confident prediction on a bad image is worse than a system that admits it cannot read the case.</p>
+<p>The hospital should track disagreements between the tool and its pathologists. Those cases are where hidden weaknesses appear. They are also where the software may catch a detail that deserves another look.</p>
+
     </div>
 
 
@@ -231,7 +251,9 @@
         <div class="whos-avatar">✍️</div>
         <div class="whos-text">
           <h3>Who's writing this?</h3>
-          <p>A Loyola High School student writing about medical AI, nutrition, and the parts of health research that are easy to oversimplify.</p>
+
+<p>I'm Jack Nassiri, a Loyola High School student who reads medical and training research because the claims are usually more interesting once you open the paper.</p>
+
         </div>
       </div>
       <a href="about.html" class="bio-btn">Read Bio →</a>
@@ -239,8 +261,12 @@
   </div>
 
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
+
+<p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
+
+
+<p>Where AI meets the human body.</p>
+
   </footer>
 
   <script>

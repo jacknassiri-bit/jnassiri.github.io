@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Can AI Predict a Heart Attack Before Symptoms Start?">
-  <meta property="og:description" content="AI can find risk patterns in scans, ECGs, and medical records, but prediction only helps if it leads to smarter prevention.">
+  <meta property="og:description" content="An AI risk score has value when it leads to a concrete change, such as treating LDL or ordering the right follow-up scan.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=420&q=80">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ai-heart-attack-prediction.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Can AI Predict a Heart Attack Before Symptoms Start?">
-  <meta name="twitter:description" content="AI can find risk patterns in scans, ECGs, and medical records, but prediction only helps if it leads to smarter prevention.">
+  <meta name="twitter:description" content="An AI risk score has value when it leads to a concrete change, such as treating LDL or ordering the right follow-up scan.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=420&q=80">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +95,7 @@
       <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span></button>
     </div>
   </nav>
-  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=420&q=80')"><div class="hero-overlay"></div></div>
+  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=2400&q=90')"><div class="hero-overlay"></div></div>
   <div class="article-wrap">
     <div class="article-header">
       <a href="ai-medicine.html" class="back-link">← Back</a>
@@ -114,18 +114,40 @@
         </ul>
       </div>
       <h2>Why heart attacks are hard to predict</h2>
-      <p>Heart attacks can feel sudden, but the risk usually builds for years. The hard part is that cholesterol, blood pressure, inflammation, diabetes, smoking, genetics, sleep, and stress do not show up as one clean warning sign. A normal appointment can miss that bigger picture because a doctor only gets a small snapshot.</p>
-      <p>AI is useful here when it can pull different pieces of the chart together at once. A model might catch a pattern across ECG signals, CT images, lab trends, and old notes that would be easy to miss in a short visit.</p>
+
+<p>Heart attacks can feel sudden, but the risk usually builds for years. The hard part is that cholesterol, blood pressure, inflammation, diabetes, smoking, genetics, sleep, and stress do not show up as one clean warning sign. A normal appointment can miss that bigger picture because a doctor only gets a small snapshot.</p>
+
+
+<p>AI is useful here when it can pull different pieces of the chart together at once. A model might catch a pattern across ECG signals, CT images, lab trends, and old notes that would be easy to miss in a short visit.</p>
+
       <h2>Catch the risk while there is still time</h2>
-      <p>The real goal is to find people whose risk is higher than it looks while there is still time to do something about it. That could mean tighter cholesterol control, better blood pressure treatment, more follow-up, or a serious lifestyle conversation before the emergency happens.</p>
-      <p>Poplin et al. trained deep learning models on retinal fundus photos and showed that the eye can carry signals about age, sex, smoking status, blood pressure, and cardiovascular event risk <a href="#ref-1">(Poplin et al.)</a>. That does not mean an eye photo magically predicts everything, but it shows how much hidden vascular information can sit inside an image.</p>
-      <p>Lin et al. took a different route with coronary CT angiography. In an international multicentre study, deep learning helped quantify plaque and stenosis features from scans, then connected those image features with later cardiac risk <a href="#ref-2">(Lin et al.)</a>. That is closer to the kind of AI I find believable because it pulls more usable detail out of tests doctors already order.</p>
+
+<p>The real goal is to find people whose risk is higher than it looks while there is still time to do something about it. That could mean tighter cholesterol control, better blood pressure treatment, more follow-up, or a serious lifestyle conversation before the emergency happens.</p>
+
+
+<p>Poplin et al. trained deep learning models on retinal fundus photos and showed that the eye can carry signals about age, sex, smoking status, blood pressure, and cardiovascular event risk <a href="#ref-1">(Poplin et al.)</a>. That does not mean an eye photo magically predicts everything, but it shows how much hidden vascular information can sit inside an image.</p>
+
+
+<p>Lin et al. took a different route with coronary CT angiography. In an international multicentre study, deep learning helped quantify plaque and stenosis features from scans, then connected those image features with later cardiac risk <a href="#ref-2">(Lin et al.)</a>. That is closer to the kind of AI I find believable because it pulls more usable detail out of tests doctors already order.</p>
+
       <h2>The problem with risk scores</h2>
-      <p>Risk scores can change behavior, but they can also create confusion. If a model gives a patient a high-risk label, someone has to explain what that means and what to do next. If the answer is just worry more, the tool failed.</p>
-      <p>False negatives are also a problem. A low-risk AI score should not become permission to ignore chest pain, family history, or basic prevention. If a score comes back high, it should lead to a real next step. If it comes back low, the doctor still has to listen to the patient in front of them.</p>
+
+<p>Risk scores can change behavior, but they can also create confusion. If a model gives a patient a high-risk label, someone has to explain what that means and what to do next. If the answer is just worry more, the tool failed.</p>
+
+
+<p>False negatives are also a problem. A low-risk AI score should not become permission to ignore chest pain, family history, or basic prevention. If a score comes back high, it should lead to a real next step. If it comes back low, the doctor still has to listen to the patient in front of them.</p>
+
       <h2>My thoughts</h2>
-      <p>This is one of the more useful places for medical AI because prevention is where medicine can actually win time back. If a model helps identify risk earlier, the patient may avoid the emergency altogether.</p>
-      <p>But I would trust it most when the output is tied to a clear plan: lower LDL, manage blood pressure, improve diabetes control, follow up imaging, or change lifestyle in a specific way. A scary score by itself is not health care.</p>
+
+<p>This is one of the more useful places for medical AI because prevention is where medicine can actually win time back. If a model helps identify risk earlier, the patient may avoid the emergency altogether.</p>
+
+
+<p>But I would trust it most when the output is tied to a clear plan: lower LDL, manage blood pressure, improve diabetes control, follow up imaging, or change lifestyle in a specific way. A scary score by itself is not health care.</p>
+<h2>A prediction needs an exit ramp</h2>
+<p>Imagine being told that an algorithm sees elevated risk in your retinal photo. What should you do tomorrow? If the answer is “talk to your doctor,” the tool has only moved anxiety from one room to another. The study has to show what action follows the score.</p>
+<p>There is also a danger of counting the same risk twice. A model may infer age, smoking or blood pressure from an image, then appear to discover risk that a normal history already revealed. Researchers need to compare it with the information a clinician already has, not with an empty baseline.</p>
+<p>I still find the idea fascinating. The eye and the heart share a vascular system, so hidden patterns are plausible. I just want the prediction to earn its place by changing prevention in a way that a patient can understand.</p>
+
     </div>
     <div class="share-section">
       <div class="share-label">Share this post</div>
@@ -146,14 +168,20 @@
     <div class="whos-writing">
       <div class="whos-left">
         <div class="whos-avatar">✍️</div>
-        <div class="whos-text"><h3>Who's writing this?</h3><p>A Loyola High School student writing about medical AI, nutrition, and the parts of health research that are easy to oversimplify.</p></div>
+        <div class="whos-text"><h3>Who's writing this?</h3>
+<p>I'm Jack Nassiri, a Loyola High School student who reads medical and training research because the claims are usually more interesting once you open the paper.</p>
+</div>
       </div>
       <a href="about.html" class="bio-btn">Read Bio →</a>
     </div>
   </div>
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
+
+<p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
+
+
+<p>Where AI meets the human body.</p>
+
   </footer>
   <script>
     function toggleTheme(){const html=document.documentElement;const isDark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',isDark?'light':'dark');document.getElementById('toggle-icon').textContent=isDark?'🌙':'☀️';localStorage.setItem('theme',isDark?'light':'dark');}

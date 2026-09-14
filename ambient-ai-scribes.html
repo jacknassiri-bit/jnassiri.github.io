@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Ambient AI Scribes: The First Medical AI Patients May Actually Notice">
-  <meta property="og:description" content="Instead of diagnosing disease, ambient AI listens to visits and drafts clinical notes. That sounds small, but it could change how doctors and patients talk.">
+  <meta property="og:description" content="An ambient scribe drafts the visit note while the doctor talks with the patient. The useful outcome may be more eye contact.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta property="og:url" content="https://jacknassiri-bit.github.io/jnassiri.github.io/ambient-ai-scribes.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ambient AI Scribes: The First Medical AI Patients May Actually Notice">
-  <meta name="twitter:description" content="Instead of diagnosing disease, ambient AI listens to visits and drafts clinical notes. That sounds small, but it could change how doctors and patients talk.">
+  <meta name="twitter:description" content="An ambient scribe drafts the visit note while the doctor talks with the patient. The useful outcome may be more eye contact.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=630&q=80">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +95,7 @@
       <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span></button>
     </div>
   </nav>
-  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&h=420&q=80')"><div class="hero-overlay"></div></div>
+  <div class="article-hero" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2400&q=90')"><div class="hero-overlay"></div></div>
   <div class="article-wrap">
     <div class="article-header">
       <a href="ai-medicine.html" class="back-link">← Back</a>
@@ -112,17 +112,37 @@
           <li>The doctor still has to review the note, because small documentation errors can matter later.</li>
         </ul>
       </div>
-      <p>Most medical AI headlines focus on the flashy stuff: reading scans, predicting sepsis, designing drugs. Ambient AI scribes are a lot less cinematic. They sit in the background of a doctor visit, listen with permission, and turn the conversation into a draft note.</p>
-      <p>That may sound less exciting than diagnosis, but it attacks one of the most painful problems in modern medicine: documentation. Doctors spend enormous time writing notes, clicking through electronic health records, and finishing charts after clinic ends. That time does not feel invisible to patients. It shows up when a doctor is staring at a screen instead of listening.</p>
+
+<p>Most medical AI headlines focus on the flashy stuff: reading scans, predicting sepsis, designing drugs. Ambient AI scribes are a lot less cinematic. They sit in the background of a doctor visit, listen with permission, and turn the conversation into a draft note.</p>
+
+
+<p>That may sound less exciting than diagnosis, but it attacks one of the most painful problems in modern medicine: documentation. Doctors spend enormous time writing notes, clicking through electronic health records, and finishing charts after clinic ends. That time does not feel invisible to patients. It shows up when a doctor is staring at a screen instead of listening.</p>
+
       <h2>Why doctors actually want this</h2>
-      <p>Ambient scribes do not need to be perfect diagnosticians to be useful. Their job is to capture the conversation, organize the history, and draft the visit note so the clinician can review and edit it. If the draft is good enough, it can reduce the clerical load and let the doctor focus more on the patient in the room.</p>
-      <p>The patient may notice the change before they notice the technology. More eye contact. Less typing. A visit that feels more like a conversation and less like a form being completed.</p>
+
+<p>Ambient scribes do not need to be perfect diagnosticians to be useful. Their job is to capture the conversation, organize the history, and draft the visit note so the clinician can review and edit it. If the draft is good enough, it can reduce the clerical load and let the doctor focus more on the patient in the room.</p>
+
+
+<p>The patient may notice the change before they notice the technology. More eye contact. Less typing. A visit that feels more like a conversation and less like a form being completed.</p>
+
       <h2>The risks are different</h2>
-      <p>The main risk is quieter than a wrong diagnosis. The scribe might misunderstand, omit, or overstate something in the note, and that mistake can follow the patient later. Privacy has to be part of the conversation because the tool is literally listening to a clinical visit. Consent and data protection cannot be treated like fine print.</p>
-      <p>That means the doctor still has to own the note. AI can draft, but it should not silently become the author of record.</p>
+
+<p>The main risk is quieter than a wrong diagnosis. The scribe might misunderstand, omit, or overstate something in the note, and that mistake can follow the patient later. Privacy has to be part of the conversation because the tool is literally listening to a clinical visit. Consent and data protection cannot be treated like fine print.</p>
+
+
+<p>That means the doctor still has to own the note. AI can draft, but it should not silently become the author of record.</p>
+
       <h2>The version patients might notice</h2>
-      <p>What I like about this use case is that it is aimed at the part of the visit that already feels broken: the screen, the note, the after-hours charting, and the feeling that the patient is competing with the computer for attention.</p>
-      <p>If this works, the patient may not leave thinking, "I just experienced AI." They may just feel like the doctor looked up more often. That sounds smaller than a diagnostic breakthrough, but in a normal clinic visit it might change more than people expect.</p>
+
+<p>What I like about this use case is that it is aimed at the part of the visit that already feels broken: the screen, the note, the after-hours charting, and the feeling that the patient is competing with the computer for attention.</p>
+
+
+<p>If this works, the patient may not leave thinking, “I just experienced AI.” They may remember that the doctor looked up more often. In a normal clinic visit, that is a real result.</p>
+<h2>The note still needs an owner</h2>
+<p>A draft can leave out a symptom, place a medication in the wrong section or make an uncertain statement sound settled. The doctor has to review it closely enough to catch those errors. If review becomes one quick click at the end of a long day, the time saving may create a different risk.</p>
+<p>Patients should also know when the room is being recorded and what happens to the audio. Is it deleted after the note is created? Can it be used to train another model? A small notice buried in registration paperwork would not feel like meaningful permission to me.</p>
+<p>This is still one of the medical AI uses I find easiest to support. It attacks work that doctors already dislike and keeps the clinical decision with the person in the room. The guardrail is simple to describe, even if it takes discipline to follow: the model writes a first draft; the doctor owns every word that stays.</p>
+
     </div>
     <div class="share-section">
       <div class="share-label">Share this post</div>
@@ -143,14 +163,20 @@
     <div class="whos-writing">
       <div class="whos-left">
         <div class="whos-avatar">✍️</div>
-        <div class="whos-text"><h3>Who's writing this?</h3><p>A Loyola High School student writing about medical AI, nutrition, and the parts of health research that are easy to oversimplify.</p></div>
+        <div class="whos-text"><h3>Who's writing this?</h3>
+<p>I'm Jack Nassiri, a Loyola High School student who reads medical and training research because the claims are usually more interesting once you open the paper.</p>
+</div>
       </div>
       <a href="about.html" class="bio-btn">Read Bio →</a>
     </div>
   </div>
   <footer>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
+
+<p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
+
+
+<p>Where AI meets the human body.</p>
+
   </footer>
   <script>
     function toggleTheme(){const html=document.documentElement;const isDark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',isDark?'light':'dark');document.getElementById('toggle-icon').textContent=isDark?'🌙':'☀️';localStorage.setItem('theme',isDark?'light':'dark');}
