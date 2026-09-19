@@ -1,0 +1,33 @@
+.skip-link {
+  position: fixed;
+  z-index: 5000;
+  top: 8px;
+  left: 8px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #123d31;
+  font: 700 .9rem/1 Inter, sans-serif;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform .15s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #e57b5f !important;
+  outline-offset: 3px !important;
+}
+html { scroll-padding-top: 86px; }
+[id^="ref-"], .citations-list li[id] { scroll-margin-top: 86px; }
+.ticker-inner { color: #c7d2cd !important; }
+.ticker-bar:hover .ticker-inner,
+.ticker-bar:focus-within .ticker-inner { animation-play-state: paused !important; }
+footer,
+footer p,
+footer span,
+footer a { color: #c7d2cd !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; }
+  .ticker-inner { animation: none !important; transform: none !important; }
+}

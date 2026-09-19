@@ -58,8 +58,10 @@
 <link rel="stylesheet" href="site-nav.css">
 <script src="site-nav.js" defer></script>
 <link rel="stylesheet" href="site-disclaimer.css">
+<link rel="stylesheet" href="site-accessibility.css">
+<script src="site-theme.js"></script>
 </head>
-<body>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="ticker-bar"><div class="ticker-inner">AI in medicine <span>◆</span> Anabolics <span>◆</span> Research notes <span>◆</span> Contact <span>◆</span> AI in medicine <span>◆</span> Anabolics <span>◆</span> Research notes <span>◆</span> Contact <span>◆</span></div></div>
   <nav>
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
@@ -74,7 +76,7 @@
       <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span></button>
     </div>
   </nav>
-  <main class="wrap">
+  <main id="main-content" tabindex="-1" class="wrap">
     <div class="kicker">Contact</div>
     <h1>Send me a note.</h1>
     <p class="lede">Found a study I should read or something I got wrong? Send it here. Topic ideas are welcome too.</p>
