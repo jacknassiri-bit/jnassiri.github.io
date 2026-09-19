@@ -4,7 +4,6 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
-const sharp = require('sharp');
 
 export const articles = [
   ['medical-ai-real-world','Clinical AI in hospitals','Two real-world trials','clinical','Chest X-ray worklist beside a hospital outcome chart',['Chest X-ray worklist with outcome chart','Hospital workflow timeline','Two-trial comparison graphic']],
@@ -118,6 +117,7 @@ function svgFor(entry, width=1600, height=900, share=false) {
 }
 
 async function buildImages() {
+  const sharp = require('sharp');
   const root = process.cwd();
   const outDir = path.join(root, 'images');
   await fs.mkdir(outDir, { recursive: true });

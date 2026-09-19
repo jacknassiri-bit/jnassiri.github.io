@@ -7,7 +7,7 @@
   <text x="120" y="117" fill="#fffdf7" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">THE MED FRONTIER</text>
   <text x="90" y="230" fill="#f4efe2" font-family="Georgia,serif" font-size="62" font-weight="700"><tspan x="90" dy="0">Connected implants</tspan></text>
   <text x="94" y="322" fill="#94c9b2" font-family="Arial,Helvetica,sans-serif" font-size="32">Alert needs a destination</text>
-  <g transform="translate(0 0)"><path d="M835 360c0-70 55-125 125-125s125 55 125 125v210H835z" fill="#fffdf7"/><circle cx="960" cy="360" r="45" fill="#e57b5f"/><path d="M1100 320q100 40 0 80M1140 280q170 80 0 160" stroke="#f4efe2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M900 570v90" stroke="#f4efe2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+  <g transform="translate(100 0)"><path d="M835 360c0-70 55-125 125-125s125 55 125 125v210H835z" fill="#fffdf7"/><circle cx="960" cy="360" r="45" fill="#e57b5f"/><path d="M1100 320q100 40 0 80M1140 280q170 80 0 160" stroke="#f4efe2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M900 570v90" stroke="#f4efe2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
   <text x="90" y="820" fill="#f4efe2" opacity=".72" font-family="Arial,Helvetica,sans-serif" font-size="24">Research, evidence, and what I think it means.</text>
   <circle cx="1500" cy="98" r="28" fill="#e57b5f"/><circle cx="1430" cy="98" r="12" fill="#94c9b2"/>
   </svg>

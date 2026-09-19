@@ -7,7 +7,7 @@
   <text x="120" y="117" fill="#fffdf7" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">THE MED FRONTIER</text>
   <text x="90" y="230" fill="#f4efe2" font-family="Georgia,serif" font-size="62" font-weight="700"><tspan x="90" dy="0">Mental-health signals</tspan></text>
   <text x="94" y="322" fill="#94c9b2" font-family="Arial,Helvetica,sans-serif" font-size="32">Consent before analysis</text>
-  <g transform="translate(0 0)"><path d="M700 410h75l40-90 60 180 65-145 45 75h70" stroke="#e57b5f" stroke-width="14" fill="none"/><rect x="1040" y="245" width="230" height="330" rx="22" fill="#fffdf7"/><path d="M1080 340h150M1080 405h110" stroke="#2f6b52" stroke-width="12"/><path d="M1090 505l35 35 75-85" stroke="#e57b5f" stroke-width="16" fill="none"/></g>
+  <g transform="translate(100 0)"><path d="M700 410h75l40-90 60 180 65-145 45 75h70" stroke="#e57b5f" stroke-width="14" fill="none"/><rect x="1040" y="245" width="230" height="330" rx="22" fill="#fffdf7"/><path d="M1080 340h150M1080 405h110" stroke="#2f6b52" stroke-width="12"/><path d="M1090 505l35 35 75-85" stroke="#e57b5f" stroke-width="16" fill="none"/></g>
   <text x="90" y="820" fill="#f4efe2" opacity=".72" font-family="Arial,Helvetica,sans-serif" font-size="24">Research, evidence, and what I think it means.</text>
   <circle cx="1500" cy="98" r="28" fill="#e57b5f"/><circle cx="1430" cy="98" r="12" fill="#94c9b2"/>
   </svg>

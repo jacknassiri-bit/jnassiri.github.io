@@ -7,7 +7,7 @@
   <text x="120" y="117" fill="#fffdf7" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">THE MED FRONTIER</text>
   <text x="90" y="230" fill="#f4efe2" font-family="Georgia,serif" font-size="62" font-weight="700"><tspan x="90" dy="0">AI in pathology</tspan></text>
   <text x="94" y="322" fill="#94c9b2" font-family="Arial,Helvetica,sans-serif" font-size="32">Highlight the suspicious region</text>
-  <g transform="translate(0 0)"><rect x="720" y="235" width="430" height="390" rx="20" fill="#f2d8d0"/><g fill="#985c79" opacity=".72"><circle cx="780" cy="310" r="34"/><circle cx="880" cy="290" r="34"/><circle cx="1010" cy="330" r="34"/><circle cx="1080" cy="430" r="34"/><circle cx="820" cy="470" r="34"/><circle cx="940" cy="500" r="34"/><circle cx="1020" cy="545" r="34"/></g><circle cx="1010" cy="330" r="68" fill="none" stroke="#e57b5f" stroke-width="12"/></g>
+  <g transform="translate(100 0)"><rect x="720" y="235" width="430" height="390" rx="20" fill="#f2d8d0"/><g fill="#985c79" opacity=".72"><circle cx="780" cy="310" r="34"/><circle cx="880" cy="290" r="34"/><circle cx="1010" cy="330" r="34"/><circle cx="1080" cy="430" r="34"/><circle cx="820" cy="470" r="34"/><circle cx="940" cy="500" r="34"/><circle cx="1020" cy="545" r="34"/></g><circle cx="1010" cy="330" r="68" fill="none" stroke="#e57b5f" stroke-width="12"/></g>
   <text x="90" y="820" fill="#f4efe2" opacity=".72" font-family="Arial,Helvetica,sans-serif" font-size="24">Research, evidence, and what I think it means.</text>
   <circle cx="1500" cy="98" r="28" fill="#e57b5f"/><circle cx="1430" cy="98" r="12" fill="#94c9b2"/>
   </svg>

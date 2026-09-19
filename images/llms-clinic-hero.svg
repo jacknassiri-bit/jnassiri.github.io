@@ -7,7 +7,7 @@
   <text x="120" y="117" fill="#fffdf7" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">THE MED FRONTIER</text>
   <text x="90" y="230" fill="#f4efe2" font-family="Georgia,serif" font-size="62" font-weight="700"><tspan x="90" dy="0">LLMs in the clinic</tspan></text>
   <text x="94" y="322" fill="#94c9b2" font-family="Arial,Helvetica,sans-serif" font-size="32">86.5% exam accuracy</text>
-  <g transform="translate(0 0)"><rect x="710" y="250" width="250" height="340" rx="22" fill="#fffdf7"/><rect x="980" y="250" width="210" height="340" rx="22" fill="#94c9b2"/><path d="M755 330h160M755 390h160M755 450h120M1020 340h125M1020 405h125" stroke="#2f6b52" stroke-width="12"/><path d="M1030 505l35 35 75-85" stroke="#e57b5f" stroke-width="16" fill="none"/></g>
+  <g transform="translate(100 0)"><rect x="710" y="250" width="250" height="340" rx="22" fill="#fffdf7"/><rect x="980" y="250" width="210" height="340" rx="22" fill="#94c9b2"/><path d="M755 330h160M755 390h160M755 450h120M1020 340h125M1020 405h125" stroke="#2f6b52" stroke-width="12"/><path d="M1030 505l35 35 75-85" stroke="#e57b5f" stroke-width="16" fill="none"/></g>
   <text x="90" y="820" fill="#f4efe2" opacity=".72" font-family="Arial,Helvetica,sans-serif" font-size="24">Research, evidence, and what I think it means.</text>
   <circle cx="1500" cy="98" r="28" fill="#e57b5f"/><circle cx="1430" cy="98" r="12" fill="#94c9b2"/>
   </svg>
