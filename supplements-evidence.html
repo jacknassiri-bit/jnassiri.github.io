@@ -79,6 +79,8 @@
     @media (max-width:768px) { .nav-links{display:none;} .whos-writing{flex-direction:column;align-items:flex-start;} footer{flex-direction:column;gap:8px;text-align:center;} .article-hero{height:220px;} }
   </style>
 <link rel="stylesheet" href="site-images.css">
+<link rel="stylesheet" href="site-nav.css">
+<script src="site-nav.js" defer></script>
 </head>
 <body>
   <button id="back-top" title="Back to top" aria-label="Back to top">↑</button>
@@ -86,7 +88,7 @@
   <nav>
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
     <div class="nav-right">
-      <ul class="nav-links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span class="menu-toggle-lines" aria-hidden="true"></span></button><ul class="nav-links" id="primary-navigation">>
         <li><a href="all-articles.html">All Articles</a></li>
         <li><a href="sources.html">Sources</a></li>
         <li><a href="search.html" title="Search" aria-label="Search" style="display:inline-flex;width:28px;height:28px;border:1px solid currentColor;border-radius:50%;align-items:center;justify-content:center;font-size:1rem;line-height:1;">⌕</a></li>

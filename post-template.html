@@ -81,6 +81,8 @@
     footer a:hover { color: var(--accent); }
     @media (max-width: 768px) { .nav-links { display: none; } footer { flex-direction: column; gap: 8px; } }
   </style>
+<link rel="stylesheet" href="site-nav.css">
+<script src="site-nav.js" defer></script>
 </head>
 <body>
 
@@ -94,7 +96,7 @@
   <nav>
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
     <div class="nav-right">
-      <ul class="nav-links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span class="menu-toggle-lines" aria-hidden="true"></span></button><ul class="nav-links" id="primary-navigation">>
         <li><a href="all-articles.html">All Articles</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="about.html">About Me</a></li>
