@@ -116,32 +116,32 @@
 <p>Emergency departments run on prioritization. A triage nurse has to decide who needs immediate attention, who can safely wait, and who might look stable but is quietly getting worse. That decision is difficult because the information is incomplete and the stakes are high.</p>
 
 
-<p>It is not hard to see why hospitals are interested in AI here. Triage is crowded, fast, and full of partial information. A model can look at heart rate, blood pressure, oxygen level, temperature, symptoms, age, medical history, and lab data, then estimate whether a patient is likely to need admission, intensive care, or urgent intervention.</p>
+<p>Hospitals are interested because triage is crowded and based on partial information. A model can combine vital signs, symptoms and medical history to estimate whether a patient is likely to need admission or urgent intervention.</p>
 
       <h2>What AI could add</h2>
 
 <p>The strongest argument for AI triage is consistency. Human triage depends on training, experience, workload, and the chaos of the room. Algorithms can apply the same model every time. They can also pick up patterns from thousands of past cases that a person may not see during a two-minute assessment.</p>
 
 
-<p>Reviews of AI in emergency triage suggest that machine learning models can sometimes outperform traditional triage scores at predicting outcomes like hospitalization or critical illness <a href="#ref-1">(Sanchez-Salmeron et al.)</a>. Raita et al. built models using emergency department data to predict outcomes such as hospital admission, critical care, and emergency procedures, which shows the basic appeal of the approach <a href="#ref-2">(Raita et al.)</a>. That does not mean the AI understands the patient. It means it can be good at statistical pattern recognition.</p>
+<p>Reviews of AI in emergency triage suggest that machine learning models can sometimes outperform traditional triage scores at predicting hospitalization or critical illness <a href="#ref-1">(Sanchez-Salmeron et al.)</a>. Raita et al. built models using emergency department data to predict hospital admission and critical care <a href="#ref-2">(Raita et al.)</a>. These results measure statistical pattern recognition. They do not show that the model understands why a particular patient looks unwell.</p>
 
       <h2>The danger of hidden judgment</h2>
 
-<p>The problem is that triage is not only prediction. It is also judgment. If an algorithm says a patient is low risk, the staff still needs to know why. Was the model trained on patients like this one? Does it work equally well across age groups, races, languages, and hospitals? What happens when the data going into the system is incomplete?</p>
+<p>Triage also requires judgment. Staff need to know why a model labels someone low risk, whether similar patients were represented in training, and how missing data affect the score.</p>
 
 
-<p>A bad triage tool could make overcrowding worse by creating false confidence. The worst version would not replace bias; it would automate it, making unfair patterns look objective because a computer produced them.</p>
+<p>Without those answers, a low-risk label can create false confidence. A model trained on unequal care can automate the same bias while making the result look objective.</p>
 
       <h2>The realistic future</h2>
 
 <p>The most believable version of AI triage is a second layer of risk detection for the nurse. The algorithm flags patients whose risk may be underestimated, and the clinical team still has to decide what happens next.</p>
 
 
-<p>Used carefully, AI triage could be a useful warning light. Used lazily, it becomes one more system patients are asked to trust without being able to see how it works. That is the part hospitals have to get right before this becomes normal.</p>
+<p>I would use the model as a warning signal that a nurse can inspect and override. Patients should not lose priority through a score that no one can explain.</p>
 <h2>The queue still belongs to people</h2>
 <p>A model can rank risk, but the emergency department has to live with the ranking. Beds may be full. A specialist may be unavailable. One patient may look stable on paper and clearly look wrong to the nurse standing beside them.</p>
 <p>I would never hide the score or let it silently move someone down the list. The nurse should see why it changed priority and be able to override it without fighting the software. Hospitals should then review those overrides. They may reveal a clinician ignoring a useful warning, or a model missing something obvious.</p>
-<p>The strongest test would compare more than prediction accuracy. Did waiting time change for the sickest patients? Did anyone get delayed because the score was wrong? That is the evidence I would want before calling the system an improvement.</p>
+<p>The strongest test would report waiting time for the sickest patients and delays caused by wrong scores. I would want those outcomes before calling the system an improvement.</p>
 
     </div>
     <div class="share-section">
