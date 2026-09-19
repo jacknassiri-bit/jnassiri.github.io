@@ -220,7 +220,7 @@
 <p>MRI has a different problem. It does not use ionizing radiation, but it can be slow, loud, expensive, and hard for patients who are claustrophobic, in pain, or unable to hold still. Traditionally, faster MRI meant collecting less data and accepting worse image quality. AI reconstruction tries to change that tradeoff.</p>
 
 
-<p>Hammernik et al. published a variational network approach for accelerated MRI reconstruction in Magnetic Resonance in Medicine. The basic idea was to use learned reconstruction methods to turn undersampled MRI data into high-quality images, instead of relying only on older reconstruction methods <a href="#ref-2">(Hammernik et al.)</a>. That sounds technical, but the patient-level idea is simple: scan for less time while still giving the doctor an image they can trust.</p>
+<p>Hammernik et al. published a variational network approach for accelerated MRI reconstruction in Magnetic Resonance in Medicine. The method used learned reconstruction to turn undersampled MRI data into high-quality images <a href="#ref-2">(Hammernik et al.)</a>. The patient-level goal is a shorter scan that still gives the doctor a trustworthy image.</p>
 
 
 <p>This is especially useful because motion ruins imaging. A child who cannot stay still, an athlete with pain, or a critically ill patient on monitors may not be able to tolerate a long scan. If reconstruction can shorten the scan while preserving diagnostic quality, that changes the experience of imaging without changing the basic MRI machine.</p>
@@ -230,7 +230,7 @@
 <p>Low-field and portable MRI are a separate story. Wald et al. reviewed low-cost and portable MRI in the Journal of Magnetic Resonance Imaging and argued that reducing the cost, siting requirements, and operational burden of MRI could expand access and create point-of-care uses that conventional scanners cannot handle easily <a href="#ref-3">(Wald et al.)</a>.</p>
 
 
-<p>The tradeoff is image quality. A portable low-field scanner will not replace a high-end hospital MRI for every question. But that is not the point. If a patient in an ICU is too unstable to transport, a bedside brain image that answers a narrow question can be more useful than a perfect scan that cannot happen. Access is part of quality too.</p>
+<p>The tradeoff is image quality. A portable low-field scanner cannot answer every question handled by a high-end hospital MRI. For a patient in an ICU who is too unstable to transport, a bedside brain image can still answer a narrow and urgent question. Access is part of quality too.</p>
 
       <h2>AI-guided ultrasound is about the person holding the probe</h2>
 
@@ -240,14 +240,14 @@
 <p>Narula et al. tested a deep-learning guidance system in a prospective multicenter diagnostic study. Eight nurses without prior echocardiography experience each scanned 30 patients, for 240 total patients. Their scans were compared with sonographer scans, and five expert echocardiographers reviewed the images blindly. The novice scans were diagnostic for left ventricular size, left ventricular function, and pericardial effusion in 237 of 240 cases, and for right ventricular size in 222 of 240 cases <a href="#ref-5">(Narula et al.)</a>.</p>
 
 
-<p>That does not turn a beginner into a cardiologist. It does suggest that AI can help more people capture useful images in places where waiting for a specialist is slow or unrealistic. Emergency rooms, rural clinics, ambulances, and global health settings could all benefit if the tools stay honest about what they can and cannot assess.</p>
+<p>The nurses did not become cardiologists. The result suggests that AI guidance can help more people capture useful images where waiting for a specialist is slow or unrealistic. Emergency rooms and rural clinics could benefit if the tools stay honest about what they can assess.</p>
 
       <h2>My thoughts</h2>
 
 <p>None of these tools needs to “reinvent” the scan to be useful. A shorter MRI may mean a child can finish without sedation. A portable machine may reach a patient who cannot be moved. AI guidance may help a nurse capture the heart view a cardiologist needs.</p>
 
 
-<p>That is how I would judge the technology: did a patient get an answer that would otherwise have been slower, riskier or unavailable? A prettier image by itself is not the goal.</p>
+<p>I would judge each technology by whether a patient received an answer that would otherwise have been slower, riskier or unavailable. A sharper image matters when it changes care.</p>
 
     </div>
 
