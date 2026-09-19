@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ambient AI scribe</title><desc id="desc">The Med Frontier original medical graphic</desc>
+  <rect width="1600" height="900" fill="#10251f"/>
+  <path d="M0 730C280 650 430 820 720 730s470-20 880-130v300H0z" fill="#2f6b52" opacity=".55"/>
+  <g opacity=".10" stroke="#94c9b2" stroke-width="2"><path d="M0 0v900"/><path d="M125 0v900"/><path d="M250 0v900"/><path d="M375 0v900"/><path d="M500 0v900"/><path d="M625 0v900"/><path d="M750 0v900"/><path d="M875 0v900"/><path d="M1000 0v900"/><path d="M1125 0v900"/><path d="M1250 0v900"/><path d="M1375 0v900"/><path d="M1500 0v900"/><path d="M1625 0v900"/><path d="M0 0h1600"/><path d="M0 125h1600"/><path d="M0 250h1600"/><path d="M0 375h1600"/><path d="M0 500h1600"/><path d="M0 625h1600"/><path d="M0 750h1600"/><path d="M0 875h1600"/></g>
+  <rect x="90" y="88" width="300" height="42" rx="21" fill="#e57b5f"/>
+  <text x="120" y="117" fill="#fffdf7" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">THE MED FRONTIER</text>
+  <text x="90" y="230" fill="#f4efe2" font-family="Georgia,serif" font-size="62" font-weight="700"><tspan x="90" dy="0">Ambient AI scribe</tspan></text>
+  <text x="94" y="322" fill="#94c9b2" font-family="Arial,Helvetica,sans-serif" font-size="32">Draft note · doctor review</text>
+  <g transform="translate(100 0)"><path d="M720 360c0-60 50-110 110-110s110 50 110 110-50 110-110 110-110-50-110-110z" fill="#e57b5f"/><path d="M830 300v120M785 360h90" stroke="#f4efe2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="970" y="220" width="230" height="380" rx="20" fill="#fffdf7"/><path d="M1010 315h150M1010 380h150M1010 445h110" stroke="#2f6b52" stroke-width="11"/></g>
+  <text x="90" y="820" fill="#f4efe2" opacity=".72" font-family="Arial,Helvetica,sans-serif" font-size="24">Research, evidence, and what I think it means.</text>
+  <circle cx="1500" cy="98" r="28" fill="#e57b5f"/><circle cx="1430" cy="98" r="12" fill="#94c9b2"/>
+  </svg>
