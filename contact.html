@@ -57,6 +57,7 @@
   </style>
 <link rel="stylesheet" href="site-nav.css">
 <script src="site-nav.js" defer></script>
+<link rel="stylesheet" href="site-disclaimer.css">
 </head>
 <body>
   <div class="ticker-bar"><div class="ticker-inner">AI in medicine <span>◆</span> Anabolics <span>◆</span> Research notes <span>◆</span> Contact <span>◆</span> AI in medicine <span>◆</span> Anabolics <span>◆</span> Research notes <span>◆</span> Contact <span>◆</span></div></div>
@@ -97,7 +98,7 @@
       </aside>
     </div>
   </main>
-  <footer><p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p><p>Where AI meets the human body.</p></footer>
+  <footer><p class="site-disclaimer footer-disclaimer">The Med Frontier is written by a high school student for education. It is not medical advice. Talk to a doctor before changing medication, supplements, or training.</p><p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p><p>Where AI meets the human body.</p></footer>
   <script>
     function toggleTheme(){const html=document.documentElement;const isDark=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',isDark?'light':'dark');document.getElementById('toggle-icon').textContent=isDark?'🌙':'☀️';localStorage.setItem('theme',isDark?'light':'dark');}
     const saved=localStorage.getItem('theme');if(saved==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('toggle-icon').textContent='☀️';}

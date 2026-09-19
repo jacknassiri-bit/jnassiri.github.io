@@ -1,0 +1,18 @@
+.article-disclaimer {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border, #d8e0db);
+  border-left: 4px solid var(--blue-mid, #2f765e);
+  border-radius: 7px;
+  background: var(--bg-surface, var(--bg-card, #fff));
+  color: var(--text-muted, #52635c);
+  font: 500 .82rem/1.6 Inter, sans-serif;
+}
+footer { flex-wrap: wrap; }
+footer .footer-disclaimer {
+  flex: 1 0 100%;
+  width: 100%;
+  margin: 0 0 .85rem;
+  color: #c7d2cd;
+  font: 500 .78rem/1.55 Inter, sans-serif;
+}
