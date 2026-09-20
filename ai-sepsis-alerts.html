@@ -64,7 +64,7 @@
 <p>The Epic Sepsis Model gives a useful warning. Wong et al. externally validated it at Michigan Medicine using 38,455 hospitalizations from 27,697 adult patients. Although the score was calculated every 15 minutes, the model showed poor discrimination and calibration in that setting <a href="#ref-2">(Wong et al.)</a>.</p>
 
 
-<p>That result is uncomfortable because the model was already widely implemented. It shows how risky it is to assume that a commercial tool works just because it is built into the electronic health record. Hospitals are different. Patient populations are different. Documentation habits are different. A sepsis model trained in one environment can drift or underperform somewhere else, especially if nobody is checking it carefully.</p>
+<p>That result is uncomfortable because the model was already widely implemented. It shows how risky it is to assume that a commercial tool works just because it is built into the electronic health record. Hospitals differ in their patients and in how they document care. A sepsis model trained in one environment can drift or underperform somewhere else, especially if nobody is checking it carefully.</p>
 
 
 <p>I would require external and local validation before trusting an alert. A hospital should know its false positive and false negative rates, calibration, timing and subgroup performance. Uneven errors can quietly change which patients receive attention.</p>
@@ -77,14 +77,14 @@
 <p>The four-minute difference in median time is small. The higher proportions treated within one and three hours are more useful because they show a change in hospital care. A randomized workflow trial can measure that change directly.</p>
 
 
-<p>Another 2024 prospective randomized ICU validation study tested NAVOY Sepsis in 304 patients, with one group receiving active alerts and the standard-care group getting silent predictions for evaluation. The system predicted Sepsis-3 onset three hours early with reported accuracy of 0.79, sensitivity of 0.80, and specificity of 0.78 <a href="#ref-4">(Persson et al.)</a>. That is promising, but it still leaves room for misses and false alarms. Sepsis is too serious for anyone to pretend 80 percent sensitivity ends the conversation.</p>
+<p>Another 2024 prospective randomized ICU validation study tested NAVOY Sepsis in 304 patients, with one group receiving active alerts and the standard-care group getting silent predictions for evaluation. The system predicted Sepsis-3 onset three hours early with reported accuracy of 0.79, sensitivity of 0.80, and specificity of 0.78 <a href="#ref-4">(Persson et al.)</a>. That is promising, but it still leaves room for misses and false alarms. Sepsis is too serious to treat 80 percent sensitivity as good enough.</p>
 
       <h2>My thoughts</h2>
 
 <p>I like sepsis AI more than many medical AI ideas because the job is practical: notice a dangerous pattern early enough for the clinical team to act.</p>
 
 
-<p>The tool has to survive the actual ward, where nurses already face too many alarms and the data are never as clean as a paper makes them look. If the alert reaches someone who can act, it may buy time. If it fires constantly, people will learn to ignore it.</p>
+<p>The tool has to work on a real ward, where nurses already face too many alarms and the data are never as clean as a paper makes them look. If the alert reaches someone who can act, it may buy time. If it fires constantly, people will learn to ignore it.</p>
 
     </div>
     <aside class="site-disclaimer article-disclaimer" aria-label="Medical disclaimer">The Med Frontier is written by a high school student for education. It is not medical advice. Talk to a doctor before changing medication, supplements, or training.</aside>
