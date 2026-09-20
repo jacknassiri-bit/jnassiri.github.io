@@ -1,0 +1,4 @@
+exclude:
+  - EDITORIAL-AUDIT.md
+  - WRITING-STANDARD.md
+  - scripts

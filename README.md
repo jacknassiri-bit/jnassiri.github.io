@@ -1,71 +1,16 @@
-# The Med Frontier — Setup Guide
-> Where AI meets the human body.
+# The Med Frontier
 
-## Your files
-- `index.html` — homepage
-- `about.html` — about page  
-- `post-template.html` — copy this for every new post
-- `README.md` — this guide
+Static HTML for [themedfrontier.com](https://themedfrontier.com), published with GitHub Pages.
 
----
+## New article publishing checklist
 
-## How to publish on GitHub Pages
+1. Copy `post-template.html` to a short, permanent `.html` filename. Fill in the title, deck, date, category, article body, citations, canonical URL, social metadata, and Article JSON-LD.
+2. Create the 800, 1200, and 1600 pixel WebP hero files plus the 1200 × 630 share image in `images/`. Add the source, author, license, concepts, and selected concept to `images/CREDITS.md`.
+3. Add the article card to `index.html`. Include its ISO `data-date`, filter category, responsive thumbnail, alt text, visible category label, deck, and reading time.
+4. Add the same card and metadata to `all-articles.html` and the appropriate category page.
+5. Add or update the article record in `search.html`.
+6. Add the canonical article URL to `sitemap.xml` with the publication date.
+7. Run `python3 scripts/check_site.py` and fix every failure before publishing.
+8. Test the homepage, article, archive, category filter, search result, mobile menu, theme switch, citations, and share buttons at desktop and phone widths.
 
-### Step 1 — Create your repository
-1. Go to github.com and sign in
-2. Click **+** (top right) → "New repository"
-3. Name it: `your-username.github.io`
-4. Set to **Public**
-5. Click "Create repository"
-
-### Step 2 — Upload your files
-1. On the new repo page, click **"uploading an existing file"**
-2. Drag all 4 files into the upload box
-3. Click **"Commit changes"**
-
-### Step 3 — Enable GitHub Pages
-1. Go to repo → **Settings** → **Pages**
-2. Source: "Deploy from a branch"
-3. Branch: **main**, folder: **/ (root)**
-4. Click **Save**
-
-### Step 4 — You're live
-Wait ~2 minutes, then visit `https://your-username.github.io`
-
----
-
-## Writing a new post
-
-1. Duplicate `post-template.html`
-2. Rename it (e.g. `ai-drug-discovery.html`)
-3. Edit everything marked `<!-- CHANGE THIS -->`
-4. Write your post between the comment markers
-5. Upload the new file to GitHub
-6. Add a card for it in `index.html` (copy an existing post card block)
-
-## Draft vs. Published
-In each post card in `index.html`, find:
-```html
-<span class="status s-draft">Draft</span>
-```
-Change `s-draft` to `s-pub` and "Draft" to "Published" when ready to go live.
-
----
-
-## Weekly content calendar
-
-| Week | Pillar | Topic |
-|------|--------|-------|
-| 1 | AI in Medicine | Can AI outdiagnose a radiologist? |
-| 2 | Med Tech | The new wave of robotic surgery |
-| 3 | AI in Medicine | How AI is accelerating drug discovery |
-| 4 | Med Tech | Wearable biosensors: what's coming |
-| 5 | AI in Medicine | LLMs in the clinic |
-| 6 | Med Tech | CRISPR in 2026 |
-
-## Sources to check every week
-- FDA device approvals: fda.gov/medical-devices
-- STAT News: statnews.com
-- NIH News: nih.gov/news-events
-- Nature Medicine: nature.com/nm
-- The Lancet: thelancet.com
+`EDITORIAL-AUDIT.md` and `WRITING-STANDARD.md` are excluded from the generated site by `_config.yml`. They remain visible in this public repository and its Git history.
