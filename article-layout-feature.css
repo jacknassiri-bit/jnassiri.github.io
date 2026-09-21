@@ -19,7 +19,7 @@
     .ticker-inner span { margin: 0 2rem; color: var(--accent); }
     @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
-    .nav-logo { font-family: 'Source Serif 4', serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo { --font-wordmark:'Source Serif 4', serif; font-family:var(--font-wordmark); font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
     .nav-logo span { color: var(--blue-mid); }
     .nav-right { display: flex; align-items: center; gap: 2rem; }
     .nav-links { display: flex; gap: 1.35rem; list-style: none; align-items: center; }
@@ -69,11 +69,6 @@
     footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
     footer a:hover { color: var(--accent); }
     @media (max-width: 768px) { .nav-links { display: none; } .whos-writing { flex-direction: column; align-items: flex-start; } footer { flex-direction: column; gap: 8px; } .article-hero { height: 220px; } .hero-emoji { font-size: 5rem; } }
-
-
-    /* PROGRESS BAR */
-    #progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(to right, var(--blue-mid), var(--accent)); z-index: 9999; transition: width 0.08s linear; }
-
     /* SHARE SECTION */
     .share-section { border-top: 1px solid var(--border); padding: 1.75rem 0 2rem; }
     .share-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.85rem; }

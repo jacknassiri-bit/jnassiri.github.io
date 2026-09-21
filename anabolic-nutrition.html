@@ -45,7 +45,7 @@
     @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s; }
-    .nav-logo { font-family: 'Source Serif 4', serif; font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
+    .nav-logo { --font-wordmark:'Source Serif 4', serif; font-family:var(--font-wordmark); font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; }
     .nav-logo span { color: var(--blue-mid); }
     .nav-right { display: flex; align-items: center; gap: 2rem; }
     .nav-links { display: flex; gap: 1.35rem; list-style: none; align-items: center; }

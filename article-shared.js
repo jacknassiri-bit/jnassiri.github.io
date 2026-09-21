@@ -35,15 +35,6 @@
 
   function initializeArticle() {
     syncThemeIcon();
-
-    var progress = document.getElementById('progress-bar');
-    if (progress) {
-      window.addEventListener('scroll', function () {
-        var height = document.body.scrollHeight - window.innerHeight;
-        progress.style.width = (height > 0 ? (window.scrollY / height) * 100 : 0) + '%';
-      });
-    }
-
     var backToTop = document.getElementById('back-top');
     if (backToTop) {
       window.addEventListener('scroll', function () {
