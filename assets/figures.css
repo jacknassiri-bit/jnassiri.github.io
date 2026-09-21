@@ -1,0 +1,77 @@
+/* Shared image and figure rules for The Med Frontier. */
+.article-hero,
+.article-visual,
+.hero:has(> .hero-img) {
+  position: relative;
+  overflow: hidden;
+  background-color: #0c1a3a;
+}
+
+.article-hero .hero-img,
+.article-visual .hero-img,
+.hero > .hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 80 / 21;
+  object-fit: cover;
+  object-position: 70% 50%;
+}
+
+.article-visual:has(> .hero-img) {
+  max-width: none;
+}
+
+.article-visual:empty {
+  height: clamp(220px, 26.25vw, 420px);
+}
+
+.article-visual:has(> .hero-img) figcaption {
+  display: none;
+}
+
+.post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fig {
+  margin: 2rem 0;
+  padding: 1rem 1rem .75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+  margin: 0 auto;
+  font-family: var(--font-ui);
+}
+
+.fig svg .t { fill: var(--text); }
+.fig svg .tm { fill: var(--text-muted); }
+.fig svg .grid { stroke: var(--border); }
+.fig svg .b { fill: var(--blue-mid); }
+.fig svg .p { fill: var(--purple-mid); }
+.fig svg .a { fill: var(--accent); stroke: var(--blue); stroke-width: 2; }
+.fig svg .line-b { fill: none; stroke: var(--blue-mid); stroke-width: 3; }
+.fig svg .line-p { fill: none; stroke: var(--purple-mid); stroke-width: 3; }
+.fig svg .panel { fill: var(--bg-card); stroke: var(--border); }
+.fig svg .mono { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
+
+.fig figcaption {
+  margin-top: .75rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@media (min-width: 900px) {
+  .fig { padding: 1.25rem 1.5rem 1rem; }
+}
