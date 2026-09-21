@@ -1,0 +1,252 @@
+:root {
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-ui: "Libre Franklin", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-wordmark: "Source Serif 4", serif;
+}
+
+html {
+  font-kerning: normal;
+  font-optical-sizing: auto;
+}
+
+body {
+  font-family: var(--font-ui);
+  line-height: 1.6;
+}
+
+.nav-logo {
+  font-family: var(--font-wordmark);
+}
+
+h1,
+h2,
+h3,
+.article-title,
+.post-header h1,
+.page-header h1,
+.page-title,
+.hero h1,
+.card-title,
+.post-card h3,
+.featured-card h2,
+.related-card h4,
+.result-title,
+.source-name,
+.sec-title,
+.pillar h3,
+.about-band h2,
+.newsletter-band h2 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+h1,
+.article-title,
+.post-header h1,
+.page-header h1,
+.hero h1 {
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.article-body,
+article.body,
+.post-body {
+  max-width: 68ch;
+  margin-inline: auto;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-align: left;
+  text-wrap: pretty;
+  hyphens: manual;
+  font-variant-numeric: lining-nums;
+}
+
+.article-body p,
+article.body p,
+.post-body p,
+.article-body > ul,
+.article-body > ol,
+article.body > ul,
+article.body > ol,
+.post-body > ul,
+.post-body > ol {
+  font-family: var(--font-body);
+  font-size: inherit;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.article-body h2,
+article.body h2,
+.post-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 2.25em 0 0.5em;
+  text-wrap: balance;
+}
+
+.article-body h3,
+article.body h3,
+.post-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.article-subtitle,
+.post-deck,
+.deck,
+.page-deck,
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: clamp(1.25rem, 2vw, 1.375rem);
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.article-tag,
+.article-tag-ai,
+.article-tag-anabolic,
+.article-tag-tech,
+.post-category,
+.tag,
+.kicker,
+.hero-kicker {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-meta,
+.post-meta,
+.meta,
+.card-meta,
+.card-foot,
+.post-foot,
+.fc-meta,
+.byline,
+.date,
+.read-time {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+}
+
+.article-body a,
+article.body a,
+.post-body a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.article-body blockquote,
+article.body blockquote,
+.post-body blockquote,
+.pullquote,
+.pullquote p {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+figcaption,
+table,
+.citations-section,
+.citations-list,
+.refs,
+.refs li,
+.sources-box,
+.caption {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+table,
+.data-table,
+.stat-grid,
+.figure-data {
+  font-variant-numeric: tabular-nums;
+}
+
+nav,
+.nav-links,
+.mobile-nav,
+button,
+input,
+select,
+textarea,
+.theme-toggle,
+.filter-btn,
+.tag-pill,
+.topic-label,
+.ticker-inner,
+.share-section,
+.share-btn,
+.bio-btn,
+.home-button,
+footer,
+footer p,
+.toc-label,
+.page-count,
+.pillar-num,
+.result-tag,
+.result-date {
+  font-family: var(--font-ui);
+}
+
+.card-title,
+.post-card h3,
+.featured-card h2,
+.related-card h4,
+.result-title {
+  font-weight: 700;
+}
+
+.quick-takeaways h2,
+.quick h2,
+.what-this-means h4 {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.quick-takeaways li,
+.quick li,
+.what-this-means p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 900px) {
+  .article-body,
+  article.body,
+  .post-body {
+    font-size: 1.25rem;
+  }
+
+  .article-body h2,
+  article.body h2,
+  .post-body h2 {
+    font-size: 1.75rem;
+  }
+}
