@@ -56,6 +56,12 @@ def main():
 
     for item in ITEMS:
         slug=item['slug']; path=ROOT/f'{slug}.html'; text=path.read_text()
+        hero=(ROOT/'images'/'heroes'/f'{slug}.svg').read_text()
+        thumb=(ROOT/'images'/'thumbs'/f'{slug}.svg').read_text()
+        if not re.search(r'<svg\b[^>]*\bwidth="1600"[^>]*\bheight="420"[^>]*\bviewBox="0 0 1600 420"',hero):
+            fail(f'{slug}: hero SVG has wrong intrinsic dimensions')
+        if not re.search(r'<svg\b[^>]*\bwidth="900"[^>]*\bheight="300"[^>]*\bviewBox="0 0 900 300"',thumb):
+            fail(f'{slug}: thumbnail SVG has wrong intrinsic dimensions')
         if len(re.findall(r'class="hero-img"',text)) != 1: fail(f'{slug}: expected one hero')
         for value in (f'https://themedfrontier.com/images/og/{slug}.png','og:image:width','og:image:height','og:image:alt','summary_large_image'):
             if value not in text: fail(f'{slug}: missing social meta {value}')
@@ -65,6 +71,8 @@ def main():
             block=(ROOT/'figures'/f'{slug}.svg.html').read_text()
             for needle in ('role="img"',f'fig-{slug}-t',f'fig-{slug}-d','<title','<desc','<figcaption>'):
                 if needle not in block: fail(f'{slug}: figure missing {needle}')
+            for size in re.findall(r'font-size="([\d.]+)"',block):
+                if float(size) < 11: fail(f'{slug}: figure text below 11px: {size}px')
             article=norm_number(visible(text))
             numeric_text=' '.join(re.findall(r'<(?:text|desc)\b[^>]*>(.*?)</(?:text|desc)>',block,re.S))
             derived_spans=set(re.findall(r'<text[^>]*data-derived="[^"]+"[^>]*>(.*?)</text>',block,re.S))

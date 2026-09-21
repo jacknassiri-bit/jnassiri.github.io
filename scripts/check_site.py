@@ -84,7 +84,9 @@ def main() -> int:
         if not (page.description or "").strip():
             errors.append(f"{path.name}: missing meta description")
         for index, image in enumerate(page.images, start=1):
-            if image.get("alt") is None or not (image.get("alt") or "").strip():
+            classes = (image.get("class") or "").split()
+            decorative_hero = "hero-img" in classes and image.get("alt") == ""
+            if image.get("alt") is None or (not (image.get("alt") or "").strip() and not decorative_hero):
                 errors.append(f"{path.name}: image {index} has missing or empty alt text")
 
     parser_cache: dict[Path, PageParser] = {path.resolve(): data[1] for path, data in parsed.items()}
@@ -153,7 +155,7 @@ def main() -> int:
 
     print(f"PASS: {len(LIVE_HTML)} live HTML pages checked")
     print(f"PASS: {len(articles)} article pages are present in sitemap.xml")
-    print("PASS: canonical URLs, descriptions, image alt text, internal links, and anchors")
+    print("PASS: canonical URLs, descriptions, image alternatives, internal links, and anchors")
     print("PASS: homepage latest-post links match the newest dated article card")
     print("PASS: no legacy GitHub Pages URLs remain")
     return 0

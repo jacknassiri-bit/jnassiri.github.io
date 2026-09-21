@@ -72,4 +72,4 @@ def motif_svg(slug: str, category: str, motifs: list[str], width: int, height: i
     for i in range(18):
         x=x0+rng.random()*(width-x0-20); y=18+rng.random()*(height-36)
         parts.append(f'<circle cx="{_f(x)}" cy="{_f(y)}" r="{2+rng.randrange(4)}" fill="{accent}" opacity="{.14+rng.random()*.35:.2f}"/>')
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">'+''.join(parts)+'</svg>\n'
+    return f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'+''.join(parts)+'</svg>\n'
