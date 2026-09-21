@@ -7,7 +7,7 @@
   border-radius: 6px;
   background: #ffffff;
   color: #123d31;
-  font: 700 .9rem/1 Inter, sans-serif;
+  font:700 .9rem/1 var(--font-ui);
   text-decoration: none;
   transform: translateY(-150%);
   transition: transform .15s ease;

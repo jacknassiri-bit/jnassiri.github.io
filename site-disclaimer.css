@@ -6,7 +6,7 @@
   border-radius: 7px;
   background: var(--bg-surface, var(--bg-card, #fff));
   color: var(--text-muted, #52635c);
-  font: 500 .82rem/1.6 Inter, sans-serif;
+  font:500 .82rem/1.6 var(--font-ui);
 }
 footer { flex-wrap: wrap; }
 footer .footer-disclaimer {
@@ -14,5 +14,5 @@ footer .footer-disclaimer {
   width: 100%;
   margin: 0 0 .85rem;
   color: #c7d2cd;
-  font: 500 .78rem/1.55 Inter, sans-serif;
+  font:500 .78rem/1.55 var(--font-ui);
 }
