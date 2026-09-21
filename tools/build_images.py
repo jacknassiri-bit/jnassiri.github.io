@@ -113,6 +113,18 @@ def _default_og(path: Path) -> None:
     _og(item,path)
 
 
+def _apple_icon(path: Path) -> None:
+    """Raster counterpart of favicon.svg, drawn from the same coordinates."""
+    from PIL import Image, ImageDraw
+    scale = 180 / 32
+    im = Image.new("RGB", (180, 180), "#080c10")
+    d = ImageDraw.Draw(im)
+    pts = [(2,16),(7,16),(10,8),(13,24),(16,11),(19,21),(22,16),(30,16)]
+    d.line([(round(x*scale),round(y*scale)) for x,y in pts], fill="#38bdf8", width=12, joint="curve")
+    path.parent.mkdir(parents=True,exist_ok=True)
+    im.save(path,optimize=True)
+
+
 def main() -> None:
     ap=argparse.ArgumentParser(); ap.add_argument("--skip-og",action="store_true"); ap.add_argument("--og-only",action="store_true")
     args=ap.parse_args(); items=json.loads(SPEC.read_text())
@@ -128,6 +140,7 @@ def main() -> None:
         try:
             for item in items: _og(item,ROOT/"images"/"og"/f'{item["slug"]}.png')
             _default_og(ROOT/"images"/"og"/"default.png")
+            _apple_icon(ROOT/"images"/"icons"/"apple-touch-icon.png")
         except ImportError:
             print("Pillow is required for OG cards", file=sys.stderr); raise
 

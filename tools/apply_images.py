@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 from pathlib import Path
@@ -93,11 +94,45 @@ def apply_figures(tier: int) -> None:
         write_if_changed(path,text)
 
 
+def _drop_meta(text: str, key: str, value: str) -> str:
+    return re.sub(rf'\s*<meta\s+{key}="{re.escape(value)}"\s+content="[^"]*"\s*/?>', '', text, flags=re.I)
+
+
+def apply_meta() -> None:
+    articles={item["slug"]:item for item in ITEMS}
+    for path in sorted(ROOT.glob("*.html")):
+        text=path.read_text()
+        text=re.sub(r'\s*<link\s+rel="apple-touch-icon"[^>]*>', '', text, flags=re.I)
+        text=text.replace('</head>', '<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">\n</head>', 1)
+        slug=path.stem
+        if slug in articles:
+            title=articles[slug]["title"]
+            for key,value in (("property","og:image"),("property","og:image:width"),("property","og:image:height"),("property","og:image:alt"),("name","twitter:card"),("name","twitter:image")):
+                text=_drop_meta(text,key,value)
+            block=(f'\n<meta property="og:image" content="https://themedfrontier.com/images/og/{slug}.png">'
+                   f'\n<meta property="og:image:width" content="1200">'
+                   f'\n<meta property="og:image:height" content="630">'
+                   f'\n<meta property="og:image:alt" content="The Med Frontier: {html.escape(title, quote=True)}">'
+                   f'\n<meta name="twitter:card" content="summary_large_image">'
+                   f'\n<meta name="twitter:image" content="https://themedfrontier.com/images/og/{slug}.png">')
+            text=text.replace('</head>',block+'\n</head>',1)
+            text=re.sub(r'("image"\s*:\s*")[^"]+("\s*,?\s*"mainEntityOfPage")',rf'\1https://themedfrontier.com/images/og/{slug}.png\2',text)
+        elif path.name in {"index.html","all-articles.html","about.html","contact.html","sources.html","search.html","ai-medicine.html","anabolic-nutrition.html","how-i-write.html","med-tech.html","404.html","post-template.html"}:
+            for key,value in (("property","og:image"),("name","twitter:image"),("name","twitter:card")):
+                text=_drop_meta(text,key,value)
+            block=('\n<meta property="og:image" content="https://themedfrontier.com/images/og/default.png">'
+                   '\n<meta name="twitter:card" content="summary_large_image">'
+                   '\n<meta name="twitter:image" content="https://themedfrontier.com/images/og/default.png">')
+            text=text.replace('</head>',block+'\n</head>',1)
+        write_if_changed(path,text)
+
+
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--art",action="store_true"); ap.add_argument("--figures",type=int,choices=(1,2))
+    ap=argparse.ArgumentParser(); ap.add_argument("--art",action="store_true"); ap.add_argument("--figures",type=int,choices=(1,2)); ap.add_argument("--meta",action="store_true")
     a=ap.parse_args()
     if a.art: apply_art()
     if a.figures: apply_figures(a.figures)
+    if a.meta: apply_meta()
 
 
 if __name__ == "__main__": main()
