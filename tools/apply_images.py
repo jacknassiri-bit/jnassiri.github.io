@@ -65,7 +65,7 @@ def apply_figures(tier: int) -> None:
       "next-gen-imaging":("after-paragraph","237 of 240"),
       "llms-clinic":("after-first","The assignment changes the risk"),
       "ai-replacing-radiologists":("end","AI is already changing the workflow"),
-      "medical-chatbots-danger":("end","The problem is the tone"),
+      "medical-chatbots-danger":("end","The missing detail problem"),
       "ai-heart-attack-prediction":("end","Catch the risk while there is still time"),
       "smart-implants":("after-paragraph","up to two weeks before symptoms became severe"),
       "ai-drug-discovery":("after-paragraph","So far, the strongest case for AI"),
