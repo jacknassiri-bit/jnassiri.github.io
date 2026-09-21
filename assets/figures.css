@@ -40,7 +40,7 @@
 .fig {
   margin: 2rem 0;
   padding: 1rem 1rem .75rem;
-  background: var(--bg-card);
+  background: var(--bg-card, var(--card, #ffffff));
   border: 1px solid var(--border);
   border-radius: 12px;
 }
@@ -55,21 +55,21 @@
 }
 
 .fig svg .t { fill: var(--text); }
-.fig svg .tm { fill: var(--text-muted); }
+.fig svg .tm { fill: var(--text-muted, var(--muted)); }
 .fig svg .grid { stroke: var(--border); }
 .fig svg .b { fill: var(--blue-mid); }
-.fig svg .p { fill: var(--purple-mid); }
-.fig svg .a { fill: var(--accent); stroke: var(--blue); stroke-width: 2; }
+.fig svg .p { fill: var(--purple-mid, var(--blue-mid)); }
+.fig svg .a { fill: var(--accent, #38bdf8); stroke: var(--blue); stroke-width: 2; }
 .fig svg .line-b { fill: none; stroke: var(--blue-mid); stroke-width: 3; }
-.fig svg .line-p { fill: none; stroke: var(--purple-mid); stroke-width: 3; }
-.fig svg .panel { fill: var(--bg-card); stroke: var(--border); }
+.fig svg .line-p { fill: none; stroke: var(--purple-mid, var(--blue-mid)); stroke-width: 3; }
+.fig svg .panel { fill: var(--bg-card, var(--card, #ffffff)); stroke: var(--border); }
 .fig svg .mono { font-family: var(--font-ui); font-variant-numeric: tabular-nums; }
 
 .fig figcaption {
   margin-top: .75rem;
   font-size: .875rem;
   line-height: 1.5;
-  color: var(--text-muted);
+  color: var(--text-muted, var(--muted));
 }
 
 @media (min-width: 900px) {
