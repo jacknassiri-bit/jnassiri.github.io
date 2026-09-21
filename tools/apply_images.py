@@ -74,7 +74,16 @@ def apply_figures(tier: int) -> None:
     for item in ITEMS:
         if not item["figure"] or item["figure"]["tier"] != tier: continue
         slug=item["slug"]; path=ROOT/f"{slug}.html"; text=path.read_text(); snippet=(ROOT/"figures"/f"{slug}.svg.html").read_text().strip()
-        if f'id="fig-{slug}-t"' in text: continue
+        title_id=f'id="fig-{slug}-t"'
+        if title_id in text:
+            title_pos=text.find(title_id)
+            figure_start=text.rfind('<figure class="fig">',0,title_pos)
+            figure_end=text.find('</figure>',title_pos)
+            if figure_start < 0 or figure_end < 0:
+                raise SystemExit(f"existing figure boundary missing: {slug}")
+            text=text[:figure_start]+snippet+text[figure_end+len('</figure>'):]
+            write_if_changed(path,text)
+            continue
         mode,anchor=anchors[slug]; ok=False
         if mode=="before-heading":
             marker=f'<h2>{anchor}</h2>'; pos=text.find(marker)

@@ -7,6 +7,7 @@ import html
 import json
 import os
 import sys
+import textwrap
 from pathlib import Path
 
 from motifs import BASE, PALETTES, motif_svg, seed_for
@@ -57,12 +58,15 @@ def _figure(slug: str, category: str) -> str:
         derived = ''
         if slug == "ai-cancer-screening" and i == 1: derived = ' data-derived="100-44"'
         if slug == "next-gen-imaging" and i < 2: derived = f' data-derived="{("237/240","222/240")[i]}"'
-        out.append(f'<text class="t mono" x="20" y="{y+27}" font-size="13" font-weight="700"{derived}>{html.escape(label)}</text>')
+        out.append(f'<text class="t mono" x="20" y="{y+27}" font-size="12" font-weight="700"{derived}>{html.escape(label)}</text>')
         if note:
-            words = note.split(" · ")
-            out.append(f'<text class="tm" x="190" y="{y+27}" font-size="12.5">{html.escape(words[0])}</text>')
-            if len(words) > 1:
-                out.append(f'<text class="tm" x="190" y="{y+44}" font-size="12.5">{html.escape(" · ".join(words[1:]))}</text>')
+            lines = textwrap.wrap(note, width=28, break_long_words=False, break_on_hyphens=False)
+            if len(lines) > 3:
+                lines = lines[:2] + [" ".join(lines[2:])]
+            first_y = y + 27 - (len(lines) - 1) * 8.5
+            for line_index, line in enumerate(lines):
+                line_y = first_y + line_index * 17
+                out.append(f'<text class="tm" x="200" y="{line_y:g}" font-size="12.5">{html.escape(line)}</text>')
         y += 58
     out.append(f'</svg>\n<figcaption>{html.escape(caption)}</figcaption>\n</figure>\n')
     return "\n".join(out)
