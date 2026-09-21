@@ -5,6 +5,10 @@
   --font-wordmark: "Source Serif 4", serif;
 }
 
+:root[data-wordmark="merriweather"] {
+  --font-wordmark: "Merriweather", serif;
+}
+
 html {
   font-kerning: normal;
   font-optical-sizing: auto;
