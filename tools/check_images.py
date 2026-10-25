@@ -178,8 +178,8 @@ def main() -> int:
         if measured < minimum:
             fail(f"contrast {label}: {measured:.2f}:1")
 
-    if len(hero_hashes) != 36 or len(DIAGRAMS) != 6 or len(ITEMS) - len(DIAGRAMS) != 30:
-        fail(f"expected 36 heroes, 30 photos, and 6 diagrams; found {len(hero_hashes)}, {len(ITEMS) - len(DIAGRAMS)}, and {len(DIAGRAMS)}")
+    if len(hero_hashes) != 35 or DIAGRAMS or len(ITEMS) != 35:
+        fail(f"expected 35 heroes and 35 photos; found {len(hero_hashes)} heroes, {len(ITEMS)} photos, and {len(DIAGRAMS)} diagrams")
 
     try:
         tracked = set(subprocess.check_output(["git", "ls-files"], cwd=ROOT, text=True).splitlines())
@@ -191,7 +191,7 @@ def main() -> int:
                 if relative not in tracked:
                     fail(f"case or tracking mismatch: {path.name}: {relative}")
 
-    print(f"Checked {len(ITEMS)} articles, 30 photos, 6 diagrams, 36 thumbnail crops, 36 social cards, and {sum(1 for x in ITEMS if x['figure'])} data figures.")
+    print(f"Checked {len(ITEMS)} articles, 35 photos, 35 thumbnail crops, 35 social cards, and {sum(1 for x in ITEMS if x['figure'])} data figures.")
     if errors:
         for error in errors:
             print("FAIL", error)

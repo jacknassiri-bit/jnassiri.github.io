@@ -8,10 +8,7 @@
       "broken link",
       "dot matrix"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "scorecard"
-    }
+    "figure": null
   },
   {
     "slug": "ai-liver-cancer-second-reader",
@@ -21,10 +18,7 @@
       "concentric rings",
       "contour lines"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "funnel"
-    }
+    "figure": null
   },
   {
     "slug": "fda-testing-generative-medical-ai",
@@ -45,10 +39,7 @@
       "hexagon graph",
       "alveoli circles"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "bars"
-    }
+    "figure": null
   },
   {
     "slug": "ai-mammography-autonomous",
@@ -58,10 +49,7 @@
       "scan tiles",
       "highlights"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "panels"
-    }
+    "figure": null
   },
   {
     "slug": "beta-alanine-endurance",
@@ -72,10 +60,7 @@
       "ion dots",
       "arc gauge"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "duration"
-    }
+    "figure": null
   },
   {
     "slug": "ai-sepsis-alerts",
@@ -85,10 +70,7 @@
       "waveform",
       "marker"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "dumbbell"
-    }
+    "figure": null
   },
   {
     "slug": "testosterone-muscle",
@@ -108,10 +90,7 @@
       "vessel branches",
       "ecg trace"
     ],
-    "figure": {
-      "tier": 2,
-      "type": "score flow"
-    }
+    "figure": null
   },
   {
     "slug": "sarms-risk",
@@ -121,10 +100,7 @@
       "capsules",
       "half fill"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "split bar"
-    }
+    "figure": null
   },
   {
     "slug": "ai-cancer-screening",
@@ -134,10 +110,7 @@
       "reader tiles",
       "scan grid"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "bars"
-    }
+    "figure": null
   },
   {
     "slug": "protein-timing",
@@ -157,10 +130,7 @@
       "speech bubbles",
       "gap"
     ],
-    "figure": {
-      "tier": 2,
-      "type": "columns"
-    }
+    "figure": null
   },
   {
     "slug": "ai-replacing-radiologists",
@@ -170,10 +140,7 @@
       "image slices",
       "split panel"
     ],
-    "figure": {
-      "tier": 2,
-      "type": "columns"
-    }
+    "figure": null
   },
   {
     "slug": "caffeine-performance",
@@ -183,10 +150,7 @@
       "molecule dots",
       "decay curve"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "timeline"
-    }
+    "figure": null
   },
   {
     "slug": "sleep-testosterone",
@@ -236,10 +200,7 @@
       "plateau curve",
       "bar arcs"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "range"
-    }
+    "figure": null
   },
   {
     "slug": "hgh-muscle-growth",
@@ -249,10 +210,7 @@
       "hormone ring",
       "split panel"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "panels"
-    }
+    "figure": null
   },
   {
     "slug": "ai-hospital-triage",
@@ -261,16 +219,6 @@
     "motifs": [
       "queue dots",
       "warning light"
-    ],
-    "figure": null
-  },
-  {
-    "slug": "creatine-guide",
-    "category": "ANA",
-    "title": "Creatine: Why Three to Five Grams Is Usually Enough",
-    "motifs": [
-      "bond cycle",
-      "arc gauge"
     ],
     "figure": null
   },
@@ -323,10 +271,7 @@
       "instrument arcs",
       "scaled motion"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "stat tiles"
-    }
+    "figure": null
   },
   {
     "slug": "ai-drug-discovery",
@@ -336,10 +281,7 @@
       "hexagon funnel",
       "thinning dots"
     ],
-    "figure": {
-      "tier": 2,
-      "type": "pipeline"
-    }
+    "figure": null
   },
   {
     "slug": "wearable-biosensors",
@@ -359,10 +301,7 @@
       "document",
       "signature line"
     ],
-    "figure": {
-      "tier": 2,
-      "type": "columns"
-    }
+    "figure": null
   },
   {
     "slug": "crispr-2026",
@@ -372,10 +311,7 @@
       "double helix",
       "scissor gap"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "dot grid"
-    }
+    "figure": null
   },
   {
     "slug": "ai-pathology",
@@ -395,10 +331,7 @@
       "implant outline",
       "signal arcs"
     ],
-    "figure": {
-      "tier": 2,
-      "type": "alert path"
-    }
+    "figure": null
   },
   {
     "slug": "next-gen-imaging",
@@ -408,10 +341,7 @@
       "detector grid",
       "sinogram arcs"
     ],
-    "figure": {
-      "tier": 1,
-      "type": "bars"
-    }
+    "figure": null
   },
   {
     "slug": "ai-mental-health",

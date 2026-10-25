@@ -26,7 +26,6 @@ All article hero, card, and social images in this folder are original vector gra
 | protein-muscle-growth | Protein response curve; meals across a day; training plus protein | Meals and response curve | Original, The Med Frontier, CC BY 4.0 |
 | hgh-muscle-growth | Lean mass versus strength; HGH vial and outcome bars; body scan | Lean-mass and strength bars | Original, The Med Frontier, CC BY 4.0 |
 | ai-hospital-triage | Emergency queue dashboard; nurse override; priority ladder | Queue with nurse override | Original, The Med Frontier, CC BY 4.0 |
-| creatine-guide | ATP recycling; scoop and repeated sets; evidence card | Scoop and ATP arrows | Original, The Med Frontier, CC BY 4.0 |
 | ambient-ai-scribes | Visit-to-note workflow; microphone and note; doctor review | Conversation to reviewed note | Original, The Med Frontier, CC BY 4.0 |
 | carbs-training | Practice-day meal; glycogen gauge; plate and workout | Meal and training curve | Original, The Med Frontier, CC BY 4.0 |
 | lean-bulk | Weight and strength trend; calorie surplus dial; weekly average | Weight and strength trend | Original, The Med Frontier, CC BY 4.0 |

@@ -45,7 +45,6 @@ Completed September 13, 2026. The review covered every top-level HTML page, ever
 - `bpc157-peptides.html` — replaced the false-choice title, explained why testimonials mislead, added the online-vial problem, and upgraded the hero.
 - `caffeine-performance.html` — replaced the hype-question title, cut the four-item deck, added tolerance and evening-training examples, and upgraded the hero.
 - `carbs-training.html` — replaced the timing/workload list with a practice-day example, added performance checks, and upgraded the hero.
-- `creatine-guide.html` — replaced the reputation title and “not flashy” deck with a usable dose, retained the specific meta-analyses, and upgraded the hero.
 - `hgh-muscle-growth.html` — replaced the rule-of-three deck with the lean-mass-versus-strength result, refreshed the bio, and upgraded the hero.
 - `lean-bulk.html` — replaced the “not this, but that” deck, added multi-day weigh-ins and gym-log checks, and upgraded the hero.
 - `ozempic-muscle-loss.html` — replaced the protein/training/follow-up list, clarified what lean mass includes, added function-based checks, and upgraded the hero.
