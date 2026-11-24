@@ -23,13 +23,13 @@
   </script>
   <style>
     :root {
-      --bg:#f8fafc; --bg-card:#fff; --bg-surface:#eef5f2; --text:#14211c; --text-muted:#5d6c65;
-      --border:#d8dfdb; --blue:#123b30; --blue-mid:#16705b; --accent:#38bdf8; --black:#080c10;
+      --bg:#f8fafc; --bg-card:#fff; --bg-surface:#f1f5f9; --text:#0f172a; --text-muted:#64748b;
+      --border:#e2e8f0; --blue:#0f52a0; --blue-mid:#1d6fd4; --purple:#7c3aed; --purple-mid:#8b5cf6; --accent:#38bdf8; --black:#080c10;
       --nav-bg:#f8fafc; --font-display:'Fraunces',Georgia,serif; --font-ui:'DM Sans',Arial,sans-serif;
     }
     [data-theme="dark"] {
-      --bg:#101412; --bg-card:#171c19; --bg-surface:#1b2420; --text:#edf4f0; --text-muted:#a0afa7;
-      --border:#2b3832; --blue:#5db99f; --blue-mid:#62c3a7; --accent:#7dd3fc; --black:#09090b; --nav-bg:#18181b;
+      --bg:#18181b; --bg-card:#27272a; --bg-surface:#222226; --text:#f4f4f5; --text-muted:#a1a1aa;
+      --border:#3f3f46; --blue:#60a5fa; --blue-mid:#93c5fd; --purple:#a78bfa; --purple-mid:#c4b5fd; --accent:#38bdf8; --black:#09090b; --nav-bg:#18181b;
     }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
@@ -75,19 +75,36 @@
 
       <div class="wheel-stage" aria-label="Selected articles">
         <div class="article-wheel">
-          <i class="wheel-spoke" style="transform:rotate(0deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(30deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(60deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(90deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(120deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(150deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(180deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(210deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(240deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(270deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(300deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(330deg)" aria-hidden="true"></i>
-          <a class="wheel-item" href="medical-ai-real-world.html"><span class="ai-key">Medical AI</span> Enters the <span class="ai-key">Real World</span>: The <span class="ai-key">Results</span> Are More <span class="ai-key">Complicated</span> Than Expected</a>
-          <a class="wheel-item" href="ai-sepsis-alerts.html"><span class="ai-key">AI Sepsis Alerts</span>: Early Warning System or Alarm Fatigue?</a>
-          <a class="wheel-item" href="lean-bulk.html">The <span class="body-key">Lean Bulk</span>: How to Gain Muscle Without Treating Calories Like a Guess</a>
-          <a class="wheel-item" href="robotic-surgery.html"><span class="ai-key">Robotic Surgery</span>: The Machine Still Follows the Surgeon</a>
-          <a class="wheel-item" href="sleep-testosterone.html"><span class="body-key">Sleep and Testosterone</span>: What One Week of Short Nights Did</a>
-          <a class="wheel-item" href="ai-cancer-screening.html"><span class="ai-key">AI in Cancer Screening</span>: What Happens After the Model Flags a Scan</a>
-          <a class="wheel-item" href="protein-timing.html"><span class="body-key">Protein Timing</span>: How Much the Anabolic Window Actually Changes</a>
-          <a class="wheel-item" href="ai-drug-discovery.html">How <span class="ai-key">AI</span> Is Accelerating <span class="ai-key">Drug Discovery</span> and Where the Hype Ends</a>
-          <a class="wheel-item" href="wearable-biosensors.html"><span class="ai-key">Wearable Biosensors</span>: When More Data Helps and When It Does Not</a>
-          <a class="wheel-item" href="sarms-risk.html"><span class="body-key">SARMs</span>: Marketed Like Supplements, Acting More Like Drugs</a>
-          <a class="wheel-item" href="ai-pathology.html"><span class="ai-key">AI in Pathology</span>: Teaching Computers to Spot Cancer in a Slide</a>
-          <a class="wheel-item" href="caffeine-performance.html"><span class="body-key">Caffeine and Performance</span>: The Dose I Would Start With</a>
+          <svg class="wheel-lines" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+            <circle cx="500" cy="500" r="488"></circle>
+            <g>
+              <line x1="500" y1="500" x2="988" y2="500"></line><line x1="500" y1="500" x2="951" y2="313"></line>
+              <line x1="500" y1="500" x2="845" y2="155"></line><line x1="500" y1="500" x2="687" y2="49"></line>
+              <line x1="500" y1="500" x2="500" y2="12"></line><line x1="500" y1="500" x2="313" y2="49"></line>
+              <line x1="500" y1="500" x2="155" y2="155"></line><line x1="500" y1="500" x2="49" y2="313"></line>
+              <line x1="500" y1="500" x2="12" y2="500"></line><line x1="500" y1="500" x2="49" y2="687"></line>
+              <line x1="500" y1="500" x2="155" y2="845"></line><line x1="500" y1="500" x2="313" y2="951"></line>
+              <line x1="500" y1="500" x2="500" y2="988"></line><line x1="500" y1="500" x2="687" y2="951"></line>
+              <line x1="500" y1="500" x2="845" y2="845"></line><line x1="500" y1="500" x2="951" y2="687"></line>
+            </g>
+          </svg>
+
+          <a class="wheel-item" style="--angle:0deg" href="medical-ai-real-world.html"><span class="wheel-full"><span class="wheel-key">Medical AI</span> Enters the <span class="wheel-key">Real World</span>: The <span class="wheel-key">Results</span> Are More <span class="wheel-key">Complicated</span> Than Expected</span><span class="wheel-short"><span class="wheel-key">Medical AI</span> Enters the Real World</span></a>
+          <a class="wheel-item" style="--angle:22.5deg" href="ai-sepsis-alerts.html"><span class="wheel-full"><span class="wheel-key">AI Sepsis Alerts</span>: Early Warning System or Alarm Fatigue?</span><span class="wheel-short"><span class="wheel-key">AI Sepsis Alerts</span></span></a>
+          <a class="wheel-item" style="--angle:45deg" href="lean-bulk.html"><span class="wheel-full">The <span class="wheel-key">Lean Bulk</span>: How to Gain Muscle Without Treating Calories Like a Guess</span><span class="wheel-short">The <span class="wheel-key">Lean Bulk</span></span></a>
+          <a class="wheel-item" style="--angle:67.5deg" href="robotic-surgery.html"><span class="wheel-full"><span class="wheel-key">Robotic Surgery</span>: The Machine Still Follows the Surgeon</span><span class="wheel-short"><span class="wheel-key">Robotic Surgery</span></span></a>
+          <a class="wheel-item" style="--angle:90deg" href="sleep-testosterone.html"><span class="wheel-full"><span class="wheel-key">Sleep and Testosterone</span>: What One Week of Short Nights Did</span><span class="wheel-short"><span class="wheel-key">Sleep and Testosterone</span></span></a>
+          <a class="wheel-item" style="--angle:112.5deg" href="ai-cancer-screening.html"><span class="wheel-full"><span class="wheel-key">AI in Cancer Screening</span>: What Happens After the Model Flags a Scan</span><span class="wheel-short"><span class="wheel-key">AI Cancer Screening</span></span></a>
+          <a class="wheel-item" style="--angle:135deg" href="protein-timing.html"><span class="wheel-full"><span class="wheel-key">Protein Timing</span>: How Much the Anabolic Window Actually Changes</span><span class="wheel-short"><span class="wheel-key">Protein Timing</span></span></a>
+          <a class="wheel-item" style="--angle:157.5deg" href="ai-drug-discovery.html"><span class="wheel-full">How <span class="wheel-key">AI</span> Is Accelerating <span class="wheel-key">Drug Discovery</span> and Where the Hype Ends</span><span class="wheel-short"><span class="wheel-key">AI Drug Discovery</span></span></a>
+          <a class="wheel-item" style="--angle:180deg" href="wearable-biosensors.html"><span class="wheel-full"><span class="wheel-key">Wearable Biosensors</span>: When More Data Helps and When It Does Not</span><span class="wheel-short"><span class="wheel-key">Wearable Biosensors</span></span></a>
+          <a class="wheel-item" style="--angle:202.5deg" href="sarms-risk.html"><span class="wheel-full"><span class="wheel-key">SARMs</span>: Marketed Like Supplements, Acting More Like Drugs</span><span class="wheel-short"><span class="wheel-key">SARMs</span></span></a>
+          <a class="wheel-item" style="--angle:225deg" href="ai-pathology.html"><span class="wheel-full"><span class="wheel-key">AI in Pathology</span>: Teaching Computers to Spot Cancer in a Slide</span><span class="wheel-short"><span class="wheel-key">AI in Pathology</span></span></a>
+          <a class="wheel-item" style="--angle:247.5deg" href="caffeine-performance.html"><span class="wheel-full"><span class="wheel-key">Caffeine and Performance</span>: The Dose I Would Start With</span><span class="wheel-short"><span class="wheel-key">Caffeine and Performance</span></span></a>
+          <a class="wheel-item" style="--angle:270deg" href="medical-ai-real-world.html"><span class="wheel-full"><span class="wheel-key">Medical AI</span> Enters the Real World</span><span class="wheel-short"><span class="wheel-key">Medical AI</span></span></a>
+          <a class="wheel-item" style="--angle:292.5deg" href="ai-sepsis-alerts.html"><span class="wheel-full"><span class="wheel-key">AI Sepsis Alerts</span>: Early Warning System or Alarm Fatigue?</span><span class="wheel-short"><span class="wheel-key">AI Sepsis Alerts</span></span></a>
+          <a class="wheel-item" style="--angle:315deg" href="lean-bulk.html"><span class="wheel-full">The <span class="wheel-key">Lean Bulk</span>: How to Gain Muscle</span><span class="wheel-short">The <span class="wheel-key">Lean Bulk</span></span></a>
+          <a class="wheel-item" style="--angle:337.5deg" href="robotic-surgery.html"><span class="wheel-full"><span class="wheel-key">Robotic Surgery</span>: The Machine Still Follows the Surgeon</span><span class="wheel-short"><span class="wheel-key">Robotic Surgery</span></span></a>
         </div>
 
         <ul class="wheel-static-list" aria-label="Selected articles without animation">

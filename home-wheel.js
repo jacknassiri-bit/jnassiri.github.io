@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   var wheel = document.querySelector('.article-wheel');
-  if (!wheel) return;
+  var stage = document.querySelector('.wheel-stage');
+  if (!wheel || !stage) return;
 
   wheel.querySelectorAll('.wheel-item').forEach(function (item) {
     item.addEventListener('focus', function () {
@@ -11,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  wheel.addEventListener('mouseenter', function () {
+  stage.addEventListener('mouseenter', function () {
     wheel.style.animationPlayState = 'paused';
   });
-  wheel.addEventListener('mouseleave', function () {
+  stage.addEventListener('mouseleave', function () {
     wheel.style.animationPlayState = '';
   });
 });
