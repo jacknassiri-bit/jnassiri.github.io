@@ -128,7 +128,7 @@
   line-height: 1.14;
   text-decoration: none;
   text-wrap: balance;
-  transform: translateY(-50%) rotate(var(--angle));
+  transform: translateY(-50%) rotate(calc(var(--angle) + 11.25deg));
   transform-origin: 0 50%;
 }
 
