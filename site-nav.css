@@ -1,3 +1,5 @@
+.ticker-bar { display: none !important; }
+
 .menu-toggle {
   display: none;
   width: 38px;

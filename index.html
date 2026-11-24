@@ -1,689 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Med Frontier is Jack Nassiri's student medical journalism on AI in medicine and the human body.">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="The Med Frontier">
-  <meta property="og:description" content="Weekly writing on AI in medicine and anabolics by a Loyola High School student.">
-  <meta property="og:url" content="https://themedfrontier.com/index.html">
-  <meta name="twitter:title" content="The Med Frontier">
-  <meta name="twitter:description" content="Weekly writing on AI in medicine and anabolics by a Loyola High School student.">
+  <meta property="og:description" content="Student medical journalism where AI meets the human body.">
+  <meta property="og:url" content="https://themedfrontier.com/">
+  <meta property="og:image" content="https://themedfrontier.com/images/og/default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://themedfrontier.com/images/og/default.png">
+  <link rel="canonical" href="https://themedfrontier.com/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Weekly writing on AI in medicine and anabolics by a Loyola High School student."><link rel="canonical" href="https://themedfrontier.com/">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
   <title>The Med Frontier</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400..700&family=Merriweather:wght@700;900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Source+Serif+4:wght@800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
   <style>
-    /* LIGHT THEME */
     :root {
-      --bg: #f8fafc;
-      --bg-surface: #f1f5f9;
-      --bg-card: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --blue: #0f52a0;
-      --blue-mid: #1d6fd4;
-      --blue-pale: #dbeafe;
-      --purple: #7c3aed;
-      --purple-mid: #8b5cf6;
-      --accent: #38bdf8;
-      --black: #080c10;
-      --nav-bg: #f8fafc;
-      --thumb-ai: #dbeafe;
-      --thumb-tech: #ede9fe;
-      --pub: #dcfce7;
-      --pub-text: #166534;
-      --draft: #fef9c3;
-      --draft-text: #854d0e;
+      --bg:#f8fafc; --bg-card:#fff; --bg-surface:#eef5f2; --text:#14211c; --text-muted:#5d6c65;
+      --border:#d8dfdb; --blue:#123b30; --blue-mid:#16705b; --accent:#38bdf8; --black:#080c10;
+      --nav-bg:#f8fafc; --font-display:'Fraunces',Georgia,serif; --font-ui:'DM Sans',Arial,sans-serif;
     }
-
-    /* DARK THEME */
     [data-theme="dark"] {
-      --bg: #18181b;
-      --bg-surface: #222226;
-      --bg-card: #27272a;
-      --text: #f4f4f5;
-      --text-muted: #a1a1aa;
-      --border: #3f3f46;
-      --blue: #60a5fa;
-      --blue-mid: #93c5fd;
-      --blue-pale: #1e3a5f;
-      --purple: #a78bfa;
-      --purple-mid: #c4b5fd;
-      --accent: #38bdf8;
-      --black: #09090b;
-      --nav-bg: #18181b;
-      --thumb-ai: #1e3a5f;
-      --thumb-tech: #2e1a4a;
-      --pub: #14532d;
-      --pub-text: #86efac;
-      --draft: #422006;
-      --draft-text: #fde68a;
+      --bg:#101412; --bg-card:#171c19; --bg-surface:#1b2420; --text:#edf4f0; --text-muted:#a0afa7;
+      --border:#2b3832; --blue:#5db99f; --blue-mid:#62c3a7; --accent:#7dd3fc; --black:#09090b; --nav-bg:#18181b;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family:var(--font-ui); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; transition: background 0.25s, color 0.25s; }
-
-    /* TICKER */
-    .ticker-bar { background: var(--black); padding: 9px 0; overflow: hidden; white-space: nowrap; }
-    .ticker-inner { display: inline-block; animation: tick 35s linear infinite; font-size: 0.72rem; font-family:var(--font-ui); color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
-    .ticker-inner span { margin: 0 2rem; color: var(--accent); }
-    @keyframes tick { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; transition: background 0.25s, border-color 0.25s; }
-    .nav-logo { --font-wordmark:'Source Serif 4', serif; font-family:var(--font-wordmark); font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
-    .nav-logo span { color: var(--blue-mid); }
-    .nav-right { display: flex; align-items: center; gap: 2rem; }
-    .nav-links { display: flex; gap: 1.35rem; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--blue-mid); }
-    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 6px; }
-
-    /* THEME TOGGLE */
-    .theme-toggle { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); font-family:var(--font-ui); transition: background 0.2s; white-space: nowrap; }
-    .theme-toggle:hover { background: var(--border); }
-    .toggle-icon { font-size: 14px; }
-
-    /* HERO */
-    .hero { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 480px; border-bottom: 1px solid var(--border); }
-    .hero-left { padding: 4.5rem 3rem 4.5rem 2.5rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; }
-    .hero-kicker { font-family:var(--font-ui); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
-    .hero-kicker::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--blue-mid); }
-    .hero h1 { font-family:var(--font-display); font-size: clamp(3.4rem, 6vw, 5.4rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.25rem; color: var(--text); }
-    .hero h1 em { font-style: normal; color: var(--blue-mid); }
-    .hero-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 440px; margin-bottom: 2rem; }
-    .hero-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: #fff; text-decoration: none; padding: 13px 26px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s; width: fit-content; }
-    .hero-btn:hover { opacity: 0.85; }
-    .hero-right { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--bg-surface); transition: background 0.25s; }
-    .featured-label { font-family:var(--font-ui); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
-    .featured-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; border-top: 3px solid var(--purple-mid); transition: background 0.25s, border-color 0.25s; text-decoration: none; color: inherit; }
-    .fc-tag { display: inline-block; background: var(--thumb-tech); color: var(--purple); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 0.85rem; }
-    .featured-card h2 { font-family:var(--font-display); font-size: 1.2rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 0.75rem; color: var(--text); }
-    .featured-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem; }
-    .fc-meta { font-family:var(--font-ui); font-size: 0.72rem; color: var(--text-muted); display: flex; gap: 10px; }
-
-    /* WRAP */
-    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
-
-    /* PILLARS */
-    .pillars { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
-    .sec-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.75rem; }
-    .sec-title { font-family:var(--font-display); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
-    .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .pillar { border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; color: var(--text); background: var(--bg-card); cursor: default; transition: background 0.25s; }
-    .pillar-num { font-family:var(--font-ui); font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 0.08em; }
-    .pillar h3 { font-family:var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.45rem; letter-spacing: -0.01em; color: var(--text); }
-    .pillar p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-    .p-badge { display: inline-block; margin-top: 1rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; }
-    .b-ai { background: var(--blue-pale); color: var(--blue); }
-    .b-tech { background: var(--thumb-tech); color: var(--purple); }
-
-    /* POSTS */
-    .posts { padding: 3.5rem 0 5rem; }
-    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .filter-btn { border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); border-radius: 999px; padding: 8px 14px; font-family:var(--font-ui); font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: color 0.2s, border-color 0.2s, background 0.2s; }
-    .filter-btn:hover, .filter-btn.active { color: var(--blue-mid); border-color: var(--blue-mid); background: var(--blue-pale); }
-    .filter-btn[data-filter="Anabolics"].active { color: var(--purple); border-color: var(--purple); background: var(--thumb-tech); }
-    .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .post-card { display: flex; flex-direction: column; text-decoration: none; color: var(--text); }
-    .post-thumb { width: 100%; height: 150px; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; transition: background 0.25s; }
-    .thumb-ai { background: var(--thumb-ai); }
-    .thumb-tech { background: var(--thumb-tech); }
-    .post-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .tag-ai { color: var(--blue-mid); }
-    .tag-tech { color: var(--purple); }
-    .post-card h3 { font-family:var(--font-display); font-size: 1rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.45rem; letter-spacing: -0.01em; color: var(--text); }
-    .post-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 0.9rem; }
-    .post-foot { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--text-muted); font-family:var(--font-ui); border-top: 1px solid var(--border); padding-top: 0.75rem; }
-    .status { margin-left: auto; font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 20px; }
-    .s-pub { background: var(--pub); color: var(--pub-text); }
-    .s-draft { background: var(--draft); color: var(--draft-text); }
-
-    /* ABOUT BAND */
-    .about-band { background: var(--black); padding: 3.5rem 0; }
-    .about-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
-    .about-band h2 { font-family:var(--font-display); font-size: 1.6rem; font-weight: 800; color: #f4f4f5; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-    .about-band p { color: rgba(255,255,255,0.55); font-size: 0.92rem; line-height: 1.75; max-width: 520px; }
-    .about-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #080c10; text-decoration: none; padding: 13px 24px; border-radius: 6px; font-size: 0.875rem; font-weight: 500; white-space: nowrap; transition: opacity 0.2s; }
-    .about-btn:hover { opacity: 0.85; }
-
-    /* FOOTER */
-    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 1.75rem 2.5rem; display: flex; align-items: center; justify-content: space-between; }
-    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); font-family:var(--font-ui); }
-    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
-
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .pillars-grid, .posts-grid { grid-template-columns: 1fr; }
-      .about-inner { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      footer { flex-direction: column; gap: 8px; text-align: center; }
-    }
-
-    /* NEWSLETTER BAND */
-    .newsletter-band { background: var(--blue); padding: 3.5rem 0; }
-    .newsletter-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
-    .newsletter-band h2 { font-family:var(--font-display); font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-    .newsletter-band p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.65; max-width: 420px; }
-    .nl-form { display: flex; gap: 10px; flex-shrink: 0; }
-    .nl-input { padding: 11px 16px; border-radius: 6px; border: none; font-size: 0.88rem; font-family:var(--font-ui); width: 240px; background: rgba(255,255,255,0.15); color: #fff; outline: none; }
-    .nl-input::placeholder { color: rgba(255,255,255,0.55); }
-    .nl-input:focus { background: rgba(255,255,255,0.25); }
-    .nl-btn { padding: 11px 22px; border-radius: 6px; border: none; background: #fff; color: var(--blue); font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family:var(--font-ui); transition: opacity 0.2s; white-space: nowrap; }
-    .nl-btn:hover { opacity: 0.9; }
-    .nl-thanks { color: #fff; font-size: 0.88rem; display: none; }
-    @media (max-width: 768px) { .newsletter-inner { grid-template-columns: 1fr; } .nl-form { flex-direction: column; } .nl-input { width: 100%; } }
-
-    /* BACK TO TOP */
-    #back-top { position:fixed; bottom:28px; right:28px; width:42px; height:42px; border-radius:50%; background:var(--blue); color:#fff; border:none; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.25s; z-index:900; box-shadow:0 4px 14px rgba(0,0,0,0.18); }
-    #back-top.visible { opacity:1; pointer-events:auto; }
-
-    /* HAMBURGER */
-    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
-    .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; transition:transform 0.2s, opacity 0.2s; }
-    .mobile-nav { display:none; position:absolute; top:60px; left:0; right:0; background:var(--nav-bg); border-bottom:1px solid var(--border); padding:1rem 2.5rem; flex-direction:column; gap:1rem; z-index:99; }
-    .mobile-nav a { text-decoration:none; font-size:0.88rem; font-weight:500; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; }
-    .mobile-nav a:hover { color:var(--blue-mid); }
-    .mobile-nav .nav-cta { background:var(--blue); color:#fff !important; padding:8px 16px; border-radius:6px; display:inline-block; }
-    @media (max-width:768px) { .hamburger { display:flex; } .nav-links { display:none !important; } .mobile-nav.open { display:flex; } nav { position:relative; } }
-
-    /* RELATED ARTICLES */
-    .related-section { border-top:1px solid var(--border); padding:2.5rem 0 3rem; }
-    .related-title { font-family:var(--font-display); font-size:1rem; font-weight:700; color:var(--text); margin-bottom:1.25rem; letter-spacing:-0.01em; }
-    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .related-card { display:flex; flex-direction:column; text-decoration:none; background:var(--bg-card); border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:border-color 0.2s; }
-    .related-card:hover { border-color:var(--blue-mid); }
-    .related-thumb { height:110px; background-size:cover; background-position:center; background-color:var(--bg-surface); }
-    .related-body { padding:1rem; }
-    .related-tag { font-size:0.65rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:0.4rem; }
-    .related-tag-tech { color:#a78bfa; }
-    .related-card h4 { font-family:var(--font-display); font-size:0.9rem; font-weight:700; line-height:1.35; color:var(--text); margin-bottom:0.35rem; }
-    .related-card span { font-family:var(--font-ui); font-size:0.7rem; color:var(--text-muted); }
-    @media (max-width:600px) { .related-grid { grid-template-columns:1fr; } }
-
-    /* TABLE OF CONTENTS */
-    .toc-box { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:2.5rem; }
-    .toc-label { font-family:var(--font-ui); font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.75rem; }
-    .toc-list { list-style:none; display:flex; flex-direction:column; gap:0.4rem; }
-    .toc-list a { font-size:0.85rem; color:var(--blue-mid); text-decoration:none; }
-    .toc-list a:hover { text-decoration:underline; }
-
-    /* ACTIVE NAV */
-    .nav-links a.active { color:var(--blue-mid) !important; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:var(--font-ui); background:var(--bg); color:var(--text); }
+    nav { position:sticky; top:0; z-index:100; height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 2.5rem; background:var(--nav-bg); border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:var(--font-wordmark,'Source Serif 4',serif); font-size:1.15rem; font-weight:800; color:var(--text); text-decoration:none; }
+    .nav-logo span { color:var(--blue-mid); }
+    .nav-right,.nav-links { display:flex; align-items:center; }
+    .nav-right { gap:1.25rem; }
+    .nav-links { gap:1.35rem; list-style:none; }
+    .nav-links a { color:var(--text-muted); font-size:.82rem; font-weight:600; letter-spacing:.06em; text-decoration:none; text-transform:uppercase; }
+    .nav-links a:hover,.nav-links a.active { color:var(--blue-mid); }
+    .theme-toggle { display:flex; align-items:center; justify-content:center; min-width:38px; min-height:38px; border:1px solid var(--border); border-radius:50%; background:var(--bg-card); color:var(--text); cursor:pointer; }
+    @media (max-width:768px) { nav { padding:0 1.25rem; } }
   </style>
-<link rel="stylesheet" href="site-images.css">
-<link rel="stylesheet" href="site-nav.css">
-<script src="site-nav.js" defer></script>
-<script type="application/ld+json" data-site-schema>{"@context":"https://schema.org","@type":"WebSite","name":"The Med Frontier","url":"https://themedfrontier.com/","author":{"@type":"Person","name":"Jack Nassiri"},"description":"Weekly writing on AI in medicine and anabolics by a Loyola High School student."}</script>
-<link rel="stylesheet" href="site-disclaimer.css">
-<link rel="stylesheet" href="site-accessibility.css">
-<script src="site-theme.js"></script>
-<link rel="stylesheet" href="assets/typography.css">
-<link rel="stylesheet" href="assets/figures.css">
-<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
-
-<meta property="og:image" content="https://themedfrontier.com/images/og/default.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://themedfrontier.com/images/og/default.png">
+  <link rel="stylesheet" href="assets/typography.css">
+  <link rel="stylesheet" href="site-accessibility.css">
+  <link rel="stylesheet" href="site-nav.css">
+  <link rel="stylesheet" href="home-redesign.css">
+  <script src="site-theme.js"></script>
+  <script src="site-nav.js" defer></script>
+  <script src="home-wheel.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"The Med Frontier","url":"https://themedfrontier.com/","author":{"@type":"Person","name":"Jack Nassiri"},"description":"Student medical journalism on AI in medicine and the human body."}</script>
 </head>
-<body><a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <button id="back-top" title="Back to top" aria-label="Back to top">↑</button>
-  <div class="ticker-bar">
-    <div class="ticker-inner">
-      AI diagnostics <span>◆</span> Hospital triage AI <span>◆</span> HGH and muscle growth <span>◆</span> Protein timing <span>◆</span> Lean bulking <span>◆</span> Recovery nutrition <span>◆</span> LLMs in clinical care <span>◆</span>
-      AI diagnostics <span>◆</span> Hospital triage AI <span>◆</span> Protein timing <span>◆</span> Lean bulking <span>◆</span> Recovery nutrition <span>◆</span> LLMs in clinical care <span>◆</span>
-    </div>
-  </div>
-
+<body class="home-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav>
     <a href="index.html" class="nav-logo">The Med <span>Frontier</span></a>
     <div class="nav-right">
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span class="menu-toggle-lines" aria-hidden="true"></span></button><ul class="nav-links" id="primary-navigation">>
-        <li><a href="all-articles.html">All Articles</a></li>
-        <li><a href="sources.html">Sources</a></li>
-        <li><a href="search.html" title="Search" aria-label="Search" style="display:inline-flex;width:28px;height:28px;border:1px solid currentColor;border-radius:50%;align-items:center;justify-content:center;font-size:1rem;line-height:1;">⌕</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html" class="nav-cta">Contact Me</a></li>
-      </ul>
-      <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn">
-        <span class="toggle-icon" id="toggle-icon">🌙</span>
-
-      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><span class="menu-toggle-lines" aria-hidden="true"></span></button>
+      <ul class="nav-links" id="primary-navigation"><li><a href="all-articles.html">All Articles</a></li><li><a href="about.html">About</a></li></ul>
+      <button aria-label="Toggle color theme" title="Toggle color theme" class="theme-toggle" onclick="toggleTheme()" id="toggle-btn"><span id="toggle-icon">🌙</span></button>
     </div>
   </nav>
 
-  <section id="main-content" tabindex="-1" class="hero">
-    <div class="hero-left">
-      <div class="hero-kicker">Student medical journalism</div>
-      <h1>Where <em>AI</em> meets<br>the human body.</h1>
-      <p class="hero-sub">I write about medical AI and the claims people make about building muscle. I read the studies, figure out what holds up, and explain where I still have questions.</p>
-      <a href="medical-ai-real-world.html" class="hero-btn">Read the latest →</a>
-    </div>
-    <div class="hero-right">
-      <div class="featured-label">Latest post</div>
-      <a class="featured-card" href="medical-ai-real-world.html">
-        <img class="featured-thumb" src="images/thumbs/medical-ai-real-world.jpg" width="900" height="300" alt="AI generated illustration of a male clinician reviewing a hospital worklist at night" loading="lazy">
-        <div class="fc-tag">AI in Medicine · Long Read</div>
-        <h2>Medical AI Enters the Real World: The Results Are More Complicated Than Expected</h2>
-        <p>I read the clinical trials behind medical AI. Some systems helped the workflow. Others did their assigned job without improving patient care.</p>
-        <div class="fc-meta"><span>September 7, 2026</span><span>·</span><span>12 min</span></div>
-      </a>
-    </div>
-  </section>
+  <main class="home-main" id="main-content" tabindex="-1">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-copy">
+        <p class="home-eyebrow">Student medical journalism</p>
+        <h1 class="home-title" id="home-title">Where <em>AI</em> meets the human body</h1>
+        <p class="home-disclaimer">This is not medical advice.</p>
+      </div>
 
-  <div class="wrap">
-    <section class="pillars">
-      <div class="sec-header"><h2 class="sec-title">What I cover</h2></div>
-      <div class="pillars-grid">
-        <div class="pillar">
-          <div class="pillar-num">01, Pillar</div>
-          <h3>AI in Medicine</h3>
-          <p>I follow what happens when an algorithm leaves the research paper and ends up beside a doctor, a scan, or a hospital bed.</p>
-          <span class="p-badge b-ai">AI &amp; Medicine</span>
+      <div class="wheel-stage" aria-label="Selected articles">
+        <div class="article-wheel">
+          <i class="wheel-spoke" style="transform:rotate(0deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(30deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(60deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(90deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(120deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(150deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(180deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(210deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(240deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(270deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(300deg)" aria-hidden="true"></i><i class="wheel-spoke" style="transform:rotate(330deg)" aria-hidden="true"></i>
+          <a class="wheel-item" href="medical-ai-real-world.html"><span class="ai-key">Medical AI</span> Enters the <span class="ai-key">Real World</span>: The <span class="ai-key">Results</span> Are More <span class="ai-key">Complicated</span> Than Expected</a>
+          <a class="wheel-item" href="ai-sepsis-alerts.html"><span class="ai-key">AI Sepsis Alerts</span>: Early Warning System or Alarm Fatigue?</a>
+          <a class="wheel-item" href="lean-bulk.html">The <span class="body-key">Lean Bulk</span>: How to Gain Muscle Without Treating Calories Like a Guess</a>
+          <a class="wheel-item" href="robotic-surgery.html"><span class="ai-key">Robotic Surgery</span>: The Machine Still Follows the Surgeon</a>
+          <a class="wheel-item" href="sleep-testosterone.html"><span class="body-key">Sleep and Testosterone</span>: What One Week of Short Nights Did</a>
+          <a class="wheel-item" href="ai-cancer-screening.html"><span class="ai-key">AI in Cancer Screening</span>: What Happens After the Model Flags a Scan</a>
+          <a class="wheel-item" href="protein-timing.html"><span class="body-key">Protein Timing</span>: How Much the Anabolic Window Actually Changes</a>
+          <a class="wheel-item" href="ai-drug-discovery.html">How <span class="ai-key">AI</span> Is Accelerating <span class="ai-key">Drug Discovery</span> and Where the Hype Ends</a>
+          <a class="wheel-item" href="wearable-biosensors.html"><span class="ai-key">Wearable Biosensors</span>: When More Data Helps and When It Does Not</a>
+          <a class="wheel-item" href="sarms-risk.html"><span class="body-key">SARMs</span>: Marketed Like Supplements, Acting More Like Drugs</a>
+          <a class="wheel-item" href="ai-pathology.html"><span class="ai-key">AI in Pathology</span>: Teaching Computers to Spot Cancer in a Slide</a>
+          <a class="wheel-item" href="caffeine-performance.html"><span class="body-key">Caffeine and Performance</span>: The Dose I Would Start With</a>
         </div>
-        <div class="pillar">
-          <div class="pillar-num">02, Pillar</div>
-          <h3>Anabolics</h3>
-          <p>I sort useful training evidence from supplement marketing, especially when a claim sounds much cleaner than the biology is.</p>
-          <span class="p-badge b-tech">Anabolics</span>
-        </div>
+
+        <ul class="wheel-static-list" aria-label="Selected articles without animation">
+          <li><a href="medical-ai-real-world.html"><span class="ai-key">Medical AI</span> Enters the Real World</a></li><li><a href="ai-sepsis-alerts.html"><span class="ai-key">AI Sepsis Alerts</span></a></li><li><a href="lean-bulk.html"><span class="body-key">Lean Bulking</span></a></li><li><a href="robotic-surgery.html"><span class="ai-key">Robotic Surgery</span></a></li><li><a href="sleep-testosterone.html"><span class="body-key">Sleep and Testosterone</span></a></li><li><a href="ai-cancer-screening.html"><span class="ai-key">AI in Cancer Screening</span></a></li><li><a href="protein-timing.html"><span class="body-key">Protein Timing</span></a></li><li><a href="ai-drug-discovery.html"><span class="ai-key">AI Drug Discovery</span></a></li><li><a href="wearable-biosensors.html"><span class="ai-key">Wearable Biosensors</span></a></li><li><a href="sarms-risk.html"><span class="body-key">SARMs</span></a></li><li><a href="ai-pathology.html"><span class="ai-key">AI in Pathology</span></a></li><li><a href="caffeine-performance.html"><span class="body-key">Caffeine and Performance</span></a></li>
+        </ul>
       </div>
     </section>
+  </main>
 
-    <section class="posts" id="posts">
-      <div class="sec-header">
-        <h2 class="sec-title">Recent articles</h2><a href="all-articles.html" style="font-size:0.82rem;color:var(--blue-mid);text-decoration:none;font-weight:600;">View all articles →</a>
-      </div>
-      <div class="filter-tabs" aria-label="Filter articles">
-        <button class="filter-btn active" type="button" data-filter="All">All</button>
-        <button class="filter-btn" type="button" data-filter="AI in Medicine">AI in Medicine</button>
-        <button class="filter-btn" type="button" data-filter="Anabolics">Anabolics</button>
-      </div>
-      <div class="posts-grid">
-
-        <a href="medical-ai-real-world.html" class="post-card" data-date="2026-09-07" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/medical-ai-real-world.jpg" width="900" height="300" alt="AI generated illustration of a male clinician reviewing a hospital worklist at night" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine · Long Read</div>
-          <h3>Medical AI Enters the Real World: The Results Are More Complicated Than Expected</h3>
-          <p>I read the clinical trials behind medical AI. Some systems helped the workflow. Others did their assigned job without improving patient care.</p>
-          <div class="post-foot"><span>Sep 7</span><span>·</span><span>12 min</span></div>
-        </a>
-        <a href="ai-liver-cancer-second-reader.html" class="post-card" data-date="2026-08-31" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-liver-cancer-second-reader.jpg" width="900" height="300" alt="AI generated illustration of a male radiologist reviewing abdominal scans" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI as a Second Reader: The System That Found Overlooked Liver Cancers</h3>
-          <p>In a live hospital workflow, LiON helped reviewers find 15 malignancies that had been overlooked on liver scans.</p>
-          <div class="post-foot"><span>Aug 31</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="fda-testing-generative-medical-ai.html" class="post-card" data-date="2026-08-24" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/fda-testing-generative-medical-ai.jpg" width="900" height="300" alt="AI generated illustration of a structured medical AI test in an empty exam room" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>Testing Medical AI: Why the FDA Is Borrowing an Idea From Physician Training</h3>
-          <p>The FDA's draft idea would test a medical AI before release, confirm it in a clinic, and keep checking it after updates.</p>
-          <div class="post-foot"><span>Aug 24</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="beta-alanine-endurance.html" class="post-card" data-date="2026-08-13" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/beta-alanine-endurance.jpg" width="900" height="300" alt="AI generated illustration of a male cyclist recovering after a track interval" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Beta-Alanine: Who Benefits From the Tingling Supplement</h3>
-          <p>Beta-alanine builds muscle carnosine over time. It helps most when a hard effort lasts roughly one to four minutes.</p>
-          <div class="post-foot"><span>Aug 13</span><span>·</span><span>9 min</span></div>
-        </a>
-        <a href="ai-sepsis-alerts.html" class="post-card" data-date="2026-08-10" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-sepsis-alerts.jpg" width="900" height="300" alt="AI generated illustration of a male nurse reviewing alerts during a night shift" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI Sepsis Alerts: Early Warning System or Alarm Fatigue?</h3>
-          <p>A sepsis alert is useful only when someone responds. The strongest hospital studies show why.</p>
-          <div class="post-foot"><span>Aug 10</span><span>·</span><span>9 min</span></div>
-        </a>
-        <a href="testosterone-muscle.html" class="post-card" data-date="2026-07-20" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/testosterone-muscle.jpg" width="900" height="300" alt="AI generated illustration of a male lifter chalking his hands beside a loaded barbell" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Testosterone and Muscle Growth: What Is Real and What Gets Exaggerated</h3>
-          <p>Testosterone can add muscle. Using it without a medical need also suppresses natural production and creates risks gym advice tends to skip.</p>
-          <div class="post-foot"><span>Jul 20</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ai-designed-drug-rentosertib.html" class="post-card" data-date="2026-07-13" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-designed-drug-rentosertib.jpg" width="900" height="300" alt="AI generated illustration of a drug development laboratory and trial workspace" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>An AI-Designed Drug Reaches Patients: What Rentosertib Actually Proved</h3>
-          <p>A 71-person phase 2a trial moved rentosertib beyond an AI discovery claim. The lung-function result still needs a larger test.</p>
-          <div class="post-foot"><span>Jul 13</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ai-heart-attack-prediction.html" class="post-card" data-date="2026-07-13" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-heart-attack-prediction.jpg" width="900" height="300" alt="AI generated illustration of a male patient receiving retinal imaging" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>Can AI Predict a Heart Attack Before Symptoms Start?</h3>
-          <p>An AI risk score has value when it leads to a concrete change, such as treating LDL or ordering the right follow-up scan.</p>
-          <div class="post-foot"><span>Jul 13</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="sarms-risk.html" class="post-card" data-date="2026-07-06" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/sarms-risk.jpg" width="900" height="300" alt="AI generated illustration of unlabeled capsules beside an opened mailer and laboratory report" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>SARMs: Marketed Like Supplements, Acting More Like Drugs</h3>
-          <p>Researchers tested 44 products sold online as SARMs. Only about half actually contained a SARM.</p>
-          <div class="post-foot"><span>Jul 6</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ai-cancer-screening.html" class="post-card" hidden data-date="2026-06-29" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-cancer-screening.jpg" width="900" height="300" alt="AI generated illustration of a diagnostic imaging workstation and follow-up room" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI in Cancer Screening: What Happens After the Model Flags a Scan</h3>
-          <p>The MASAI trial included more than 80,000 women. AI support cut reading workload while finding at least as many cancers.</p>
-          <div class="post-foot"><span>Jun 29</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ai-mammography-autonomous.html" class="post-card" hidden data-date="2026-06-22" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-mammography-autonomous.jpg" width="900" height="300" alt="AI generated illustration of a mammography suite beside a reading room" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI and Mammography: Are Some Scans Ready to Skip the Radiologist?</h3>
-          <p>In a 31,301-woman trial, AI cleared low-risk mammograms and cut reading workload by 63.6%. It also increased recalls.</p>
-          <div class="post-foot"><span>Jun 22</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="protein-timing.html" class="post-card" hidden data-date="2026-06-22" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/protein-timing.jpg" width="900" height="300" alt="AI generated illustration of a gym bag, meal, shaker bottle, and banana after training" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Protein Timing: How Much the Anabolic Window Actually Changes</h3>
-          <p>The 30-minute anabolic window is mostly gym mythology. Total daily protein comes first; meal timing is a smaller detail.</p>
-          <div class="post-foot"><span>Jun 22</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="medical-chatbots-danger.html" class="post-card" hidden data-date="2026-06-15" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/medical-chatbots-danger.jpg" width="900" height="300" alt="AI generated illustration of a home chatbot screen beside health information it cannot see" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>Medical Chatbots: One Missing Detail Can Change the Answer</h3>
-          <p>A chatbot can make a medical answer sound clear even when it missed the one detail that changes the advice.</p>
-          <div class="post-foot"><span>Jun 15</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ai-replacing-radiologists.html" class="post-card" hidden data-date="2026-06-08" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-replacing-radiologists.jpg" width="900" height="300" alt="AI generated illustration of a male radiologist comparing current and prior scans from a home office" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI and Radiologists: What the Replacement Headlines Miss</h3>
-          <p>AI already flags scans and drafts reports. Radiologists still have to handle the strange cases and own the final call.</p>
-          <div class="post-foot"><span>Jun 8</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="caffeine-performance.html" class="post-card" hidden data-date="2026-06-01" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/caffeine-performance.jpg" width="900" height="300" alt="AI generated illustration of coffee, running shoes, water, and a workout notebook" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Caffeine and Performance: The Dose I Would Start With</h3>
-          <p>Caffeine helps performance at surprisingly ordinary doses. Taking more mostly raises the chance that sleep pays for it later.</p>
-          <div class="post-foot"><span>Jun 1</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="sleep-testosterone.html" class="post-card" hidden data-date="2026-05-25" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/sleep-testosterone.jpg" width="900" height="300" alt="AI generated illustration of a dim bedroom with a phone face down on the nightstand" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Sleep and Testosterone: What One Week of Short Nights Did</h3>
-          <p>One week of five-hour nights lowered daytime testosterone in a small study of healthy young men. One late night does not establish the pattern.</p>
-          <div class="post-foot"><span>May 25</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="ozempic-muscle-loss.html" class="post-card" hidden data-date="2026-05-18" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/ozempic-muscle-loss.jpg" width="900" height="300" alt="AI generated illustration of a balanced meal beside a resistance band in a kitchen" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Ozempic, Weight Loss, and Muscle: What Gets Lost Besides Fat?</h3>
-          <p>Fast weight loss can include lean mass. Resistance training and enough protein should be part of the plan from day one.</p>
-          <div class="post-foot"><span>May 18</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="bpc157-peptides.html" class="post-card" hidden data-date="2026-05-11" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/bpc157-peptides.jpg" width="900" height="300" alt="AI generated illustration of an unlabeled vial and capped syringe on a clinical tray" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>BPC-157: The Human Evidence Is Almost Empty</h3>
-          <p>BPC-157 has a huge online reputation and almost no convincing human evidence for healing an injury.</p>
-          <div class="post-foot"><span>May 11</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="supplements-evidence.html" class="post-card" hidden data-date="2026-05-04" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/supplements-evidence.jpg" width="900" height="300" alt="AI generated illustration of blank supplement containers arranged on a shelf" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Supplements: What Earned a Place in My Gym Bag</h3>
-          <p>Creatine and caffeine have evidence. Most of the supplement aisle has marketing copy and a much thinner research file.</p>
-          <div class="post-foot"><span>May 4</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="protein-muscle-growth.html" class="post-card" hidden data-date="2026-04-27" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/protein-muscle-growth.jpg" width="900" height="300" alt="AI generated illustration of eggs, chicken, greens, and a shaker bottle on a kitchen table" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Protein for Muscle Growth: The Amount That Usually Covers It</h3>
-          <p>A large meta-analysis found the added benefit leveling off around 1.6 grams of protein per kilogram per day.</p>
-          <div class="post-foot"><span>Apr 27</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="hgh-muscle-growth.html" class="post-card" hidden data-date="2026-04-20" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/hgh-muscle-growth.jpg" width="900" height="300" alt="AI generated illustration of an empty consultation room with a blurred chart on a tablet" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>HGH and Muscle Growth: Bigger Lean Mass Is Not the Same as More Strength</h3>
-          <p>In healthy adults, HGH can raise measured lean mass without producing the strength gains its reputation suggests.</p>
-          <div class="post-foot"><span>Apr 20</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="ai-hospital-triage.html" class="post-card" hidden data-date="2026-04-13" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-hospital-triage.jpg" width="900" height="300" alt="AI generated illustration of a nurse working at an emergency department triage desk" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI Hospital Triage: Can Algorithms Decide Who Needs Care First?</h3>
-          <p>A triage score can catch a patient who looks stable and is getting worse. Hospitals still need to show who acts on the warning.</p>
-          <div class="post-foot"><span>Apr 13</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ambient-ai-scribes.html" class="post-card" hidden data-date="2026-03-30" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ambient-ai-scribes.jpg" width="900" height="300" alt="AI generated illustration of a doctor and patient talking with a small recording device on the desk" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>Ambient AI Scribes: The First Medical AI Patients May Actually Notice</h3>
-          <p>An ambient scribe drafts the visit note while the doctor talks with the patient. The useful outcome may be more eye contact.</p>
-          <div class="post-foot"><span>Mar 30</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="carbs-training.html" class="post-card" hidden data-date="2026-03-23" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/carbs-training.jpg" width="900" height="300" alt="AI generated illustration of a bowl of pasta beside a gym bag in a home kitchen" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Carbs Around Training: Fuel, Recovery, and the Myth of the Perfect Window</h3>
-          <p>Carbohydrate needs change with the work. A long practice burns through more glycogen than a short lifting session.</p>
-          <div class="post-foot"><span>Mar 23</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="lean-bulk.html" class="post-card" hidden data-date="2026-03-16" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/lean-bulk.jpg" width="900" height="300" alt="AI generated illustration of a hand portioning rice onto a plate resting on a kitchen scale" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>The Lean Bulk: How to Gain Muscle Without Treating Calories Like a Guess</h3>
-          <p>A small calorie surplus gives training room to work. Eating far past it mostly makes the later cut longer.</p>
-          <div class="post-foot"><span>Mar 16</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="sleep-muscle-growth.html" class="post-card" hidden data-date="2026-03-09" data-category="Anabolics">
-          <div class="post-thumb thumb-tech"><img src="images/thumbs/sleep-muscle-growth.jpg" width="900" height="300" alt="AI generated illustration of a quiet bedroom with a folded training shirt on a chair" loading="lazy"></div>
-          <div class="post-tag tag-tech">Anabolics</div>
-          <h3>Sleep and Muscle Growth: The Free Part of the Program</h3>
-          <p>The workout creates fatigue. Sleep is when the body gets a chance to adapt before the next one.</p>
-          <div class="post-foot"><span>Mar 9</span><span>·</span><span>5 min</span></div>
-        </a>
-        <a href="robotic-surgery.html" class="post-card" hidden data-date="2026-03-02" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/robotic-surgery.jpg" width="900" height="300" alt="AI generated illustration of an unoccupied surgical robot in an operating room" loading="lazy"></div>
-          <div class="post-tag tag-ai">Med Tech</div>
-          <h3>Robotic Surgery: The Machine Still Follows the Surgeon</h3>
-          <p>A surgical robot follows the surgeon's hands. Whether it helps depends on the operation and the experience of the person at the console.</p>
-          <div class="post-foot"><span>Mar 2</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="ai-drug-discovery.html" class="post-card" hidden data-date="2026-02-23" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-drug-discovery.jpg" width="900" height="300" alt="AI generated illustration of a medicinal chemistry laboratory with molecular software and automated equipment" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>How AI Is Accelerating Drug Discovery and Where the Hype Ends</h3>
-          <p>AlphaFold made protein structures easier to predict. A useful drug still has to pass chemistry and years of human testing.</p>
-          <div class="post-foot"><span>Feb 23</span><span>·</span><span>8 min</span></div>
-        </a>
-        <a href="wearable-biosensors.html" class="post-card" hidden data-date="2026-02-16" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/wearable-biosensors.jpg" width="900" height="300" alt="AI generated illustration of an unbranded smartwatch displaying an abstract pulse line outdoors" loading="lazy"></div>
-          <div class="post-tag tag-ai">Med Tech</div>
-          <h3>Wearable Biosensors: When More Data Helps and When It Does Not</h3>
-          <p>Continuous glucose monitors already guide treatment. Many other wearable signals still create more data than clear medical decisions.</p>
-          <div class="post-foot"><span>Feb 16</span><span>·</span><span>5 min</span></div>
-        </a>
-        <a href="llms-clinic.html" class="post-card" hidden data-date="2026-02-09" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/llms-clinic.jpg" width="900" height="300" alt="AI generated illustration of a male family doctor reviewing a draft while speaking with a patient" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>LLMs in the Clinic: Where I Think Doctors Should Draw the Line</h3>
-          <p>AI can give doctors time back and still make a dangerously convincing mistake. The job we give it determines how useful it is.</p>
-          <div class="post-foot"><span>Feb 9</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="crispr-2026.html" class="post-card" hidden data-date="2026-02-02" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/crispr-2026.jpg" width="900" height="300" alt="AI generated illustration of gloved hands using a multichannel pipette over a sequencing plate" loading="lazy"></div>
-          <div class="post-tag tag-ai">Med Tech</div>
-          <h3>CRISPR in 2026: What Gene Editing Can and Cannot Do Yet</h3>
-          <p>In the Casgevy trial, 29 of 31 evaluable patients avoided severe sickle-cell pain crises for at least a year.</p>
-          <div class="post-foot"><span>Feb 2</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="ai-pathology.html" class="post-card" hidden data-date="2026-01-26" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-pathology.jpg" width="900" height="300" alt="AI generated illustration of a pathologist viewing a blurred generic tissue image" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>AI in Pathology: Teaching Computers to Spot Cancer in a Slide</h3>
-          <p>AI can mark a suspicious patch on a digital slide. A pathologist still decides what those cells mean for the patient.</p>
-          <div class="post-foot"><span>Jan 26</span><span>·</span><span>7 min</span></div>
-        </a>
-        <a href="smart-implants.html" class="post-card" hidden data-date="2026-01-19" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/smart-implants.jpg" width="900" height="300" alt="AI generated illustration of a man checking an implant monitoring alert at home" loading="lazy"></div>
-          <div class="post-tag tag-ai">Med Tech</div>
-          <h3>Smart Implants: Who Watches the Data From Inside the Body?</h3>
-          <p>Connected implants can report a rhythm change or device problem from home. Someone still has to watch the alert.</p>
-          <div class="post-foot"><span>Jan 19</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="next-gen-imaging.html" class="post-card" hidden data-date="2026-01-12" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/next-gen-imaging.jpg" width="900" height="300" alt="AI generated illustration of an empty modern CT scanner suite" loading="lazy"></div>
-          <div class="post-tag tag-ai">Med Tech</div>
-          <h3>Medical Imaging Is Changing: Faster Scans and Smaller Machines</h3>
-          <p>Photon-counting CT, shorter MRI scans, and portable machines are changing who can get a useful image and how long it takes.</p>
-          <div class="post-foot"><span>Jan 12</span><span>·</span><span>6 min</span></div>
-        </a>
-        <a href="ai-mental-health.html" class="post-card" hidden data-date="2026-01-05" data-category="AI in Medicine">
-          <div class="post-thumb thumb-ai"><img src="images/thumbs/ai-mental-health.jpg" width="900" height="300" alt="AI generated illustration of a quiet telehealth desk with a blurred generic video call on a laptop" loading="lazy"></div>
-          <div class="post-tag tag-ai">AI in Medicine</div>
-          <h3>Can AI Detect Depression Before You Can?</h3>
-          <p>Speech may contain clues about depression. Using those clues without consent would turn a screening idea into surveillance.</p>
-          <div class="post-foot"><span>Jan 5</span><span>·</span><span>6 min</span></div>
-        </a>
-
-      </div>
-    </section>
-  </div>
-
-  <div class="newsletter-band">
-    <div class="wrap">
-      <div class="newsletter-inner">
-        <div>
-          <h2>Want the next article?</h2>
-          <p>I will send it when it is ready. That is usually once a week.</p>
-        </div>
-        <!-- Newsletter submissions are sent to the configured Formspree endpoint. -->
-        <form class="nl-form" action="https://formspree.io/f/xpwzqkrn" method="POST" onsubmit="nlSubmit(event, this)">
-          <input class="nl-input" type="email" name="email" placeholder="your@email.com" required>
-          <button class="nl-btn" type="submit">Subscribe</button>
-          <span class="nl-thanks" id="nl-thanks">Thanks! You&#8217;re in.</span>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="about-band">
-    <div class="wrap">
-      <div class="about-inner">
-        <div>
-          <h2>Who's writing this?</h2>
-          <p>I'm Jack Nassiri, a Loyola High School student and writer for <em>The Loyalist</em>. This is where I work through the health research I cannot stop reading about.</p>
-        </div>
-        <a href="about.html" class="about-btn">Read my full bio →</a>
-      </div>
-    </div>
-  </div>
-
-  <footer><p class="site-disclaimer footer-disclaimer">The Med Frontier is written by a high school student for education. It is not medical advice. Talk to a doctor before changing medication, supplements, or training.</p>
-    <p>© 2026 The Med Frontier &nbsp;·&nbsp; Built with GitHub Pages</p>
-    <p>Where AI meets the human body.</p>
-  </footer>
-
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      document.getElementById('toggle-icon').textContent = isDark ? '🌙' : '☀️';
-
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    }
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      document.getElementById('toggle-icon').textContent = '☀️';
-
-    }
-
-    function nlSubmit(e, form) {
-      e.preventDefault();
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(r) {
-        document.getElementById('nl-thanks').style.display = 'inline';
-        form.querySelector('.nl-input').style.display = 'none';
-        form.querySelector('.nl-btn').style.display = 'none';
-      }).catch(function() {
-        document.getElementById('nl-thanks').textContent = 'Error. Try again.';
-        document.getElementById('nl-thanks').style.display = 'inline';
-      });
-    }
-
-    var homeCards = Array.from(document.querySelectorAll('#posts .post-card')).sort(function(a, b) {
-      return b.getAttribute('data-date').localeCompare(a.getAttribute('data-date'));
-    });
-    var homeGrid = document.querySelector('#posts .posts-grid');
-    homeCards.forEach(function(card) { homeGrid.appendChild(card); });
-
-    function syncLatestPost() {
-      var newest = homeCards[0];
-      if (!newest) return;
-      var featured = document.querySelector('.featured-card');
-      var sourceImage = newest.querySelector('.post-thumb img');
-      var featuredImage = featured.querySelector('.featured-thumb');
-      document.querySelector('.hero-btn').href = newest.getAttribute('href');
-      featured.href = newest.getAttribute('href');
-      featured.querySelector('.fc-tag').textContent = newest.querySelector('.post-tag').textContent;
-      featured.querySelector('h2').textContent = newest.querySelector('h3').textContent;
-      featured.querySelector('p').textContent = newest.querySelector('p').textContent;
-      featuredImage.src = sourceImage.src;
-      featuredImage.srcset = sourceImage.srcset;
-      featuredImage.alt = sourceImage.alt;
-      featuredImage.removeAttribute('loading');
-      featuredImage.setAttribute('fetchpriority', 'high');
-      var date = new Date(newest.getAttribute('data-date') + 'T12:00:00Z');
-      featured.querySelector('.fc-meta span:first-child').textContent = new Intl.DateTimeFormat('en-US', { month:'long', day:'numeric', year:'numeric', timeZone:'UTC' }).format(date);
-      featured.querySelector('.fc-meta span:last-child').textContent = newest.querySelector('.post-foot span:last-child').textContent;
-    }
-
-    function filterHomeArticles(category) {
-      document.querySelectorAll('.filter-btn').forEach(function(btn){ btn.classList.toggle('active', btn.getAttribute('data-filter') === category); });
-      var visible = 0;
-      homeCards.forEach(function(card){
-        var matches = category === 'All' || card.getAttribute('data-category') === category;
-        var show = matches && visible < 9;
-        card.hidden = !show;
-        card.style.display = show ? 'flex' : 'none';
-        if (matches) visible += 1;
-      });
-    }
-    document.querySelectorAll('.filter-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){ filterHomeArticles(btn.getAttribute('data-filter')); });
-    });
-    syncLatestPost();
-    filterHomeArticles('All');
-
-    // Back to top
-    var btt = document.getElementById('back-top');
-    if(btt) {
-      window.addEventListener('scroll', function(){ btt.classList.toggle('visible', window.scrollY > 350); });
-      btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-    }
-    // Hamburger
-    function toggleMenu(){
-      document.getElementById('mobile-nav').classList.toggle('open');
-    }
-    // Active nav
-    (function(){
-      var page = window.location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(function(a){
-        if(a.getAttribute('href') === page) a.classList.add('active');
-      });
-    })();
-  </script>
-
+  <footer class="home-footer"><p>© 2026 The Med Frontier</p></footer>
 </body>
 </html>

@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var links = nav.querySelector('.nav-links');
     if (!button || !links) return;
 
+    links.innerHTML = '<li><a href="all-articles.html">All Articles</a></li><li><a href="about.html">About</a></li>';
+
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    links.querySelectorAll('a').forEach(function (link) {
+      if (link.getAttribute('href') === page) link.classList.add('active');
+    });
+
     function closeMenu() {
       nav.classList.remove('menu-open');
       button.setAttribute('aria-expanded', 'false');
